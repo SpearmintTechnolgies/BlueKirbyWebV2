@@ -1,21 +1,43 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "./Components/Navbar";
-import Card1 from "./Components/Card1";
-import Card2 from "./Components/Card2";
-import BrandLogoStrip from "./Components/BrandLogoStrip";
+import {
+  Box,
+  ThemeProvider,
+  createTheme,
+} from "@mui/material";
+import "./App.css";
+import Herosection from "./Components/landing/Card1";
+
+const theme = createTheme({
+  typography: {
+    fontFamily: "POPPINS, sans-serif",
+  },
+});
 
 const App = () => {
+  const [darkmode, setDarkmode] = useState(
+    JSON.parse(localStorage.getItem("darkmode")) || false
+  );
+
+  useEffect(() => {
+    const savedDarkMode = JSON.parse(localStorage.getItem("darkmode")) || false;
+    console.log(savedDarkMode, "mode");
+    setDarkmode(savedDarkMode);
+    document.body.style.backgroundColor = savedDarkMode ? "#13171E" : "#D3DEEE";
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("darkmode", JSON.stringify(darkmode));
+    document.body.style.backgroundColor = darkmode ? "#13171E" : "#D3DEEE";
+  }, [darkmode]);
+
   return (
-    <div className="bg-custom-black-1">
-      <div className="grid place-items-center mt-8">
-        <Navbar />
-      </div>
-      <div className="pt-[34px] mx-[149px]">
-        <Card1 />
-        <BrandLogoStrip />
-        <Card2 />
-      </div>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Box className="main">
+        <Navbar darkmode={darkmode} setDarkmode={setDarkmode} />
+       <Herosection darkmode={darkmode} />
+      </Box>
+    </ThemeProvider>
   );
 };
 
