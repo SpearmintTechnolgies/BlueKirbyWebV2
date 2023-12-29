@@ -17,17 +17,167 @@ body {
   font-family: "POPPINS", sans-serif;
 }
 
-.main{
-    transition: all 1s ease-in;
+.main {
+  transition: all 1s ease-in;
 }
 
-.text-white{
-    color: white;
+.text-white {
+  color: white;
 }
 
-.text-black{
-    color: black;
+.text-black {
+  color: black;
 }
-.text-blue{
-    color: #007DFF;
+.text-blue {
+  color: #007dff;
+}
+
+.blue-button {
+  background-color: #007dff;
+  color: white;
+  padding: 0.6rem 1.5rem;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: 15px;
+  animation: none;
+
+  /* Initial state without hover */
+  animation: none;
+
+  /* Hover effect and animation when hovered */
+  &:hover {
+    box-shadow: rgba(225, 223, 223, 0.35) 1px 5px 35px;
+    animation: vibrate 0.3s  ease 1;
+  }
+}
+
+.black-button {
+  background-color: black;
+  color: white;
+  padding: 0.6rem 1.5rem;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: 15px;
+
+  /* Initial state without hover */
+  animation: none;
+
+  /* Hover effect and animation when hovered */
+  &:hover {
+    box-shadow: rgba(225, 223, 223, 0.35) 1px 5px 35px;
+    animation: vibrate 0.3s  ease 1;
+  }
+}
+
+.white-button {
+  background-color: white;
+  color: black;
+  padding: 0.6rem 1.5rem;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: 15px;
+
+  /* Initial state without hover */
+  animation: none;
+
+  /* Hover effect and animation when hovered */
+  &:hover {
+    box-shadow: rgba(225, 223, 223, 0.35) 1px 5px 35px;
+    animation: vibrate 0.3s ease 1;
+  }
+}
+
+.vibrate {
+  animation: vibrate infinite 1s 2s;
+}
+
+@keyframes vibrate {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-2px) translateY(2px);
+  }
+  50% {
+    transform: translateX(2px) translateY(-2px);
+  }
+  75% {
+    transform: translateX(-2px) translateY(2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.vibration-button {
+  transition: background-color 0.3s ease;
+
+  /* Initial state without hover */
+  animation: none;
+
+  /* Hover effect and animation when hovered */
+  &:hover {
+    box-shadow: rgba(225, 223, 223, 0.35) 1px 5px 35px;
+    animation: vibrate 0.3s ease infinite;
+  }
+}
+
+.infinit-scroll-wrapper {
+  width: 100%;
+  display: inline-flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+.infinit-scroll {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7rem;
+  animation: infinite-scroll 20s linear infinite;
+}
+
+@keyframes infinite-scroll {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.desktop-view {
+  display: block;
+}
+
+@media (max-width: 999px) {
+  .blue-button {
+    font-size: 10px;
+    padding: 0.4rem 1.2rem;
+    border-radius: 10px;
+  }
+  .white-button {
+    font-size: 10px;
+    padding: 0.4rem 1.2rem;
+    border-radius: 10px;
+  }
+  .black-button {
+    font-size: 10px;
+    padding: 0.4rem 1.2rem;
+    border-radius: 10px;
+  }
+  .infinit-scroll {
+    gap: 3rem;
+  }
+  .desktop-view {
+    display: none;
+  }
 }
