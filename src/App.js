@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./Components/Navbar";
-import {
-  Box,
-  ThemeProvider,
-  createTheme,
-} from "@mui/material";
+import { Box, ThemeProvider, createTheme } from "@mui/material";
 import "./App.css";
 import Herosection from "./Components/landing/Card1";
-import './App.css'
-import BrandLogoStrip from "./Components/landing/BrandLogoStrip";
+import "./App.css";
+import "./Generate.css";
+import ThirdSection from "./Components/landing/ThirdSection";
+import Ecosystem from "./Components/landing/Ecosystem";
 
 const theme = createTheme({
   typography: {
@@ -34,8 +32,6 @@ const App = () => {
     document.body.style.backgroundColor = darkmode ? "#13171E" : "#D3DEEE";
   }, [darkmode]);
 
-
-
   useEffect(() => {
     const handleResize = () => {
       // Check if the window width is below a certain threshold (e.g., 600 pixels)
@@ -52,11 +48,11 @@ const App = () => {
     handleResize();
 
     // Attach the event listener for window resize
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     // Clean up the event listener on component unmount
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, [isMobile]);
 
@@ -64,8 +60,9 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <Box className="main">
         <Navbar darkmode={darkmode} setDarkmode={setDarkmode} />
-       <Herosection darkmode={darkmode} isMobile={isMobile} />
-
+        <Herosection darkmode={darkmode} isMobile={isMobile} />
+        <Ecosystem darkmode={darkmode} isMobile={isMobile}/>
+        <ThirdSection darkmode={darkmode} isMobile={isMobile}/>
       </Box>
     </ThemeProvider>
   );
