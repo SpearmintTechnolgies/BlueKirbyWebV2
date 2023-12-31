@@ -461,9 +461,9 @@ function ThirdSection({ darkmode, isMobile }) {
                       color={darkmode ? "white" : "black"}
                       fontSize={{ xs: "11px", sm: "20px", lg: "20px" }}
                     >
-                      Kirby contract addresses <br /> <br />
+                      Kirby contract addresses <br /> 
                       ETH: 0xcf0c122c6b73ff809c693db761e7baebe62b6a2e <br />{" "}
-                      <br />
+                
                       BSC: 0xfb5b838b6cfeedc2873ab27866079ac55363d37e
                     </Typography>
                   </div>
@@ -508,58 +508,82 @@ function ThirdSection({ darkmode, isMobile }) {
                   </Typography>
                 </div>
                 <div className="flex  flex-col gap-[32px] items-start shrink-0 flex-nowrap relative z-[3]">
-                  <div className="flex flex-col md:flex-row gap-[25px] md:gap-[125px] items-start shrink-0 flex-nowrap relative z-[4]">
+                  <div className="flex flex-col md:flex-row items-start md:items-center gap-[25px] md:gap-[125px] items-start shrink-0 flex-nowrap relative z-[4]">
                     <div className="shrink-0 font-['Poppins'] text-[30px] font-semibold leading-[41.1px] relative text-left z-[5]">
-                      <span className="font-['Poppins'] text-[16px] font-semibold leading-[41.1px] text-[rgba(255,255,255,0.5)] relative text-left">
+                      <Typography color={"gray"}>
                         Total Supply
                         <br />
-                      </span>
-                      <span className="font-['Poppins'] text-[25px] font-semibold leading-[41.1px] text-[#fff] relative text-left">
+                      </Typography>
+                      <Typography
+                        color={!darkmode ? "black" : "white"}
+                        fontSize={"25px"}
+                        fontWeight={700}
+                      >
                         10,000,000,000,000
-                      </span>
+                      </Typography>
                     </div>
                     <div className=" shrink-0 font-['Poppins'] text-[30px] font-semibold leading-[41.1px] relative text-left z-[6]">
-                      <span className="font-['Poppins'] text-[16px] font-semibold leading-[41.1px] text-[rgba(255,255,255,0.5)] relative text-left">
-                        buy/sell tax <br />
-                      </span>
-                      <span className="font-['Poppins'] text-[30px] font-semibold leading-[41.1px] text-[#fff] relative text-left">
+                      <Typography color={"gray"}>
+                        buy/sell tax
+                        <br />
+                      </Typography>
+                      <Typography
+                        color={!darkmode ? "black" : "white"}
+                        fontSize={"25px"}
+                        fontWeight={700}
+                      >
                         0.3%
-                      </span>
+                      </Typography>
                     </div>
                   </div>
-                  <div className="flex flex-col md:flex-row gap-10 md:gap-[67px]  items-start shrink-0 flex-nowrap relative z-[7]">
+                  <div className="flex flex-col items-center md:flex-row gap-10 md:gap-[67px]  items-start shrink-0 flex-nowrap relative z-[7]">
                     <div className=" shrink-0 font-['Poppins'] text-[30px] font-semibold leading-[41.1px] relative text-left z-[8]">
-                      <span className="font-['Poppins'] text-[16px] font-semibold leading-[41.1px] text-[rgba(255,255,255,0.5)] relative text-left">
+                      <Typography color={"gray"}>
                         Locker Fees Burned
                         <br />
-                      </span>
-                      <span className="font-['Poppins'] text-[30px] font-semibold leading-[41.1px] text-[#fff] relative text-left">
+                      </Typography>
+                      <Typography
+                        color={!darkmode ? "black" : "white"}
+                        fontSize={"25px"}
+                        fontWeight={700}
+                      >
                         25%
-                      </span>
+                      </Typography>
                     </div>
                     <div className=" shrink-0 font-['Poppins'] text-[30px] font-semibold leading-[41.1px] relative text-left z-[9]">
-                      <span className="font-['Poppins'] text-[16px] font-semibold leading-[41.1px] text-[rgba(255,255,255,0.5)] relative text-left">
+                      <Typography color={"gray"}>
                         Prepaid card fee
                         <br />
-                      </span>
-                      <span className="font-['Poppins'] text-[30px] font-semibold leading-[41.1px] text-[#fff] relative text-left">
+                      </Typography>
+                      <Typography
+                        color={!darkmode ? "black" : "white"}
+                        fontSize={"25px"}
+                        fontWeight={700}
+                      >
                         1%
-                      </span>
+                      </Typography>
                     </div>
                     <div className=" shrink-0 font-['Poppins'] text-[30px] font-semibold leading-[41.1px] relative text-left z-10">
-                      <span className="font-['Poppins'] text-[16px] font-semibold leading-[41.1px] text-[rgba(255,255,255,0.5)] relative text-left">
-                        Circulating Supply <br />
-                      </span>
-                      <span className="font-['Poppins'] text-[30px] font-semibold leading-[41.1px] text-[#fff] relative text-left">
+                      <Typography color={"gray"}>
+                        Circulating Supply
+                        <br />
+                      </Typography>
+                      <Typography
+                        color={!darkmode ? "black" : "white"}
+                        fontSize={"25px"}
+                        fontWeight={700}
+                      >
                         9.44T
-                      </span>
+                      </Typography>
                     </div>
                   </div>
                 </div>
                 <Box mt={"6rem"}>
                   <button
                     className={`${
-                      darkmode ? "white-button-v2 w-full lg:w-[250px]" : "black-button-v2 w-full lg:w-[250px]"
+                      darkmode
+                        ? "white-button-v2 w-full lg:w-[250px]"
+                        : "black-button-v2 w-full lg:w-[250px]"
                     } `}
                   >
                     Operation and Funding
