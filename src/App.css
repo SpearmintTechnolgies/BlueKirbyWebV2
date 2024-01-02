@@ -277,10 +277,26 @@ body {
     border-radius: 0 0 25px 25px;
     top: 4rem;
   }
-
 }
 
 .news-box-wrapp {
   width: 300px;
-  border-radius: 50%;
+  height: 100px;
+  border-radius: 20%;
+}
+
+.scale {
+  transition: all 500ms ease-in;
+}
+
+.scale:hover {
+  transform: scale(1.1);
+}
+
+.hover-color {
+  transition: color 500ms ease-in; 
+}
+
+.hover-color:hover {
+  color: #007bff;
 }

@@ -113,6 +113,7 @@ const Navbar = ({ darkmode, setDarkmode, element, element1, element2 }) => {
           <img src={BlueKirbyLogo} alt="img" />
           <IconButton
             onClick={onBtnClick}
+            className="scale"
             sx={{ display: { xs: "none", sm: "none", lg: "block" } }}
           >
             <Typography color={darkmode ? "white" : "black"}>
@@ -121,16 +122,16 @@ const Navbar = ({ darkmode, setDarkmode, element, element1, element2 }) => {
           </IconButton>
           <IconButton
             onClick={onBtnClick1}
-            className="desktop-view"
+            className="desktop-view scale"
             sx={{ display: { xs: "none", sm: "none", lg: "block" } }}
           >
-            <Typography color={darkmode ? "white" : "black"}>
+            <Typography color={darkmode ? "white " : "black"}>
               Tokenomics
             </Typography>
           </IconButton>
           <IconButton
             onClick={onBtnClick2}
-            className="desktop-view"
+            className="desktop-view scale"
             sx={{ display: { xs: "none", sm: "none", lg: "block" } }}
           >
             <Typography color={darkmode ? "white" : "black"}>

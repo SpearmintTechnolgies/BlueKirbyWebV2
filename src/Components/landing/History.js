@@ -1,5 +1,5 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import monkey from "../../images/monkey.png";
 import cherry from "../../images/cherry.png";
 import shield from "../../images/shield.png";
@@ -56,45 +56,78 @@ function History({ darkmode, isMobile, setElement2 }) {
       link: "https://coinmarketcap.com/currencies/blue-kirby/",
     },
   ];
-  const items2 = [    {
-    img: spookyswap,
-    name: "SpookySwap",
-    link: "https://spooky.fi/#/swap?inputCurrency=FTM&outputCurrency=0x97bdAfe3830734acF12Da25359674277fcc33729",
-  },
-  {
-    img: equalizer,
-    name: "Equalizer",
-    link: "https://equalizer.exchange/swap",
-  },
-  {
-    img: fantom,
-    name: "Fantom",
-    link: "https://fantom.foundation/",
-  },
-  {
-    img: CoinGecko,
-    name: "CoinGecko",
-    link: "https://www.coingecko.com/en/coins/blue-kirby",
-  },
-  {
-    img: LBank,
-    name: "LBank",
-    link: "https://www.lbank.com/trade/kirby_usdt",
-  },
-  {
-    img: solidly,
-    name: "Solidly",
-    link: "https://solidly.exchange/",
-  },
-  {
-    img: coinmarketcap,
-    name: "Coinmarketcap",
-    link: "https://coinmarketcap.com/currencies/blue-kirby/",
-  },];
+  const items2 = [
+    {
+      img: spookyswap,
+      name: "SpookySwap",
+      link: "https://spooky.fi/#/swap?inputCurrency=FTM&outputCurrency=0x97bdAfe3830734acF12Da25359674277fcc33729",
+    },
+    {
+      img: equalizer,
+      name: "Equalizer",
+      link: "https://equalizer.exchange/swap",
+    },
+    {
+      img: fantom,
+      name: "Fantom",
+      link: "https://fantom.foundation/",
+    },
+    {
+      img: CoinGecko,
+      name: "CoinGecko",
+      link: "https://www.coingecko.com/en/coins/blue-kirby",
+    },
+    {
+      img: LBank,
+      name: "LBank",
+      link: "https://www.lbank.com/trade/kirby_usdt",
+    },
+    {
+      img: solidly,
+      name: "Solidly",
+      link: "https://solidly.exchange/",
+    },
+    {
+      img: coinmarketcap,
+      name: "Coinmarketcap",
+      link: "https://coinmarketcap.com/currencies/blue-kirby/",
+    },
+  ];
   React.useEffect(() => {
     let element = document.getElementById("roadmap");
     setElement2(element);
   }, []);
+
+  const [roadmap, setRoadmap] = useState([
+    {
+      date: "December 15, 2023",
+      title: "Blue Kirby is born",
+      secondtitle: "The Idea",
+      description:
+        "Blue Kirby Launched on $FTM Network during a long haul of it being an abandoned blockchain, restoring volume and hope.",
+    },
+    {
+      date: "December 28, 2023",
+      title: "10M+ market cap breached",
+      secondtitle: "The Growth",
+      description:
+        "Community of Blue Kirby ranks as the top ten communities of all crypto memes, breaching 10m+ mcap on Fantom network which is a first for a FTM memecoin.",
+    },
+    {
+      date: "February 25, 2024",
+      title: "Glory Restored",
+      secondtitle: "Global Recognition",
+      description:
+        "Blue Kirby will unleash a large-scale global influencer campaign to bring recognition to the Kirby utilities and community.",
+    },
+    {
+      date: "June 18, 2024",
+      title: "The Future Awaits",
+      secondtitle: "Blue Chip Token",
+      description:
+        "Multiple listings on top tier exchanges with multiple completed and incubated projects.250k+ in shared Kirbot revenue",
+    },
+  ]);
   return (
     <Box my={"2rem"}>
       <Container maxWidth="xl" className="global-flex">
@@ -121,183 +154,336 @@ function History({ darkmode, isMobile, setElement2 }) {
             ></Box>
             <Grid container>
               <Grid item lg={6} sm={6} xs={12} mt={"2rem"}>
-                <Typography
-                  fontSize={{ xs: "12px", sm: "14px", lg: "15px" }}
-                  color={"gray"}
-                  textAlign={{ xs: "start", sm: "start", lg: "start" }}
-                  ml={"25px"}
-                >
-                  December 15, 2023
-                </Typography>
-                <Box
-                  display={"flex"}
-                  justifyContent={"start"}
-                  alignItems={"center"}
-                  gap={"1rem"}
-                >
-                  <div className="select-circle"></div>
+                <Box>
                   <Typography
-                    fontSize={{ xs: "20px", sm: "27px", lg: "40px" }}
-                    fontWeight={"800"}
+                    fontSize={{ xs: "12px", sm: "14px", lg: "15px" }}
+                    color={"gray"}
+                    textAlign={{ xs: "start", sm: "start", lg: "start" }}
+                    ml={"25px"}
+                  >
+                    December 15, 2023
+                  </Typography>
+                  <Box
+                    display={"flex"}
+                    justifyContent={"start"}
+                    alignItems={"center"}
+                    gap={"1rem"}
+                  >
+                    <div className="select-circle"></div>
+                    <Typography
+                      fontSize={{ xs: "20px", sm: "27px", lg: "40px" }}
+                      fontWeight={"800"}
+                      color={darkmode ? "white" : "black"}
+                      textAlign={{ xs: "start", sm: "start", lg: "start" }}
+                    >
+                      Blue Kirby is born
+                    </Typography>
+                  </Box>
+                  <Typography
+                    fontSize={{ xs: "12px", sm: "14px", lg: "15px" }}
+                    color={"#007dff"}
+                    textAlign={{ xs: "start", sm: "start", lg: "start" }}
+                    ml={"25px"}
+                  >
+                    The Idea
+                  </Typography>
+                  <Typography
+                    fontSize={{ xs: "15px", sm: "15px", lg: "16px" }}
+                    my={{ xs: "0rem", sm: "2rem" }}
                     color={darkmode ? "white" : "black"}
                     textAlign={{ xs: "start", sm: "start", lg: "start" }}
+                    ml={"25px"}
                   >
-                    Blue Kirby is born
+                    Blue Kirby Launched on $FTM Network during a long haul of it
+                    being <br></br> an abandoned blockchain, restoring volume
+                    and hope.
                   </Typography>
                 </Box>
-                <Typography
-                  fontSize={{ xs: "12px", sm: "14px", lg: "15px" }}
-                  color={"#007dff"}
-                  textAlign={{ xs: "start", sm: "start", lg: "start" }}
-                  ml={"25px"}
-                >
-                  The Idea
-                </Typography>
-                <Typography
-                  fontSize={{ xs: "15px", sm: "15px", lg: "16px" }}
-                  my={{ xs: "0rem", sm: "2rem" }}
-                  color={darkmode ? "white" : "black"}
-                  textAlign={{ xs: "start", sm: "start", lg: "start" }}
-                  ml={"25px"}
-                >
-                  Blue Kirby Launched on $FTM Network during a long haul of it
-                  being <br></br> an abandoned blockchain, restoring volume and
-                  hope.
-                </Typography>
               </Grid>
               <Grid item lg={6} sm={6} xs={12} mt={"2rem"}>
-                <Typography
-                  fontSize={{ xs: "12px", sm: "14px", lg: "15px" }}
-                  color={"gray"}
-                  textAlign={{ xs: "start", sm: "start", lg: "start" }}
-                  ml={"25px"}
-                >
-                  June 18, 2024
-                </Typography>
-                <Box
-                  display={"flex"}
-                  justifyContent={"start"}
-                  alignItems={"center"}
-                  gap={"1rem"}
-                >
-                  <div className="select-circle"></div>
-                  <Typography
-                    fontSize={{ xs: "20px", sm: "27px", lg: "40px" }}
-                    fontWeight={"800"}
-                    color={darkmode ? "white" : "black"}
-                    textAlign={{ xs: "start", sm: "start", lg: "start" }}
-                  >
-                    The Future Awaits
-                  </Typography>
-                </Box>
-                <Typography
-                  fontSize={{ xs: "12px", sm: "14px", lg: "15px" }}
-                  color={"#007dff"}
-                  textAlign={{ xs: "start", sm: "start", lg: "start" }}
-                  ml={"25px"}
-                >
-                  Blue Chip Token
-                </Typography>
-                <Typography
-                  fontSize={{ xs: "15px", sm: "15px", lg: "16px" }}
-                  my={{ xs: "0rem", sm: "2rem" }}
-                  color={darkmode ? "white" : "black"}
-                  textAlign={{ xs: "start", sm: "start", lg: "start" }}
-                  ml={"25px"}
-                >
-                  Multiple listings on top tier exchanges with multiple
-                  completed and incubated projects.
-                </Typography>
+                {isMobile ? (
+                  <Box>
+                    <Typography
+                      fontSize={{ xs: "12px", sm: "14px", lg: "15px" }}
+                      color={"gray"}
+                      textAlign={{ xs: "start", sm: "start", lg: "start" }}
+                      ml={"25px"}
+                    >
+                      December 28, 2023
+                    </Typography>
+                    <Box
+                      display={"flex"}
+                      justifyContent={"start"}
+                      alignItems={"center"}
+                      gap={"1rem"}
+                    >
+                      <div className="select-circle"></div>
+                      <Typography
+                        fontSize={{ xs: "20px", sm: "27px", lg: "40px" }}
+                        fontWeight={"800"}
+                        color={darkmode ? "white" : "black"}
+                        textAlign={{ xs: "start", sm: "start", lg: "start" }}
+                      >
+                        10M+ market cap breached
+                      </Typography>
+                    </Box>
+                    <Typography
+                      fontSize={{ xs: "12px", sm: "14px", lg: "15px" }}
+                      color={"#007dff"}
+                      textAlign={{ xs: "start", sm: "start", lg: "start" }}
+                      ml={"25px"}
+                    >
+                      The Growth
+                    </Typography>
+                    <Typography
+                      fontSize={{ xs: "15px", sm: "15px", lg: "16px" }}
+                      my={{ xs: "0rem", sm: "2rem" }}
+                      color={darkmode ? "white" : "black"}
+                      textAlign={{ xs: "start", sm: "start", lg: "start" }}
+                      ml={"25px"}
+                    >
+                      Community of Blue Kirby ranks as the top ten communities
+                      of all crypto memes, breaching 10m+ mcap on Fantom network
+                      which is a first for a FTM memecoin.
+                    </Typography>
+                  </Box>
+                ) : (
+                  <Box>
+                    <Typography
+                      fontSize={{ xs: "12px", sm: "14px", lg: "15px" }}
+                      color={"gray"}
+                      textAlign={{ xs: "start", sm: "start", lg: "start" }}
+                      ml={"25px"}
+                    >
+                      June 18, 2024
+                    </Typography>
+                    <Box
+                      display={"flex"}
+                      justifyContent={"start"}
+                      alignItems={"center"}
+                      gap={"1rem"}
+                    >
+                      <div className="select-circle"></div>
+                      <Typography
+                        fontSize={{ xs: "20px", sm: "27px", lg: "40px" }}
+                        fontWeight={"800"}
+                        color={darkmode ? "white" : "black"}
+                        textAlign={{ xs: "start", sm: "start", lg: "start" }}
+                      >
+                        The Future Awaits
+                      </Typography>
+                    </Box>
+                    <Typography
+                      fontSize={{ xs: "12px", sm: "14px", lg: "15px" }}
+                      color={"#007dff"}
+                      textAlign={{ xs: "start", sm: "start", lg: "start" }}
+                      ml={"25px"}
+                    >
+                      Blue Chip Token
+                    </Typography>
+                    <Typography
+                      fontSize={{ xs: "15px", sm: "15px", lg: "16px" }}
+                      my={{ xs: "0rem", sm: "2rem" }}
+                      color={darkmode ? "white" : "black"}
+                      textAlign={{ xs: "start", sm: "start", lg: "start" }}
+                      ml={"25px"}
+                    >
+                      Multiple listings on top tier exchanges with multiple
+                      completed and incubated projects.<br></br>
+                      250k+ in shared Kirbot revenue
+                    </Typography>
+                  </Box>
+                )}
               </Grid>
               <Grid item lg={6} sm={6} xs={12} mt={"2rem"}>
-                <Typography
-                  fontSize={{ xs: "12px", sm: "14px", lg: "15px" }}
-                  color={"gray"}
-                  textAlign={{ xs: "start", sm: "start", lg: "start" }}
-                  ml={"25px"}
-                >
-                  December 28, 2023
-                </Typography>
-                <Box
-                  display={"flex"}
-                  justifyContent={"start"}
-                  alignItems={"center"}
-                  gap={"1rem"}
-                >
-                  <div className="select-circle"></div>
-                  <Typography
-                    fontSize={{ xs: "20px", sm: "27px", lg: "40px" }}
-                    fontWeight={"800"}
-                    color={darkmode ? "white" : "black"}
-                    textAlign={{ xs: "start", sm: "start", lg: "start" }}
-                  >
-                    10M+ market cap breached
-                  </Typography>
-                </Box>
-                <Typography
-                  fontSize={{ xs: "12px", sm: "14px", lg: "15px" }}
-                  color={"#007dff"}
-                  textAlign={{ xs: "start", sm: "start", lg: "start" }}
-                  ml={"25px"}
-                >
-                  The Growth
-                </Typography>
-                <Typography
-                  fontSize={{ xs: "15px", sm: "15px", lg: "16px" }}
-                  my={{ xs: "0rem", sm: "2rem" }}
-                  color={darkmode ? "white" : "black"}
-                  textAlign={{ xs: "start", sm: "start", lg: "start" }}
-                  ml={"25px"}
-                >
-                  Community of Blue Kirby ranks as the top ten communities of
-                  all crypto memes, breaching 10m+ mcap on Fantom network which
-                  is a first for a FTM memecoin.
-                </Typography>
+                {isMobile ? (
+                  <Box>
+                    <Typography
+                      fontSize={{ xs: "12px", sm: "14px", lg: "15px" }}
+                      color={"gray"}
+                      textAlign={{ xs: "start", sm: "start", lg: "start" }}
+                      ml={"25px"}
+                    >
+                      February 25, 2024
+                    </Typography>
+                    <Box
+                      display={"flex"}
+                      justifyContent={"start"}
+                      alignItems={"center"}
+                      gap={"1rem"}
+                    >
+                      <div className="select-circle-blue "></div>
+                      <Typography
+                        fontSize={{ xs: "20px", sm: "27px", lg: "40px" }}
+                        fontWeight={"800"}
+                        color={darkmode ? "white" : "black"}
+                        textAlign={{ xs: "start", sm: "start", lg: "start" }}
+                      >
+                        Glory Restored
+                      </Typography>
+                    </Box>
+                    <Typography
+                      fontSize={{ xs: "12px", sm: "14px", lg: "15px" }}
+                      color={"#007dff"}
+                      textAlign={{ xs: "start", sm: "start", lg: "start" }}
+                      ml={"25px"}
+                    >
+                      Global Recognition
+                    </Typography>
+                    <Typography
+                      fontSize={{ xs: "15px", sm: "15px", lg: "16px" }}
+                      my={{ xs: "0rem", sm: "2rem" }}
+                      color={darkmode ? "white" : "black"}
+                      textAlign={{ xs: "start", sm: "start", lg: "start" }}
+                      ml={"25px"}
+                    >
+                      Blue Kirby will unleash a large-scale global influencer
+                      campaign to bring recognition to the Kirby utilities and
+                      community.
+                    </Typography>
+                  </Box>
+                ) : (
+                  <Box>
+                    <Typography
+                      fontSize={{ xs: "12px", sm: "14px", lg: "15px" }}
+                      color={"gray"}
+                      textAlign={{ xs: "start", sm: "start", lg: "start" }}
+                      ml={"25px"}
+                    >
+                      December 28, 2023
+                    </Typography>
+                    <Box
+                      display={"flex"}
+                      justifyContent={"start"}
+                      alignItems={"center"}
+                      gap={"1rem"}
+                    >
+                      <div className="select-circle"></div>
+                      <Typography
+                        fontSize={{ xs: "20px", sm: "27px", lg: "40px" }}
+                        fontWeight={"800"}
+                        color={darkmode ? "white" : "black"}
+                        textAlign={{ xs: "start", sm: "start", lg: "start" }}
+                      >
+                        10M+ market cap breached
+                      </Typography>
+                    </Box>
+                    <Typography
+                      fontSize={{ xs: "12px", sm: "14px", lg: "15px" }}
+                      color={"#007dff"}
+                      textAlign={{ xs: "start", sm: "start", lg: "start" }}
+                      ml={"25px"}
+                    >
+                      The Growth
+                    </Typography>
+                    <Typography
+                      fontSize={{ xs: "15px", sm: "15px", lg: "16px" }}
+                      my={{ xs: "0rem", sm: "2rem" }}
+                      color={darkmode ? "white" : "black"}
+                      textAlign={{ xs: "start", sm: "start", lg: "start" }}
+                      ml={"25px"}
+                    >
+                      Community of Blue Kirby ranks as the top ten communities
+                      of all crypto memes, breaching 10m+ mcap on Fantom network
+                      which is a first for a FTM memecoin.
+                    </Typography>
+                  </Box>
+                )}
               </Grid>
               <Grid item lg={6} sm={6} xs={12} mt={"2rem"}>
-                <Typography
-                  fontSize={{ xs: "12px", sm: "14px", lg: "15px" }}
-                  color={"gray"}
-                  textAlign={{ xs: "start", sm: "start", lg: "start" }}
-                  ml={"25px"}
-                >
-                  February 25, 2024
-                </Typography>
-                <Box
-                  display={"flex"}
-                  justifyContent={"start"}
-                  alignItems={"center"}
-                  gap={"1rem"}
-                >
-                  <div className="select-circle-blue "></div>
-                  <Typography
-                    fontSize={{ xs: "20px", sm: "27px", lg: "40px" }}
-                    fontWeight={"800"}
-                    color={darkmode ? "white" : "black"}
-                    textAlign={{ xs: "start", sm: "start", lg: "start" }}
-                  >
-                    Glory Restored
-                  </Typography>
-                </Box>
-                <Typography
-                  fontSize={{ xs: "12px", sm: "14px", lg: "15px" }}
-                  color={"#007dff"}
-                  textAlign={{ xs: "start", sm: "start", lg: "start" }}
-                  ml={"25px"}
-                >
-                  Global Recognition
-                </Typography>
-                <Typography
-                  fontSize={{ xs: "15px", sm: "15px", lg: "16px" }}
-                  my={{ xs: "0rem", sm: "2rem" }}
-                  color={darkmode ? "white" : "black"}
-                  textAlign={{ xs: "start", sm: "start", lg: "start" }}
-                  ml={"25px"}
-                >
-                  Blue Kirby will unleash a large-scale global influencer
-                  campaign to bring recognition to the Kirby utilities and
-                  community.
-                </Typography>
+                {isMobile ? (
+                  <Box>
+                    <Typography
+                      fontSize={{ xs: "12px", sm: "14px", lg: "15px" }}
+                      color={"gray"}
+                      textAlign={{ xs: "start", sm: "start", lg: "start" }}
+                      ml={"25px"}
+                    >
+                      June 18, 2024
+                    </Typography>
+                    <Box
+                      display={"flex"}
+                      justifyContent={"start"}
+                      alignItems={"center"}
+                      gap={"1rem"}
+                    >
+                      <div className="select-circle"></div>
+                      <Typography
+                        fontSize={{ xs: "20px", sm: "27px", lg: "40px" }}
+                        fontWeight={"800"}
+                        color={darkmode ? "white" : "black"}
+                        textAlign={{ xs: "start", sm: "start", lg: "start" }}
+                      >
+                        The Future Awaits
+                      </Typography>
+                    </Box>
+                    <Typography
+                      fontSize={{ xs: "12px", sm: "14px", lg: "15px" }}
+                      color={"#007dff"}
+                      textAlign={{ xs: "start", sm: "start", lg: "start" }}
+                      ml={"25px"}
+                    >
+                      Blue Chip Token
+                    </Typography>
+                    <Typography
+                      fontSize={{ xs: "15px", sm: "15px", lg: "16px" }}
+                      my={{ xs: "0rem", sm: "2rem" }}
+                      color={darkmode ? "white" : "black"}
+                      textAlign={{ xs: "start", sm: "start", lg: "start" }}
+                      ml={"25px"}
+                    >
+                      Multiple listings on top tier exchanges with multiple
+                      completed and incubated projects.<br></br>
+                      250k+ in shared Kirbot revenue
+                    </Typography>
+                  </Box>
+                ) : (
+                  <Box>
+                    <Typography
+                      fontSize={{ xs: "12px", sm: "14px", lg: "15px" }}
+                      color={"gray"}
+                      textAlign={{ xs: "start", sm: "start", lg: "start" }}
+                      ml={"25px"}
+                    >
+                      February 25, 2024
+                    </Typography>
+                    <Box
+                      display={"flex"}
+                      justifyContent={"start"}
+                      alignItems={"center"}
+                      gap={"1rem"}
+                    >
+                      <div className="select-circle-blue "></div>
+                      <Typography
+                        fontSize={{ xs: "20px", sm: "27px", lg: "40px" }}
+                        fontWeight={"800"}
+                        color={darkmode ? "white" : "black"}
+                        textAlign={{ xs: "start", sm: "start", lg: "start" }}
+                      >
+                        Glory Restored
+                      </Typography>
+                    </Box>
+                    <Typography
+                      fontSize={{ xs: "12px", sm: "14px", lg: "15px" }}
+                      color={"#007dff"}
+                      textAlign={{ xs: "start", sm: "start", lg: "start" }}
+                      ml={"25px"}
+                    >
+                      Global Recognition
+                    </Typography>
+                    <Typography
+                      fontSize={{ xs: "15px", sm: "15px", lg: "16px" }}
+                      my={{ xs: "0rem", sm: "2rem" }}
+                      color={darkmode ? "white" : "black"}
+                      textAlign={{ xs: "start", sm: "start", lg: "start" }}
+                      ml={"25px"}
+                    >
+                      Blue Kirby will unleash a large-scale global influencer
+                      campaign to bring recognition to the Kirby utilities and
+                      community.
+                    </Typography>
+                  </Box>
+                )}
               </Grid>
             </Grid>
           </Box>
@@ -327,7 +513,10 @@ function History({ darkmode, isMobile, setElement2 }) {
               </Typography>
             </Box>
             <SliderSecond item={items1} className={"infinit-scroll1"} />
-            <SliderSecond item={items2.reverse()} className={"infinit-scroll2"} />
+            <SliderSecond
+              item={items2.reverse()}
+              className={"infinit-scroll2"}
+            />
           </Box>
         </Box>
         <Box width={"100%"} mt={"2rem"} position={"relative"}>

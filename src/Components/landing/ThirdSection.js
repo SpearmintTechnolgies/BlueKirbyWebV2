@@ -15,6 +15,7 @@ import lbank from "../../images/Lbank.png";
 import spookyswap from "../../images/spookyswap.png";
 import solidly from "../../images/solidly.png";
 import equalizer from "../../images/equilizer.png";
+import { Home } from "@mui/icons-material";
 
 function Item({ item, darkmode, active, index }) {
   return (
@@ -68,7 +69,7 @@ function Item({ item, darkmode, active, index }) {
   );
 }
 
-function ThirdSection({ darkmode, isMobile,setElement1 }) {
+function ThirdSection({ darkmode, isMobile, setElement1 }) {
   const [items, setItems] = useState([
     {
       title: "Community",
@@ -90,29 +91,8 @@ function ThirdSection({ darkmode, isMobile,setElement1 }) {
     { card: "orange-card", image: lbank },
     { card: "gray-card", image: okxicon },
     { card: "blue-card", image: walleticon },
-    { card: "orange-card", image: lbank },
-    { card: "gray-card", image: okxicon },
-    { card: "blue-card", image: walleticon },
   ]);
   const [cards1, setCards1] = useState([
-    {
-      card: "orange-card",
-      image: spookyswap,
-      name: "SpookySwap",
-      link: "https://spooky.fi/#/swap?inputCurrency=FTM&outputCurrency=0x97bdAfe3830734acF12Da25359674277fcc33729",
-    },
-    {
-      card: "gray-card",
-      image: solidly,
-      name: "Solidly",
-      link: "https://solidly.exchange/",
-    },
-    {
-      card: "blue-card",
-      image: equalizer,
-      name: "Equalizer",
-      link: "https://equalizer.exchange/swap",
-    },
     {
       card: "orange-card",
       image: spookyswap,
@@ -180,7 +160,6 @@ function ThirdSection({ darkmode, isMobile,setElement1 }) {
           animation="slide"
           interval={4000}
           duration={500}
-          indicators={false}
         >
           {items.map((item, i) => (
             <Item
@@ -212,12 +191,14 @@ function ThirdSection({ darkmode, isMobile,setElement1 }) {
                 >
                   Top Centralized Exchanges
                 </Typography>
-                <IconButton onClick={handleDivClick}>
-                  <ArrowRightAltIcon
-                    fontSize="large"
-                    sx={{ color: "#007dff" }}
-                  />
-                </IconButton>
+                {isMobile && (
+                  <IconButton onClick={handleDivClick}>
+                    <ArrowRightAltIcon
+                      fontSize="large"
+                      sx={{ color: "#007dff" }}
+                    />
+                  </IconButton>
+                )}
               </Box>
 
               <ReactSimplyCarousel
@@ -309,14 +290,16 @@ function ThirdSection({ darkmode, isMobile,setElement1 }) {
                   color={darkmode ? "white" : "black"}
                   fontSize={{ xs: "15px", sm: "30px" }}
                 >
-                  Top Centralized Exchanges
+                  Top Decentralized Exchanges
                 </Typography>
-                <IconButton onClick={handleDivClick1}>
-                  <ArrowRightAltIcon
-                    fontSize="large"
-                    sx={{ color: "#007dff" }}
-                  />
-                </IconButton>
+                {isMobile && (
+                  <IconButton onClick={handleDivClick1}>
+                    <ArrowRightAltIcon
+                      fontSize="large"
+                      sx={{ color: "#007dff" }}
+                    />
+                  </IconButton>
+                )}
               </Box>
 
               <ReactSimplyCarousel
@@ -493,7 +476,7 @@ function ThirdSection({ darkmode, isMobile,setElement1 }) {
                       </Typography>
                     </div>
                   </div>
-                  <div className="flex flex-col items-center md:flex-row gap-10 md:gap-[67px]  items-start shrink-0 flex-nowrap relative z-[7]">
+                  <div className="flex flex-col items-start md:flex-row gap-10 md:gap-[67px]  items-start shrink-0 flex-nowrap relative z-[7]">
                     <div className=" shrink-0 font-['Poppins'] text-[30px] font-semibold leading-[41.1px] relative text-left z-[8]">
                       <Typography color={"gray"}>
                         Token % Burnt
@@ -681,11 +664,10 @@ function ThirdSection({ darkmode, isMobile,setElement1 }) {
                   fontWeight={700}
                   zIndex={10}
                 >
-                 Safety
-
+                  Safety
                 </Typography>
                 <Typography
-                  color={darkmode ? "white" : "black"}
+                  color={darkmode || isMobile ? "white" : "black"}
                   fontSize={{ xs: "16px", sm: "26px", lg: "60px" }}
                   fontWeight={700}
                 >
@@ -694,14 +676,15 @@ function ThirdSection({ darkmode, isMobile,setElement1 }) {
               </Grid>
               <Grid item lg={7} sm={6} xs={12}>
                 <Typography
-                  color={darkmode ? "white" : "black"}
+                  color={darkmode || isMobile ? "white" : "black"}
                   fontSize={{ xs: "13px", sm: "26px", lg: "45px" }}
                   fontWeight={700}
                 >
-                  “Kirby has the safest and most simple token contract possible to make on a chain.”
+                  “Kirby has the safest and most simple token contract possible
+                  to make on a chain.”
                 </Typography>
                 <Typography
-                  color={darkmode ? "white" : "black"}
+                  color={darkmode || isMobile ? "white" : "black"}
                   fontSize={{ xs: "15px", sm: "18px", lg: "20px" }}
                   mt={{ xs: "1rem", sm: "2rem" }}
                 >
@@ -719,11 +702,11 @@ function ThirdSection({ darkmode, isMobile,setElement1 }) {
               </Grid>
               <Grid item lg={5} sm={6} xs={12}>
                 <Typography
-                  color={darkmode ? "white" : "black"}
+                  color={darkmode || isMobile ? "white" : "black"}
                   fontSize={{ xs: "16px", sm: "26px", lg: "30px" }}
                   fontWeight={700}
                 >
-                 Coming Soon..
+                  Coming Soon..
                 </Typography>
                 <Box
                   display={"flex"}
@@ -738,11 +721,11 @@ function ThirdSection({ darkmode, isMobile,setElement1 }) {
               </Grid>
               <Grid item lg={7} sm={6} xs={12}>
                 <Typography
-                  color={darkmode ? "white" : "black"}
+                  color={darkmode || isMobile ? "white" : "black"}
                   fontSize={{ xs: "16px", sm: "26px", lg: "30px" }}
                   fontWeight={700}
                 >
-                   Techrate
+                  Techrate
                 </Typography>
                 <Box
                   display={"flex"}
@@ -758,9 +741,8 @@ function ThirdSection({ darkmode, isMobile,setElement1 }) {
                         : "black-button text-stretch"
                     }
                   >
-                   Coming Soon
+                    Coming Soon
                   </button>
-                 
                 </Box>
               </Grid>
             </Grid>

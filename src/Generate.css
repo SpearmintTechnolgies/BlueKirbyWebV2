@@ -121,13 +121,12 @@
 .orange-card {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  flex-wrap: nowrap;
-  gap: 79px;
+  align-items: center;
+  justify-content: space-between;
   position: relative;
-  width: 309.286px;
-  height: 171px;
-  margin: 0 auto;
+  width: 400px;
+  height: 271px;
+  margin: 0rem 1rem;
   padding: 15px 25px 15px 25px;
   border: 1px solid rgba(244, 164, 39, 0.2);
   background: linear-gradient(to top left, rgba(244, 165, 39, 0.399), black);
@@ -136,13 +135,13 @@
 .gray-card {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
   gap: 79px;
   position: relative;
-  width: 309.286px;
-  height: 171px;
-  margin: 0 auto;
+  width: 400px;
+  height: 271px;
+  margin: 0rem 1rem;
   padding: 15px 25px 15px 25px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: linear-gradient(to top left, rgba(255, 255, 255, 0.351), black);
@@ -151,13 +150,13 @@
 .blue-card {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
   gap: 79px;
   position: relative;
-  width: 309.286px;
-  height: 171px;
-  margin: 0 auto;
+  width: 400px;
+  height: 271px;
+  margin: 0rem 1rem;
   padding: 15px 25px 15px 25px;
   border: 1px solid rgba(4, 49, 108, 0.2);
   background: linear-gradient(to top left, rgba(21, 95, 192, 0.582), black);
@@ -253,4 +252,43 @@
   background-size: cover;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 30px;
+}
+
+.ecosystem-card {
+  background: linear-gradient(to bottom right, rgba(21, 95, 192, 0.582), black);
+  border-radius: 25px;
+  width: 480px;
+  height: 520px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ecosystem-text {
+  color: rgba(21, 95, 192, 0.392);
+  font-size: 60px;
+  font-weight: 800;
+}
+
+@media (max-width: 999px) {
+  .ecosystem-card {
+    width: 350px;
+    height: 450px;
+  }
+  .ecosystem-text {
+    font-size: 40px;
+    font-weight: 600;
+  }
+  .orange-card{
+    width: 228px;
+    height: 217px;
+  }
+  .blue-card{
+    width: 228px;
+    height: 217px;
+  }
+  .gray-card{
+    width: 228px;
+    height: 217px;
+  }
 }

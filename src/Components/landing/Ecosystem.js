@@ -9,11 +9,14 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import slider1 from "../../images/slider1.png";
 import slider2 from "../../images/slider2.png";
 import slider3 from "../../images/slider3.png";
-import news1 from "../../images/news1.webp";
+import news1 from "../../images/news1.jpg";
 import news2 from "../../images/news2.webp";
 import news3 from "../../images/news3.webp";
-import news4 from "../../images/news4.webp";
-import news5 from "../../images/news5.webp";
+import news4 from "../../images/news4.jpg";
+import news5 from "../../images/news5.jpg";
+import token from "../../images/token-icon.png";
+import nft from "../../images/nft-icon.png";
+import defi from "../../images/defi-icon.png";
 
 const Ecosystem = ({ darkmode, isMobile, setElement }) => {
   var [item, setItem] = useState([
@@ -28,7 +31,7 @@ const Ecosystem = ({ darkmode, isMobile, setElement }) => {
     {
       image: news1,
       title: "Kirbypad and the future of FTM",
-      date: "January 1th 2024",
+      date: "January 1st 2024",
       link: "https://medium.com/@bluekirbyftm/kirbypad-and-the-future-of-ftm-d922e9a9174a",
     },
     {
@@ -46,7 +49,7 @@ const Ecosystem = ({ darkmode, isMobile, setElement }) => {
     {
       image: news4,
       title: "kings remain kings. $KIRBY",
-      date: "December 21th 2023",
+      date: "December 21st 2023",
       link: "https://medium.com/@bluekirbyftm/kings-remain-kings-kirby-058f1e8e39ed",
     },
     {
@@ -104,8 +107,17 @@ const Ecosystem = ({ darkmode, isMobile, setElement }) => {
           justifyContent={"center"}
         >
           <Grid item xs={12} sm={6} lg={4}>
-            <Box position={"relative"}>
-              <img src={tokencard} alt="token" width={600} />
+            <Box position={"relative"} className="ecosystem-card">
+              <Box position={"absolute"} top={"1rem"} left={"5rem"} zIndex={1}>
+                <p className="ecosystem-text">Blue Kirby Incubator</p>
+              </Box>
+              <img
+                src={token}
+                alt="token"
+                width={300}
+                className="scale"
+                style={{ position: "relative", zIndex: 5 }}
+              />
               <Box
                 display={"flex"}
                 justifyContent={"space-between"}
@@ -118,13 +130,26 @@ const Ecosystem = ({ darkmode, isMobile, setElement }) => {
                 <Typography fontSize={"30px"} color={"white"}>
                   Launchpad
                 </Typography>
-                <EastIcon sx={{ color: "#007dff" }} fontSize="large" />
+                <EastIcon
+                  sx={{ color: "#007dff" }}
+                  fontSize="large"
+                  className="scale"
+                />
               </Box>
             </Box>
           </Grid>
           <Grid item xs={12} sm={6} lg={4}>
-            <Box position={"relative"}>
-              <img src={nftcard} alt="token" width={600} />
+            <Box position={"relative"} className="ecosystem-card">
+              <Box position={"absolute"} top={"1rem"} left={"5rem"} zIndex={1}>
+                <p className="ecosystem-text">Blue Kirby NFTs</p>
+              </Box>
+              <img
+                src={nft}
+                alt="token"
+                width={250}
+                className="scale"
+                style={{ position: "relative", zIndex: 5 }}
+              />
               <Box
                 display={"flex"}
                 justifyContent={"space-between"}
@@ -141,14 +166,27 @@ const Ecosystem = ({ darkmode, isMobile, setElement }) => {
                   href="https://paintswap.finance/marketplace/fantom/collections/blue-friends"
                   target="_blank"
                 >
-                  <EastIcon sx={{ color: "#007dff" }} fontSize="large" />
+                  <EastIcon
+                    sx={{ color: "#007dff" }}
+                    fontSize="large"
+                    className="scale"
+                  />
                 </IconButton>
               </Box>
             </Box>
           </Grid>
           <Grid item xs={12} sm={6} lg={4}>
-            <Box position={"relative"}>
-              <img src={deficard} alt="token" width={600} />
+            <Box position={"relative"} className="ecosystem-card">
+              <Box position={"absolute"} top={"1rem"} left={"5rem"} zIndex={1}>
+                <p className="ecosystem-text">Blue Kirby DeFi</p>
+              </Box>
+              <img
+                src={defi}
+                alt="token"
+                width={200}
+                className="scale"
+                style={{ position: "relative", zIndex: 5 }}
+              />
               <Box
                 display={"flex"}
                 justifyContent={"space-between"}
@@ -161,7 +199,11 @@ const Ecosystem = ({ darkmode, isMobile, setElement }) => {
                 <Typography fontSize={"30px"} color={"white"}>
                   Kirbot
                 </Typography>
-                <EastIcon sx={{ color: "#007dff" }} fontSize="large" />
+                <EastIcon
+                  sx={{ color: "#007dff" }}
+                  fontSize="large"
+                  className="scale"
+                />
               </Box>
             </Box>
           </Grid>
@@ -211,19 +253,19 @@ const Ecosystem = ({ darkmode, isMobile, setElement }) => {
               >
                 {items.map((item, index) => (
                   <a href={item.link} target="_blank" rel="noreferrer">
-                    <Box mx={{ xs: "0rem", sm: "2rem" }} key={index}>
-                      <div className="news-box-wrapp">
-                        <img src={item.image} alt="slider" width="100%" />
+                    <Box mx={{ xs: "0rem", sm: "2rem" }} key={index} >
+                      <div className="news-box-wrapp scale">
+                        <img src={item.image} alt="slider"  />
                       </div>
                       <Typography
                         fontSize={"13px"}
                         color={"gray"}
-                        mt={"1rem"}
+                        mt={"7rem"}
                         ml={"5px"}
                       >
                         {item.date}
                       </Typography>
-                      <Typography fontSize={"15px"} color={"white"} ml={"5px"}>
+                      <Typography fontSize={"15px"} color={darkmode?"white":"black"} ml={"5px"}>
                         {item.title}
                       </Typography>
                     </Box>
