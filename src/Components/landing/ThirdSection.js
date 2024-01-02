@@ -11,8 +11,12 @@ import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import ReactSimplyCarousel from "react-simply-carousel";
 import earth from "../../images/earth.png";
 import earthbutton from "../../images/earth-mobile.png";
+import lbank from "../../images/Lbank.png";
+import spookyswap from "../../images/spookyswap.png";
+import solidly from "../../images/solidly.png";
+import equalizer from "../../images/equilizer.png";
 
-function Item({ item, darkmode, active }) {
+function Item({ item, darkmode, active, index }) {
   return (
     <div className={darkmode ? "main-container-black" : "main-container-white"}>
       <div className="frame-1">
@@ -22,7 +26,7 @@ function Item({ item, darkmode, active }) {
           fontWeight={700}
           marginTop={{ xs: "50px", lg: "0px" }}
         >
-          {item}
+          {item.title}
         </Typography>
         <Box
           className={active === 0 ? "vector-active" : "vector-inactive"}
@@ -45,20 +49,18 @@ function Item({ item, darkmode, active }) {
             fontSize={{ xs: "10px", sm: "20px" }}
             maxWidth={{ xs: "250px", sm: "1000px" }}
           >
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s,
-            <br />
-            <br />
-            when an unknown printer took a galley of type and scrambled it to
-            make a type specimen book. It has survived not only five centuries,
-            but also the leap into
+            {item.description}
           </Typography>
           <div className="frame-3">
-            <button className={darkmode ? "white-button" : "black-button"}>
-              Know More
-            </button>
-            <button className="blue-button">Join the Community</button>
+            {index === 0 && (
+              <a
+                href="https://t.me/bluekirbyftm"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <button className="blue-button">Join the Community</button>
+              </a>
+            )}
           </div>
         </div>
       </div>
@@ -66,15 +68,69 @@ function Item({ item, darkmode, active }) {
   );
 }
 
-function ThirdSection({ darkmode, isMobile }) {
-  const [items, setItems] = useState(["Community", "Ecosystem", "For People"]);
+function ThirdSection({ darkmode, isMobile,setElement1 }) {
+  const [items, setItems] = useState([
+    {
+      title: "Community",
+      description:
+        "Blue Kirby has one of the strongest memecoin communities in all of crypto. Never ending grit and persistence is what keeps us together. Good vibes mixed with a professional family of admins, devs, builders, designers and advisors.",
+    },
+    {
+      title: "Innovation",
+      description:
+        "Blue Kirby thrives on innovation, constantly pushing the boundaries of what's possible in the crypto space. From cutting-edge technology to groundbreaking ideas, our commitment to innovation sets us apart and propels us toward new horizons.",
+    },
+    {
+      title: "Longevity",
+      description:
+        "Blue Kirby is not just a momentary trend; it's a journey for the long haul. We focus on sustainable growth, building a foundation for longevity in the crypto space. Our vision extends beyond the immediate future, ensuring Blue Kirby's enduring impact.",
+    },
+  ]);
   const [cards, setCards] = useState([
-    { card: "orange-card", image: bnbicon },
+    { card: "orange-card", image: lbank },
     { card: "gray-card", image: okxicon },
     { card: "blue-card", image: walleticon },
-    { card: "orange-card", image: bnbicon },
+    { card: "orange-card", image: lbank },
     { card: "gray-card", image: okxicon },
     { card: "blue-card", image: walleticon },
+  ]);
+  const [cards1, setCards1] = useState([
+    {
+      card: "orange-card",
+      image: spookyswap,
+      name: "SpookySwap",
+      link: "https://spooky.fi/#/swap?inputCurrency=FTM&outputCurrency=0x97bdAfe3830734acF12Da25359674277fcc33729",
+    },
+    {
+      card: "gray-card",
+      image: solidly,
+      name: "Solidly",
+      link: "https://solidly.exchange/",
+    },
+    {
+      card: "blue-card",
+      image: equalizer,
+      name: "Equalizer",
+      link: "https://equalizer.exchange/swap",
+    },
+    {
+      card: "orange-card",
+      image: spookyswap,
+      name: "SpookySwap",
+      link: "https://spooky.fi/#/swap?inputCurrency=FTM&outputCurrency=0x97bdAfe3830734acF12Da25359674277fcc33729",
+    },
+    {
+      card: "gray-card",
+      image: solidly,
+      name: "Solidly",
+      link: "https://solidly.exchange/",
+    },
+    {
+      card: "blue-card",
+      image: equalizer,
+      name: "Equalizer",
+      link: "https://equalizer.exchange/swap",
+    },
   ]);
   const [active, setActive] = useState(0);
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
@@ -92,6 +148,11 @@ function ThirdSection({ darkmode, isMobile }) {
       buttonRef1.current.click();
     }
   };
+
+  React.useEffect(() => {
+    let element = document.getElementById("tokenomics");
+    setElement1(element);
+  }, []);
   return (
     <Box my={"2rem"}>
       <Container maxWidth="xl" className="global-flex">
@@ -122,11 +183,17 @@ function ThirdSection({ darkmode, isMobile }) {
           indicators={false}
         >
           {items.map((item, i) => (
-            <Item key={i} item={item} darkmode={darkmode} active={active} />
+            <Item
+              key={i}
+              item={item}
+              darkmode={darkmode}
+              active={active}
+              index={i}
+            />
           ))}
         </Carousel>
         <Grid container spacing={2}>
-          <Grid item xs={12} sm={12} lg={9}>
+          <Grid item xs={12} sm={12} lg={12}>
             <Box
               className={
                 darkmode ? "main-container-black" : "main-container-white"
@@ -174,7 +241,7 @@ function ThirdSection({ darkmode, isMobile }) {
                 }}
                 responsiveProps={[
                   {
-                    itemsToShow: 3,
+                    itemsToShow: 5,
                     itemsToScroll: 1,
                     minWidth: 868,
                   },
@@ -185,24 +252,19 @@ function ThirdSection({ darkmode, isMobile }) {
                 {cards.map((item, index) => (
                   <Box p={{ xs: "0px", sm: "6px" }}>
                     <Box className={item.card}>
-                      <Box
-                        display={"flex"}
-                        justifyContent={"space-between"}
-                        alignItems={"center"}
-                        width={"100%"}
-                      >
-                        <img src={item.image} alt="bnb" width={30} />
+                      {index === 0 || index === 3 ? (
                         <Box
                           display={"flex"}
-                          gap={"1rem"}
+                          justifyContent={"space-between"}
                           alignItems={"center"}
+                          width={"100%"}
                         >
-                          <button className="tranperant-button">
-                            Centralized
-                          </button>
-                          <button className="tranperant-button">Low Fee</button>
+                          <img src={item.image} alt="bnb" width={30} />
                         </Box>
-                      </Box>
+                      ) : (
+                        ""
+                      )}
+
                       <Box
                         display={"flex"}
                         justifyContent={"space-between"}
@@ -214,11 +276,23 @@ function ThirdSection({ darkmode, isMobile }) {
                           fontWeight={700}
                           color={"white"}
                         >
-                          Binance
+                          {index === 0 || index === 3 ? "LBank" : "Coming Soon"}
                         </Typography>
-                        <button className="bg-white rounded-lg px-4">
-                          <ArrowRightAltIcon />
-                        </button>
+                        {index === 0 || index === 3 ? (
+                          <a
+                            href="https://www.lbank.com/trade/kirby_usdt"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <button className="bg-white rounded-lg px-4">
+                              <ArrowRightAltIcon />
+                            </button>
+                          </a>
+                        ) : (
+                          <button className="bg-white rounded-lg px-4">
+                            <ArrowRightAltIcon />
+                          </button>
+                        )}
                       </Box>
                     </Box>
                   </Box>
@@ -251,14 +325,12 @@ function ThirdSection({ darkmode, isMobile }) {
                 itemsToShow={1}
                 itemsToScroll={1}
                 forwardBtnProps={{
-                  //here you can also pass className, or any other button element attributes
                   style: {
                     display: "none",
                   },
                   children: <span ref={buttonRef1}>{`>`}</span>,
                 }}
                 backwardBtnProps={{
-                  //here you can also pass className, or any other button element attributes
                   style: {
                     display: "none",
                   },
@@ -266,7 +338,7 @@ function ThirdSection({ darkmode, isMobile }) {
                 }}
                 responsiveProps={[
                   {
-                    itemsToShow: isMobile ? 1 : 3,
+                    itemsToShow: 5,
                     itemsToScroll: 1,
                     minWidth: 768,
                   },
@@ -274,7 +346,7 @@ function ThirdSection({ darkmode, isMobile }) {
                 speed={400}
                 easing="linear"
               >
-                {cards.map((item, index) => (
+                {cards1.map((item, index) => (
                   <Box p={{ xs: "0px", sm: "6px" }}>
                     <Box className={item.card}>
                       <Box
@@ -284,16 +356,6 @@ function ThirdSection({ darkmode, isMobile }) {
                         width={"100%"}
                       >
                         <img src={item.image} alt="bnb" width={30} />
-                        <Box
-                          display={"flex"}
-                          gap={"1rem"}
-                          alignItems={"center"}
-                        >
-                          <button className="tranperant-button">
-                            Centralized
-                          </button>
-                          <button className="tranperant-button">Low Fee</button>
-                        </Box>
                       </Box>
                       <Box
                         display={"flex"}
@@ -306,11 +368,13 @@ function ThirdSection({ darkmode, isMobile }) {
                           fontWeight={700}
                           color={"white"}
                         >
-                          Binance
+                          {item.name}
                         </Typography>
-                        <button className="bg-white rounded-lg px-4">
-                          <ArrowRightAltIcon />
-                        </button>
+                        <a href={item.link} target="_blank" rel="noreferrer">
+                          <button className="bg-white rounded-lg px-4">
+                            <ArrowRightAltIcon />
+                          </button>
+                        </a>
                       </Box>
                     </Box>
                   </Box>
@@ -318,113 +382,8 @@ function ThirdSection({ darkmode, isMobile }) {
               </ReactSimplyCarousel>
             </Box>
           </Grid>
-          <Grid item xs={12} sm={12} lg={3}>
-            <Box
-              className={
-                darkmode ? "main-container-black" : "main-container-white"
-              }
-              mt={"2rem"}
-            >
-              <Typography
-                color={darkmode ? "white" : "black"}
-                fontSize={"30px"}
-                fontWeight={"700"}
-              >
-                Others
-              </Typography>
-              <Box
-                display={"flex"}
-                justifyContent={"space-between"}
-                alignItems={"center"}
-                flexDirection={{ sm: "row", lg: "column" }}
-                width={"100%"}
-                gap={"8px"}
-              >
-                <Box className="small-orange-card">
-                  <Box
-                    display={"flex"}
-                    justifyContent={"space-between"}
-                    alignItems={"center"}
-                    width={"100%"}
-                  >
-                    <img src={bnbicon} alt="bnb" width={30} />
-                    <button className="bg-white rounded-lg px-4">
-                      <ArrowRightAltIcon />
-                    </button>
-                  </Box>
-                  <Typography
-                    fontSize={"20px"}
-                    fontWeight={700}
-                    color={"white"}
-                  >
-                    Binance
-                  </Typography>
-                </Box>
-                <Box className="small-orange-card desktop-view">
-                  <Box
-                    display={"flex"}
-                    justifyContent={"space-between"}
-                    alignItems={"center"}
-                    width={"100%"}
-                  >
-                    <img src={bnbicon} alt="bnb" width={30} />
-                    <button className="bg-white rounded-lg px-4">
-                      <ArrowRightAltIcon />
-                    </button>
-                  </Box>
-                  <Typography
-                    fontSize={"20px"}
-                    fontWeight={700}
-                    color={"white"}
-                  >
-                    Binance
-                  </Typography>
-                </Box>
-                <Box className="small-orange-card desktop-view">
-                  <Box
-                    display={"flex"}
-                    justifyContent={"space-between"}
-                    alignItems={"center"}
-                    width={"100%"}
-                  >
-                    <img src={bnbicon} alt="bnb" width={30} />
-                    <button className="bg-white rounded-lg px-4">
-                      <ArrowRightAltIcon />
-                    </button>
-                  </Box>
-                  <Typography
-                    fontSize={"20px"}
-                    fontWeight={700}
-                    color={"white"}
-                  >
-                    Binance
-                  </Typography>
-                </Box>
-                <Box className="small-orange-card desktop-view">
-                  <Box
-                    display={"flex"}
-                    justifyContent={"space-between"}
-                    alignItems={"center"}
-                    width={"100%"}
-                  >
-                    <img src={bnbicon} alt="bnb" width={30} />
-                    <button className="bg-white rounded-lg px-4">
-                      <ArrowRightAltIcon />
-                    </button>
-                  </Box>
-                  <Typography
-                    fontSize={"20px"}
-                    fontWeight={700}
-                    color={"white"}
-                  >
-                    Binance
-                  </Typography>
-                </Box>
-              </Box>
-            </Box>
-          </Grid>
         </Grid>
-        <Grid container spacing={2}>
+        <Grid container spacing={2} id="tokenomics">
           <Grid item sm={12} lg={6}>
             <Box
               className={`${
@@ -442,7 +401,7 @@ function ThirdSection({ darkmode, isMobile }) {
                     fontSize={{ xs: "30px", sm: "40px", lg: "50px" }}
                     fontWeight={700}
                   >
-                    Kirby Stats
+                    Kirby Token
                   </Typography>
                 </div>
                 <div className="flex  flex-col gap-[67px] items-start shrink-0 flex-nowrap relative z-[3]">
@@ -452,32 +411,30 @@ function ThirdSection({ darkmode, isMobile }) {
                       fontSize={{ xs: "20px", sm: "25px", lg: "35px" }}
                       fontWeight={700}
                     >
-                      Powered by ETH and BSC
+                      Powered by Fantom
                     </Typography>
                     <Typography
                       color={darkmode ? "white" : "black"}
                       fontSize={{ xs: "11px", sm: "20px", lg: "20px" }}
                     >
-                      Kirby contract addresses <br />
-                      ETH: 0xcf0c122c6b73ff809c693db761e7baebe62b6a2e <br />{" "}
-                      BSC: 0xfb5b838b6cfeedc2873ab27866079ac55363d37e
+                      Kirby contract address <br />
+                      FTM: 0x97bdAfe3830734acF12Da25359674277fcc33729
                     </Typography>
                   </div>
                   <div className="flex gap-2 flex-col md:flex-row w-full">
-                    <button
-                      className={`${
-                        darkmode ? "white-button-v2" : "black-button-v2"
-                      } `}
+                    <a
+                      href="https://ftmscan.com/token/0x97bdAfe3830734acF12Da25359674277fcc33729"
+                      target="_blank"
+                      rel="noreferrer"
                     >
-                      Etherscan (ETH)
-                    </button>
-                    <button
-                      className={
-                        darkmode ? "white-button-v2" : "black-button-v2"
-                      }
-                    >
-                      BscScan (BSC)
-                    </button>
+                      <button
+                        className={`${
+                          darkmode ? "white-button-v2" : "black-button-v2"
+                        } w-full`}
+                      >
+                        FantomScan (FTM)
+                      </button>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -489,11 +446,11 @@ function ThirdSection({ darkmode, isMobile }) {
                 darkmode ? "main-container-black" : "main-container-white"
               }
               mt={"2rem"}
-              width={'100%'}
+              width={"100%"}
             >
-              <div className="w-[75vw]">
+              <div className="w-[300px]">
                 <Typography
-                  fontSize={{ xs: "20px", sm: "40px", lg: "50px" }}
+                  fontSize={{ xs: "20px", sm: "30px", lg: "30px" }}
                   fontWeight={700}
                   color={"#007dff"}
                 >
@@ -519,7 +476,7 @@ function ThirdSection({ darkmode, isMobile }) {
                         fontSize={"25px"}
                         fontWeight={700}
                       >
-                        10,000,000,000,000
+                        3,175,000,000
                       </Typography>
                     </div>
                     <div className=" shrink-0 font-['Poppins'] text-[30px] font-semibold leading-[41.1px] relative text-left z-[6]">
@@ -532,14 +489,14 @@ function ThirdSection({ darkmode, isMobile }) {
                         fontSize={"25px"}
                         fontWeight={700}
                       >
-                        0.3%
+                        0%
                       </Typography>
                     </div>
                   </div>
                   <div className="flex flex-col items-center md:flex-row gap-10 md:gap-[67px]  items-start shrink-0 flex-nowrap relative z-[7]">
                     <div className=" shrink-0 font-['Poppins'] text-[30px] font-semibold leading-[41.1px] relative text-left z-[8]">
                       <Typography color={"gray"}>
-                        Locker Fees Burned
+                        Token % Burnt
                         <br />
                       </Typography>
                       <Typography
@@ -547,12 +504,12 @@ function ThirdSection({ darkmode, isMobile }) {
                         fontSize={"25px"}
                         fontWeight={700}
                       >
-                        25%
+                        30%
                       </Typography>
                     </div>
                     <div className=" shrink-0 font-['Poppins'] text-[30px] font-semibold leading-[41.1px] relative text-left z-[9]">
                       <Typography color={"gray"}>
-                        Prepaid card fee
+                        LP Lock
                         <br />
                       </Typography>
                       <Typography
@@ -560,7 +517,7 @@ function ThirdSection({ darkmode, isMobile }) {
                         fontSize={"25px"}
                         fontWeight={700}
                       >
-                        1%
+                        12 Years
                       </Typography>
                     </div>
                     <div className=" shrink-0 font-['Poppins'] text-[30px] font-semibold leading-[41.1px] relative text-left z-10">
@@ -573,21 +530,27 @@ function ThirdSection({ darkmode, isMobile }) {
                         fontSize={"25px"}
                         fontWeight={700}
                       >
-                        9.44T
+                        2.75B
                       </Typography>
                     </div>
                   </div>
                 </div>
-                <Box mt={"6rem"}>
-                  <button
-                    className={`${
-                      darkmode
-                        ? "white-button-v2 w-full lg:w-[250px]"
-                        : "black-button-v2 w-full lg:w-[250px]"
-                    } `}
+                <Box mt={"4rem"}>
+                  <a
+                    href="https://ftmscan.com/token/0x97bdAfe3830734acF12Da25359674277fcc33729#tokenAnalytics"
+                    target="_blank"
+                    rel="noreferrer"
                   >
-                    Operation and Funding
-                  </button>
+                    <button
+                      className={`${
+                        darkmode
+                          ? "white-button-v2 w-full lg:w-[250px]"
+                          : "black-button-v2 w-full lg:w-[250px]"
+                      } `}
+                    >
+                      Analytics
+                    </button>
+                  </a>
                 </Box>
               </div>
             </Box>
@@ -637,7 +600,7 @@ function ThirdSection({ darkmode, isMobile }) {
                   >
                     Total Holders
                   </span>
-                  460,000+ on DEX alone
+                  6,700+ on DEX alone
                 </Typography>
               </Grid>
               <Grid item lg={4} sm={4}>
@@ -646,8 +609,34 @@ function ThirdSection({ darkmode, isMobile }) {
                   fontSize={{ xs: "14px", sm: "16px", lg: "20px" }}
                   fontWeight={600}
                 >
-                  Lorem Ipsum is simply dummy text of the Lorem Ipsum is
+                  The fastest growing token in the Fantom ecosystem.
                 </Typography>
+                <Box
+                  display={"flex"}
+                  justifyContent={"start"}
+                  alignItems={"center"}
+                  gap={"1rem"}
+                  mt={"2rem"}
+                >
+                  <a
+                    href="https://www.dextools.io/app/en/fantom/pair-explorer/0x3684706b32648757bbf9c234b18689d1a225b857"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <button
+                      className={darkmode ? "white-button" : "black-button"}
+                    >
+                      Chart
+                    </button>
+                  </a>
+                  <a
+                    href="https://spooky.fi/#/swap?inputCurrency=FTM&outputCurrency=0x97bdAfe3830734acF12Da25359674277fcc33729"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <button className="blue-button">Buy KIRBY</button>
+                  </a>
+                </Box>
               </Grid>
             </Grid>
           </Box>
@@ -692,7 +681,8 @@ function ThirdSection({ darkmode, isMobile }) {
                   fontWeight={700}
                   zIndex={10}
                 >
-                  Audits
+                 Safety
+
                 </Typography>
                 <Typography
                   color={darkmode ? "white" : "black"}
@@ -705,17 +695,17 @@ function ThirdSection({ darkmode, isMobile }) {
               <Grid item lg={7} sm={6} xs={12}>
                 <Typography
                   color={darkmode ? "white" : "black"}
-                  fontSize={{ xs: "16px", sm: "26px", lg: "65px" }}
+                  fontSize={{ xs: "13px", sm: "26px", lg: "45px" }}
                   fontWeight={700}
                 >
-                  "Kirby DAO contract is revolutionary."
+                  “Kirby has the safest and most simple token contract possible to make on a chain.”
                 </Typography>
                 <Typography
                   color={darkmode ? "white" : "black"}
                   fontSize={{ xs: "15px", sm: "18px", lg: "20px" }}
                   mt={{ xs: "1rem", sm: "2rem" }}
                 >
-                  Larry Lundy{" "}
+                  Solidity{" "}
                   <span
                     style={{
                       fontSize: "13px",
@@ -723,17 +713,17 @@ function ThirdSection({ darkmode, isMobile }) {
                     }}
                     className="transperant-text"
                   >
-                    Formerly with CertiK
+                    Github Research
                   </span>
                 </Typography>
               </Grid>
-              <Grid item lg={9} sm={6} xs={12}>
+              <Grid item lg={5} sm={6} xs={12}>
                 <Typography
                   color={darkmode ? "white" : "black"}
                   fontSize={{ xs: "16px", sm: "26px", lg: "30px" }}
                   fontWeight={700}
                 >
-                  CertiK
+                 Coming Soon..
                 </Typography>
                 <Box
                   display={"flex"}
@@ -743,16 +733,16 @@ function ThirdSection({ darkmode, isMobile }) {
                   mt={"1rem"}
                 >
                   <button className="blue-button">Kirby Token</button>
-                  <button className="blue-button">Kirby FI</button>
+                  <button className="blue-button">KirbyPad</button>
                 </Box>
               </Grid>
-              <Grid item lg={3} sm={6} xs={12}>
+              <Grid item lg={7} sm={6} xs={12}>
                 <Typography
                   color={darkmode ? "white" : "black"}
                   fontSize={{ xs: "16px", sm: "26px", lg: "30px" }}
                   fontWeight={700}
                 >
-                  Solidity Finance
+                   Techrate
                 </Typography>
                 <Box
                   display={"flex"}
@@ -768,13 +758,9 @@ function ThirdSection({ darkmode, isMobile }) {
                         : "black-button text-stretch"
                     }
                   >
-                    Binanace Smartchain
+                   Coming Soon
                   </button>
-                  <button
-                    className={darkmode ? "white-button" : "black-button"}
-                  >
-                    Ethereum
-                  </button>
+                 
                 </Box>
               </Grid>
             </Grid>

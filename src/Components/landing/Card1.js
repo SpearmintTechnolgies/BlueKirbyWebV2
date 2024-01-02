@@ -6,7 +6,7 @@ import icon from "../../images/iconsmall.svg";
 import Slider from "../Slider";
 import heroseconddark from "../../images/hero-second-dark.png";
 
-const Herosection = ({ darkmode ,isMobile}) => {
+const Herosection = ({ darkmode, isMobile }) => {
   return (
     <Box my={"2rem"}>
       <Container maxWidth="xl" className="global-flex">
@@ -41,14 +41,14 @@ const Herosection = ({ darkmode ,isMobile}) => {
                     fontWeight={"900"}
                     color={darkmode ? "white" : "black"}
                   >
-                    Crypto for People
+                    Blue Kirby
                   </Typography>
                   <Typography
                     fontSize={{ xs: "20px", sm: "40px", lg: "70px" }}
                     fontWeight={"900"}
                     color={"#007DFF"}
                   >
-                    by people
+                    Kings remain kings.
                   </Typography>
                 </Box>
                 <Box
@@ -60,7 +60,7 @@ const Herosection = ({ darkmode ,isMobile}) => {
                     fontSize={{ xs: "10px", sm: "15px", lg: "20px" }}
                     color={darkmode ? "white" : "black"}
                   >
-                    Its a utility token based on Phantom
+                    MemeFi ecosystem based on Fantom
                   </Typography>
                 </Box>
                 <Box
@@ -72,12 +72,24 @@ const Herosection = ({ darkmode ,isMobile}) => {
                   bottom={"40px"}
                   right={{ sm: "60px", xs: "150px" }}
                 >
-                  <button
-                    className={darkmode ? "white-button" : "black-button"}
+                  <a
+                    href="https://www.dextools.io/app/en/fantom/pair-explorer/0x3684706b32648757bbf9c234b18689d1a225b857"
+                    target="_blank"
+                    rel="noreferrer"
                   >
-                    Explore
-                  </button>
-                  <button className="blue-button">Buy Kirby</button>
+                    <button
+                      className={darkmode ? "white-button" : "black-button"}
+                    >
+                      Chart
+                    </button>
+                  </a>
+                  <a
+                    href="https://spooky.fi/#/swap?inputCurrency=FTM&outputCurrency=0x97bdAfe3830734acF12Da25359674277fcc33729"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <button className="blue-button">Buy KIRBY</button>
+                  </a>
                 </Box>
               </Box>
             </Grid>
@@ -97,7 +109,7 @@ const Herosection = ({ darkmode ,isMobile}) => {
                 />
                 <Box position={"absolute"} top={"40px"} left={"30px"}>
                   <button className="blue-button">
-                    <img src={icon}></img>
+                    <img src={icon} alt="bg"></img>
                     Blue Kirby
                   </button>
                   <Typography
@@ -105,55 +117,83 @@ const Herosection = ({ darkmode ,isMobile}) => {
                     fontWeight={"600"}
                     color={"white"}
                   >
-                    Let's lead the <br></br> bullrun.
+                    Leading the Fantom<br></br> bullrun.
                   </Typography>
                 </Box>
               </Box>
             </Grid>
           </Grid>
+
+          {/* auto scroller section */}
           <Slider />
+
           <Box position={"relative"} width={"100%"}>
             <img
               src={darkmode ? heroseconddark : heromainlight}
               alt="main2"
               width={"100%"}
             />
-            <Box position={"absolute"} top={{xs:"20px", sm:"60px",lg:"100px"}} left={{xs:"30px",sm:"60px"}}>
+            <Box
+              position={"absolute"}
+              top={{ xs: "20px", sm: "60px", lg: "100px" }}
+              left={{ xs: "30px", sm: "60px" }}
+            >
               <Typography
-                fontSize={{xs:"15px",sm:"35px",lg:"45px"}}
+                fontSize={{ xs: "15px", sm: "35px", lg: "45px" }}
                 fontWeight={"800"}
                 color={darkmode ? "white" : "black"}
               >
-                Community is what <br /> makes or Breaks
-              </Typography>
-            </Box>
-            <Box position={"absolute"} bottom={{xs:"25px",sm:"50px",lg:"100px"}} left={{xs:"30px",sm:"60px"}}>
-              <Typography
-                fontSize={{xs:"13px",sm:"35px",lg:"50px"}}
-                fontWeight={"800"}
-                color={"#007dff"}
-                maxWidth={{xs:"250px",sm:"650px",lg:"750px"}}
-              >
-                Let's change community tokens forever on FLOKI and 
-                lead the bull run.
+                Community of builders, devs,
+                <br /> marketers, and designers.
               </Typography>
             </Box>
             <Box
-                  display={"flex"}
-                  justifyContent={"center"}
-                  alignItems={"center"}
-                  gap={"2rem"}
-                  position={"absolute"}
-                  bottom={{lg:"120px", sm: "60px", xs: "150px" }}
-                  right={{lg:"100px", sm: "60px", xs: "150px" }}
+              position={"absolute"}
+              bottom={{ xs: "25px", sm: "50px", lg: "100px" }}
+              left={{ xs: "30px", sm: "60px" }}
+              display={"flex"}
+              justifyContent={"space-between"}
+              alignItems={"center"}
+            >
+              <Typography
+                fontSize={{ xs: "13px", sm: "35px", lg: "50px" }}
+                fontWeight={"800"}
+                color={"#007dff"}
+                maxWidth={{ xs: "250px", sm: "650px", lg: "750px" }}
+              >
+                The glory of Fantom
+              </Typography>
+            </Box>
+            <Box
+              display={"flex"}
+              justifyContent={"center"}
+              alignItems={"center"}
+              gap={"2rem"}
+              position={"absolute"}
+              bottom={{ lg: "120px", sm: "60px", xs: "150px" }}
+              right={{ lg: "100px", sm: "60px", xs: "150px" }}
+            >
+              <a
+                href="https://t.me/bluekirbyftm"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <button
+                  className={`${
+                    darkmode ? "white-button" : "black-button"
+                  } desktop-view`}
                 >
-                  <button
-                    className={`${darkmode ? "white-button" : "black-button"} desktop-view` }
-                  >
-                    Explore
-                  </button>
-                  <button className="blue-button desktop-view">Buy Kirby</button>
-                </Box>
+                  Explore
+                </button>
+              </a>
+              <a
+                href="https://spooky.fi/#/swap?inputCurrency=FTM&outputCurrency=0x97bdAfe3830734acF12Da25359674277fcc33729"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <button className="blue-button desktop-view">Buy KIRBY</button>
+              </a>
+            </Box>
           </Box>
         </Box>
       </Container>

@@ -1,6 +1,6 @@
 import React from "react";
 import BlueKirbyLogo from "../images/kirbyicon.svg";
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Container, IconButton, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
@@ -52,7 +52,46 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   },
 }));
 
-const Navbar = ({ darkmode, setDarkmode }) => {
+const Navbar = ({ darkmode, setDarkmode, element, element1, element2 }) => {
+  const scroll2El = (elID) => {
+    if (elID) {
+      elID.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
+  const onBtnClick = (e) => {
+    e.preventDefault();
+    setTimeout(() => {
+      scroll2El(element);
+    }, 100);
+  };
+  const scroll2El1 = (elID) => {
+    if (elID) {
+      elID.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
+  const onBtnClick1 = (e) => {
+    e.preventDefault();
+    setTimeout(() => {
+      scroll2El1(element1);
+    }, 100);
+  };
+  const scroll2El2 = (elID) => {
+    if (elID) {
+      elID.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  };
+  const onBtnClick2 = (e) => {
+    e.preventDefault();
+    setTimeout(() => {
+      scroll2El2(element2);
+    }, 100);
+  };
   return (
     <Box>
       <Container maxWidth="md">
@@ -72,24 +111,32 @@ const Navbar = ({ darkmode, setDarkmode }) => {
           borderRadius={5}
         >
           <img src={BlueKirbyLogo} alt="img" />
-          <Typography
-            color={darkmode ? "white" : "black"}
+          <IconButton
+            onClick={onBtnClick}
             sx={{ display: { xs: "none", sm: "none", lg: "block" } }}
           >
-            What is Kirby
-          </Typography>
-          <Typography
-            color={darkmode ? "white" : "black"}
+            <Typography color={darkmode ? "white" : "black"}>
+              Ecosystem
+            </Typography>
+          </IconButton>
+          <IconButton
+            onClick={onBtnClick1}
+            className="desktop-view"
             sx={{ display: { xs: "none", sm: "none", lg: "block" } }}
           >
-            Claim Kirby
-          </Typography>
-          <Typography
-            color={darkmode ? "white" : "black"}
+            <Typography color={darkmode ? "white" : "black"}>
+              Tokenomics
+            </Typography>
+          </IconButton>
+          <IconButton
+            onClick={onBtnClick2}
+            className="desktop-view"
             sx={{ display: { xs: "none", sm: "none", lg: "block" } }}
           >
-            Buy Kirby
-          </Typography>
+            <Typography color={darkmode ? "white" : "black"}>
+              Roadmap
+            </Typography>
+          </IconButton>
           <FormControlLabel
             control={
               <MaterialUISwitch

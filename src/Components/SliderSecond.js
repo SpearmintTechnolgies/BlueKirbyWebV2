@@ -3,8 +3,6 @@ import React from "react";
 import iconbox from "../images/icon-box.svg";
 
 function SliderSecond({ item, className }) {
-
-
   return (
     <div
       x-data="{}"
@@ -17,21 +15,25 @@ function SliderSecond({ item, className }) {
     >
       <Box className={className}>
         {item.map((slide, index) => (
-          <Box width={"150px"} position={"relative"}>
-            <img src={iconbox} width={"100%"} alt="icon" />
-            <Box
-              position={"absolute"}
-              top={"20px"}
-              left={"25px"}
-              display={"flex"}
-              flexDirection={"column"}
-              alignItems={"center"}
-              justifyContent={"space-between"}
-            >
-              <img src={slide} width={"100px"} alt="logo" />
-              <Typography color={"gray"}>Lorem</Typography>
+          <a href={slide.link} target="_blank" rel="noreferrer">
+            <Box width={"150px"} position={"relative"}>
+              <img src={iconbox} width={"100%"} alt="icon" />
+              <Box
+                position={"absolute"}
+                top={"20px"}
+                left={"35px"}
+                display={"flex"}
+                flexDirection={"column"}
+                alignItems={"center"}
+                justifyContent={"space-between"}
+              >
+                <img src={slide.img} width={"80px"} alt="logo" />
+                <Typography color={"gray"} fontSize={"13px"} mt={"1rem"}>
+                  {slide.name}
+                </Typography>
+              </Box>
             </Box>
-          </Box>
+          </a>
         ))}
       </Box>
     </div>

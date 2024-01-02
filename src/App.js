@@ -47,15 +47,24 @@ const App = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, [isMobile]);
+  const [element, setElement] = useState(null);
+  const [element1, setElement1] = useState(null);
+  const [element2, setElement2] = useState(null);
 
   return (
     <ThemeProvider theme={theme}>
       <Box className="main">
-        <Navbar darkmode={darkmode} setDarkmode={setDarkmode} />
+        <Navbar
+          darkmode={darkmode}
+          setDarkmode={setDarkmode}
+          element={element}
+          element1={element1}
+          element2={element2}
+        />
         <Herosection darkmode={darkmode} isMobile={isMobile} />
-        <Ecosystem darkmode={darkmode} isMobile={isMobile} />
-        <ThirdSection darkmode={darkmode} isMobile={isMobile} />
-        <History darkmode={darkmode} isMobile={isMobile} />
+        <Ecosystem darkmode={darkmode} isMobile={isMobile} setElement={setElement} />
+        <ThirdSection darkmode={darkmode} isMobile={isMobile} setElement1={setElement1} />
+        <History darkmode={darkmode} isMobile={isMobile} setElement2={setElement2} />
         <Footer />
       </Box>
     </ThemeProvider>

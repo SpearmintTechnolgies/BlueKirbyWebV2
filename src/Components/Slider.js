@@ -1,19 +1,25 @@
 import { Box } from "@mui/material";
 import React, { useState } from "react";
-import slider1 from "../images/slide-icon1.png";
-import slider2 from "../images/slide-icon2.png";
-import slider3 from "../images/slide-icon3.png";
-import slider4 from "../images/slide-icon4.png";
+import solidity from "../images/solidity-gray.png";
+import CG from "../images/CG-gray.png";
+import CMC from "../images/CMC-gray.png";
+import spookeyswap from "../images/spookeyswap-gray.png";
+import fantom from "../images/Fantom-gray.png";
+import equilizer from "../images/equlizer-gray.png";
+import LBank from "../images/lbank-gray.png";
 
 function Slider() {
   const [sliders, setSliders] = useState([
-    slider1,
-    slider2,
-    slider3,
-    slider4,
-    slider1,
-    slider2,
-    slider3,
+    { img: solidity, link: "https://solidly.exchange/" },
+    { img: CG, link: "https://www.coingecko.com/en/coins/blue-kirby" },
+    { img: CMC, link: "https://coinmarketcap.com/currencies/blue-kirby/" },
+    {
+      img: spookeyswap,
+      link: "https://spooky.fi/#/swap?inputCurrency=FTM&outputCurrency=0x97bdAfe3830734acF12Da25359674277fcc33729",
+    },
+    { img: fantom, link: "https://fantom.foundation/" },
+    { img: equilizer, link: "https://equalizer.exchange/swap" },
+    { img: LBank, link: "https://www.lbank.com/trade/kirby_usdt" },
   ]);
 
   return (
@@ -28,9 +34,11 @@ function Slider() {
     >
       <Box className="infinit-scroll">
         {sliders.map((slide, index) => (
-          <Box key={index} width={{ xs: 50, sm: 100 }}>
-            <img src={slide} alt="slider" />
-          </Box>
+          <a href={slide.link} target="_blank" rel="noreferrer">
+            <Box key={index} width={{ xs: 50, sm: 100 }}>
+              <img src={slide.img} alt="slider" />
+            </Box>
+          </a>
         ))}
       </Box>
     </div>

@@ -139,7 +139,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 7rem;
-  animation: infinite-scroll 20s linear infinite;
+  animation: infinite-scroll 40s linear infinite;
 }
 .infinit-scroll1 {
   display: flex;
@@ -233,6 +233,12 @@ body {
   border-radius: 50%;
   border: 1px solid gray;
 }
+.select-circle-blue {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: #007bff;
+}
 
 .social-circle {
   background-color: #007bff;
@@ -254,7 +260,7 @@ body {
 
 .pointer-line-mobile {
   border: 1px solid gray;
-  height: 500px;
+  height: 520px;
   border-radius: 0 0 25px 0;
   border-top: none;
   border-bottom: none;
@@ -272,4 +278,9 @@ body {
     top: 4rem;
   }
 
+}
+
+.news-box-wrapp {
+  width: 300px;
+  border-radius: 50%;
 }

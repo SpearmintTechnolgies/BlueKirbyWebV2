@@ -10,14 +10,95 @@ import currency from "../../images/currency.png";
 import currencymobile from "../../images/currency-mobile.png";
 import BlockIcon from "@mui/icons-material/Block";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import spookyswap from "../../images/spookyswap.png";
+import equalizer from "../../images/equilizer.png";
+import fantom from "../../images/ftm.png";
+import CoinGecko from "../../images/CG.png";
+import LBank from "../../images/Lbank.png";
+import solidly from "../../images/solidly.png";
+import coinmarketcap from "../../images/cmc.png";
 
-function History({ darkmode, isMobile }) {
-  const items1 = [monkey, cherry, shield, monkey, cherry, shield];
-  const items2 = [cherry, monkey, cherry, shield, monkey, shield];
+function History({ darkmode, isMobile, setElement2 }) {
+  const items1 = [
+    {
+      img: spookyswap,
+      name: "SpookySwap",
+      link: "https://spooky.fi/#/swap?inputCurrency=FTM&outputCurrency=0x97bdAfe3830734acF12Da25359674277fcc33729",
+    },
+    {
+      img: equalizer,
+      name: "Equalizer",
+      link: "https://equalizer.exchange/swap",
+    },
+    {
+      img: fantom,
+      name: "Fantom",
+      link: "https://fantom.foundation/",
+    },
+    {
+      img: CoinGecko,
+      name: "CoinGecko",
+      link: "https://www.coingecko.com/en/coins/blue-kirby",
+    },
+    {
+      img: LBank,
+      name: "LBank",
+      link: "https://www.lbank.com/trade/kirby_usdt",
+    },
+    {
+      img: solidly,
+      name: "Solidly",
+      link: "https://solidly.exchange/",
+    },
+    {
+      img: coinmarketcap,
+      name: "Coinmarketcap",
+      link: "https://coinmarketcap.com/currencies/blue-kirby/",
+    },
+  ];
+  const items2 = [    {
+    img: spookyswap,
+    name: "SpookySwap",
+    link: "https://spooky.fi/#/swap?inputCurrency=FTM&outputCurrency=0x97bdAfe3830734acF12Da25359674277fcc33729",
+  },
+  {
+    img: equalizer,
+    name: "Equalizer",
+    link: "https://equalizer.exchange/swap",
+  },
+  {
+    img: fantom,
+    name: "Fantom",
+    link: "https://fantom.foundation/",
+  },
+  {
+    img: CoinGecko,
+    name: "CoinGecko",
+    link: "https://www.coingecko.com/en/coins/blue-kirby",
+  },
+  {
+    img: LBank,
+    name: "LBank",
+    link: "https://www.lbank.com/trade/kirby_usdt",
+  },
+  {
+    img: solidly,
+    name: "Solidly",
+    link: "https://solidly.exchange/",
+  },
+  {
+    img: coinmarketcap,
+    name: "Coinmarketcap",
+    link: "https://coinmarketcap.com/currencies/blue-kirby/",
+  },];
+  React.useEffect(() => {
+    let element = document.getElementById("roadmap");
+    setElement2(element);
+  }, []);
   return (
     <Box my={"2rem"}>
       <Container maxWidth="xl" className="global-flex">
-        <Box display={"flex"} flexDirection={"column"}>
+        <Box display={"flex"} flexDirection={"column"} id="roadmap">
           <Typography
             fontSize={{ xs: "20px", sm: "35px", lg: "35px" }}
             fontWeight={"800"}
@@ -32,7 +113,7 @@ function History({ darkmode, isMobile }) {
             color={darkmode ? "white" : "black"}
             textAlign={{ xs: "center", sm: "center", lg: "start" }}
           >
-            Path of History to success
+            Path of History and to Success
           </Typography>
           <Box mt={"2rem"} width={"100%"} position={"relative"}>
             <Box
@@ -46,7 +127,7 @@ function History({ darkmode, isMobile }) {
                   textAlign={{ xs: "start", sm: "start", lg: "start" }}
                   ml={"25px"}
                 >
-                  June 25, 2021
+                  December 15, 2023
                 </Typography>
                 <Box
                   display={"flex"}
@@ -61,7 +142,7 @@ function History({ darkmode, isMobile }) {
                     color={darkmode ? "white" : "black"}
                     textAlign={{ xs: "start", sm: "start", lg: "start" }}
                   >
-                    Blue Kerby Born
+                    Blue Kirby is born
                   </Typography>
                 </Box>
                 <Typography
@@ -73,14 +154,15 @@ function History({ darkmode, isMobile }) {
                   The Idea
                 </Typography>
                 <Typography
-                  fontSize={{ xs: "15px", sm: "18px", lg: "20px" }}
+                  fontSize={{ xs: "15px", sm: "15px", lg: "16px" }}
                   my={{ xs: "0rem", sm: "2rem" }}
                   color={darkmode ? "white" : "black"}
                   textAlign={{ xs: "start", sm: "start", lg: "start" }}
                   ml={"25px"}
                 >
-                  Lorem Ipsum is simply dummy text of the <br></br> Lorem Ipsum
-                  is
+                  Blue Kirby Launched on $FTM Network during a long haul of it
+                  being <br></br> an abandoned blockchain, restoring volume and
+                  hope.
                 </Typography>
               </Grid>
               <Grid item lg={6} sm={6} xs={12} mt={"2rem"}>
@@ -90,7 +172,7 @@ function History({ darkmode, isMobile }) {
                   textAlign={{ xs: "start", sm: "start", lg: "start" }}
                   ml={"25px"}
                 >
-                  June 25, 2021
+                  June 18, 2024
                 </Typography>
                 <Box
                   display={"flex"}
@@ -105,7 +187,7 @@ function History({ darkmode, isMobile }) {
                     color={darkmode ? "white" : "black"}
                     textAlign={{ xs: "start", sm: "start", lg: "start" }}
                   >
-                    Blue Kerby Born
+                    The Future Awaits
                   </Typography>
                 </Box>
                 <Typography
@@ -114,17 +196,17 @@ function History({ darkmode, isMobile }) {
                   textAlign={{ xs: "start", sm: "start", lg: "start" }}
                   ml={"25px"}
                 >
-                  The Idea
+                  Blue Chip Token
                 </Typography>
                 <Typography
-                  fontSize={{ xs: "15px", sm: "18px", lg: "20px" }}
+                  fontSize={{ xs: "15px", sm: "15px", lg: "16px" }}
                   my={{ xs: "0rem", sm: "2rem" }}
                   color={darkmode ? "white" : "black"}
                   textAlign={{ xs: "start", sm: "start", lg: "start" }}
                   ml={"25px"}
                 >
-                  Lorem Ipsum is simply dummy text of the <br></br> Lorem Ipsum
-                  is
+                  Multiple listings on top tier exchanges with multiple
+                  completed and incubated projects.
                 </Typography>
               </Grid>
               <Grid item lg={6} sm={6} xs={12} mt={"2rem"}>
@@ -134,7 +216,7 @@ function History({ darkmode, isMobile }) {
                   textAlign={{ xs: "start", sm: "start", lg: "start" }}
                   ml={"25px"}
                 >
-                  June 25, 2021
+                  December 28, 2023
                 </Typography>
                 <Box
                   display={"flex"}
@@ -149,7 +231,7 @@ function History({ darkmode, isMobile }) {
                     color={darkmode ? "white" : "black"}
                     textAlign={{ xs: "start", sm: "start", lg: "start" }}
                   >
-                    Blue Kerby Born
+                    10M+ market cap breached
                   </Typography>
                 </Box>
                 <Typography
@@ -158,17 +240,18 @@ function History({ darkmode, isMobile }) {
                   textAlign={{ xs: "start", sm: "start", lg: "start" }}
                   ml={"25px"}
                 >
-                  The Idea
+                  The Growth
                 </Typography>
                 <Typography
-                  fontSize={{ xs: "15px", sm: "18px", lg: "20px" }}
+                  fontSize={{ xs: "15px", sm: "15px", lg: "16px" }}
                   my={{ xs: "0rem", sm: "2rem" }}
                   color={darkmode ? "white" : "black"}
                   textAlign={{ xs: "start", sm: "start", lg: "start" }}
                   ml={"25px"}
                 >
-                  Lorem Ipsum is simply dummy text of the <br></br> Lorem Ipsum
-                  is
+                  Community of Blue Kirby ranks as the top ten communities of
+                  all crypto memes, breaching 10m+ mcap on Fantom network which
+                  is a first for a FTM memecoin.
                 </Typography>
               </Grid>
               <Grid item lg={6} sm={6} xs={12} mt={"2rem"}>
@@ -178,7 +261,7 @@ function History({ darkmode, isMobile }) {
                   textAlign={{ xs: "start", sm: "start", lg: "start" }}
                   ml={"25px"}
                 >
-                  June 25, 2021
+                  February 25, 2024
                 </Typography>
                 <Box
                   display={"flex"}
@@ -186,14 +269,14 @@ function History({ darkmode, isMobile }) {
                   alignItems={"center"}
                   gap={"1rem"}
                 >
-                  <div className="select-circle"></div>
+                  <div className="select-circle-blue "></div>
                   <Typography
                     fontSize={{ xs: "20px", sm: "27px", lg: "40px" }}
                     fontWeight={"800"}
                     color={darkmode ? "white" : "black"}
                     textAlign={{ xs: "start", sm: "start", lg: "start" }}
                   >
-                    Blue Kerby Born
+                    Glory Restored
                   </Typography>
                 </Box>
                 <Typography
@@ -202,17 +285,18 @@ function History({ darkmode, isMobile }) {
                   textAlign={{ xs: "start", sm: "start", lg: "start" }}
                   ml={"25px"}
                 >
-                  The Idea
+                  Global Recognition
                 </Typography>
                 <Typography
-                  fontSize={{ xs: "15px", sm: "18px", lg: "20px" }}
+                  fontSize={{ xs: "15px", sm: "15px", lg: "16px" }}
                   my={{ xs: "0rem", sm: "2rem" }}
                   color={darkmode ? "white" : "black"}
                   textAlign={{ xs: "start", sm: "start", lg: "start" }}
                   ml={"25px"}
                 >
-                  Lorem Ipsum is simply dummy text of the <br></br> Lorem Ipsum
-                  is
+                  Blue Kirby will unleash a large-scale global influencer
+                  campaign to bring recognition to the Kirby utilities and
+                  community.
                 </Typography>
               </Grid>
             </Grid>
@@ -224,7 +308,7 @@ function History({ darkmode, isMobile }) {
             sx={{ backgroundColor: `${darkmode ? "black" : "white"}` }}
             py={"2rem"}
           >
-            <Box ml={{xs:"0rem",sm:"2rem"}}>
+            <Box ml={{ xs: "0rem", sm: "2rem" }}>
               <Typography
                 fontSize={{ xs: "20px", sm: "35px", lg: "35px" }}
                 fontWeight={"800"}
@@ -239,11 +323,11 @@ function History({ darkmode, isMobile }) {
                 color={darkmode ? "white" : "black"}
                 textAlign={{ xs: "center", sm: "center", lg: "start" }}
               >
-                No Stopping us when we together
+                We are stronger together
               </Typography>
             </Box>
             <SliderSecond item={items1} className={"infinit-scroll1"} />
-            <SliderSecond item={items2} className={"infinit-scroll2"} />
+            <SliderSecond item={items2.reverse()} className={"infinit-scroll2"} />
           </Box>
         </Box>
         <Box width={"100%"} mt={"2rem"} position={"relative"}>
