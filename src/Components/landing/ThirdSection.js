@@ -9,8 +9,6 @@ import okxicon from "../../images/okx-icon.png";
 import tokenicon from "../../images/token-icon.png";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import ReactSimplyCarousel from "react-simply-carousel";
-import earthbg from "../../images/eath-bg.png";
-import earthbgmobile from "../../images/earth-bg-mobile.png";
 import earth from "../../images/earth.png";
 import earthbutton from "../../images/earth-mobile.png";
 
@@ -493,7 +491,7 @@ function ThirdSection({ darkmode, isMobile }) {
               mt={"2rem"}
               width={'100%'}
             >
-              <div className="w-[300px]">
+              <div className="w-[75vw]">
                 <Typography
                   fontSize={{ xs: "20px", sm: "40px", lg: "50px" }}
                   fontWeight={700}

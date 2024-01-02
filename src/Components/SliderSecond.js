@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import React, { useState } from "react";
+import React from "react";
 import iconbox from "../images/icon-box.svg";
 
 function SliderSecond({ item, className }) {
