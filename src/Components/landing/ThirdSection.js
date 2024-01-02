@@ -652,7 +652,7 @@ function ThirdSection({ darkmode, isMobile }) {
         </Box>
         <Box
           width={"100%"}
-          height={{ lg: "515px", sm: "405px", xs: "80vh" }}
+          height={{ lg: "515px", sm: "405px", xs: "410px" }}
           mt={"2rem"}
           position={"relative"}
           sx={{ backgroundColor: darkmode ? "black" : "white" }}
@@ -686,7 +686,7 @@ function ThirdSection({ darkmode, isMobile }) {
               <Grid item lg={5} sm={6} xs={12}>
                 <Typography
                   color={"#007dff"}
-                  fontSize={{ xs: "24px", sm: "26px", lg: "30px" }}
+                  fontSize={{ xs: "16px", sm: "26px", lg: "30px" }}
                   fontWeight={700}
                   zIndex={10}
                 >
@@ -694,7 +694,7 @@ function ThirdSection({ darkmode, isMobile }) {
                 </Typography>
                 <Typography
                   color={darkmode ? "white" : "black"}
-                  fontSize={{ xs: "24px", sm: "26px", lg: "60px" }}
+                  fontSize={{ xs: "16px", sm: "26px", lg: "60px" }}
                   fontWeight={700}
                 >
                   Kirby Audits
@@ -703,15 +703,15 @@ function ThirdSection({ darkmode, isMobile }) {
               <Grid item lg={7} sm={6} xs={12}>
                 <Typography
                   color={darkmode ? "white" : "black"}
-                  fontSize={{ xs: "24px", sm: "26px", lg: "65px" }}
+                  fontSize={{ xs: "16px", sm: "26px", lg: "65px" }}
                   fontWeight={700}
                 >
                   "Kirby DAO contract is revolutionary."
                 </Typography>
                 <Typography
                   color={darkmode ? "white" : "black"}
-                  fontSize={{ xs: "24px", sm: "26px", lg: "20px" }}
-                  mt={"2rem"}
+                  fontSize={{ xs: "15px", sm: "18px", lg: "20px" }}
+                  mt={{xs:"1rem",sm:"2rem"}}
                 >
                   Larry Lundy{" "}
                   <span
@@ -728,7 +728,7 @@ function ThirdSection({ darkmode, isMobile }) {
               <Grid item lg={9} sm={6} xs={12}>
                 <Typography
                   color={darkmode ? "white" : "black"}
-                  fontSize={{ xs: "24px", sm: "26px", lg: "30px" }}
+                  fontSize={{ xs: "16px", sm: "26px", lg: "30px" }}
                   fontWeight={700}
                 >
                   CertiK
@@ -747,7 +747,7 @@ function ThirdSection({ darkmode, isMobile }) {
               <Grid item lg={3} sm={6} xs={12}>
                 <Typography
                   color={darkmode ? "white" : "black"}
-                  fontSize={{ xs: "24px", sm: "30px", lg: "30px" }}
+                  fontSize={{ xs: "16px", sm: "26px", lg: "30px" }}
                   fontWeight={700}
                 >
                   Solidity Finance

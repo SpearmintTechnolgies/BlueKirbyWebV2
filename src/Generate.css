@@ -217,28 +217,37 @@
   border-radius: 12px;
 }
 
-.desktop-view{
-    display: flex;
+.desktop-view {
+  display: flex;
 }
 
-.white-button-v2{
-    background-color: white;
-    color: black;
-    border-radius: 10px;
-    padding: .5rem 1rem;
+.white-button-v2 {
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
 }
-.black-button-v2{
-    background-color: black;
-    color: white;
-    border-radius: 10px;
-    padding: .5rem 1rem;
+.black-button-v2 {
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
 }
 
 @media (max-width: 999px) {
-    .desktop-view{
-        display: none;
-    }
-    .main-container-black.main-container-black{
-        padding: 30px;
-    }
+  .desktop-view {
+    display: none;
+  }
+  .main-container-black.main-container-black {
+    padding: 30px;
+  }
+}
+.icon-box {
+  position: relative;
+  width: 206.073px;
+  height: 206.073px;
+  margin: 0 auto;
+  background-size: cover;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
 }

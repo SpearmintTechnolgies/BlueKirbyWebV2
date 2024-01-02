@@ -28,7 +28,7 @@ function Slider() {
     >
       <Box className="infinit-scroll">
         {sliders.map((slide, index) => (
-          <Box key={index} width={{xs:50,sm:100}}>
+          <Box key={index} width={{ xs: 50, sm: 100 }}>
             <img src={slide} alt="slider" />
           </Box>
         ))}

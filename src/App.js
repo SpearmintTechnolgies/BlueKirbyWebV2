@@ -7,6 +7,8 @@ import "./App.css";
 import "./Generate.css";
 import ThirdSection from "./Components/landing/ThirdSection";
 import Ecosystem from "./Components/landing/Ecosystem";
+import History from "./Components/landing/History";
+import Footer from "./Components/Footer";
 
 const theme = createTheme({
   typography: {
@@ -63,6 +65,8 @@ const App = () => {
         <Herosection darkmode={darkmode} isMobile={isMobile} />
         <Ecosystem darkmode={darkmode} isMobile={isMobile}/>
         <ThirdSection darkmode={darkmode} isMobile={isMobile}/>
+        <History darkmode={darkmode} isMobile={isMobile} />
+        <Footer />
       </Box>
     </ThemeProvider>
   );
