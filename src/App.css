@@ -204,3 +204,13 @@ body {
   flex-direction: column;
   padding: 2rem;
 }
+
+.transperant-text{
+  color: rgba(255, 255, 255, 0.381);
+}
+
+.text-stretch {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+}

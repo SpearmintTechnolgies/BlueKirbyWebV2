@@ -1,19 +1,18 @@
-import {
-  Box,
-  Button,
-  Container,
-  Grid,
-  IconButton,
-  Typography,
-} from "@mui/material";
+import { Box, Container, Grid, IconButton, Typography } from "@mui/material";
 import React, { useState } from "react";
 import Carousel from "react-material-ui-carousel";
 import bnbicon from "../../images/bnb-icon.png";
 import walleticon from "../../images/wallet-icon.png";
+import powerKirby from "../../images/power-kirby.png";
+import powerKirbymobile from "../../images/power-kirby-mobile.png";
 import okxicon from "../../images/okx-icon.png";
+import tokenicon from "../../images/token-icon.png";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import ReactSimplyCarousel from "react-simply-carousel";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import earthbg from "../../images/eath-bg.png";
+import earthbgmobile from "../../images/earth-bg-mobile.png";
+import earth from "../../images/earth.png";
+import earthbutton from "../../images/earth-mobile.png";
 
 function Item({ item, darkmode, active }) {
   return (
@@ -461,9 +460,8 @@ function ThirdSection({ darkmode, isMobile }) {
                       color={darkmode ? "white" : "black"}
                       fontSize={{ xs: "11px", sm: "20px", lg: "20px" }}
                     >
-                      Kirby contract addresses <br /> 
+                      Kirby contract addresses <br />
                       ETH: 0xcf0c122c6b73ff809c693db761e7baebe62b6a2e <br />{" "}
-                
                       BSC: 0xfb5b838b6cfeedc2873ab27866079ac55363d37e
                     </Typography>
                   </div>
@@ -593,6 +591,193 @@ function ThirdSection({ darkmode, isMobile }) {
             </Box>
           </Grid>
         </Grid>
+        <Box
+          width={"100%"}
+          mt={"2rem"}
+          position={"relative"}
+          sx={{ backgroundColor: "black" }}
+          borderRadius={"20px"}
+        >
+          <img
+            src={isMobile ? powerKirbymobile : powerKirby}
+            alt="power kirby"
+          />
+          <Box
+            position={"absolute"}
+            top={"0px"}
+            width={"100%"}
+            p={{ xs: "2rem", sm: "4rem" }}
+          >
+            <Grid container spacing={{ xs: "1rem", sm: "0rem" }}>
+              <Grid item lg={4} sm={4}>
+                {isMobile && <img src={tokenicon} alt="token" />}
+              </Grid>
+              <Grid item lg={4} sm={4}>
+                <Typography
+                  color={"white"}
+                  fontSize={{ xs: "24px", sm: "26px", lg: "30px" }}
+                  fontWeight={700}
+                >
+                  Powerful Kirby
+                </Typography>
+                <Typography
+                  color={"white"}
+                  fontSize={{ xs: "14px", sm: "16px", lg: "20px" }}
+                  fontWeight={600}
+                  mt={"2rem"}
+                >
+                  <span
+                    style={{
+                      color: "gray",
+                      fontSize: "13px",
+                      marginRight: "1rem",
+                    }}
+                  >
+                    Total Holders
+                  </span>
+                  460,000+ on DEX alone
+                </Typography>
+              </Grid>
+              <Grid item lg={4} sm={4}>
+                <Typography
+                  color={"white"}
+                  fontSize={{ xs: "14px", sm: "16px", lg: "20px" }}
+                  fontWeight={600}
+                >
+                  Lorem Ipsum is simply dummy text of the Lorem Ipsum is
+                </Typography>
+              </Grid>
+            </Grid>
+          </Box>
+        </Box>
+        <Box
+          width={"100%"}
+          height={{ lg: "515px", sm: "405px", xs: "80vh" }}
+          mt={"2rem"}
+          position={"relative"}
+          sx={{ backgroundColor: darkmode ? "black" : "white" }}
+          borderRadius={"20px"}
+        >
+          <Box
+            position={"absolute"}
+            zIndex={1}
+            left={{xs:"10px",sm:"300px"}}
+            top={"0px"}
+            height={"400px"}
+          >
+            <img
+              src={isMobile ? earthbutton : earth}
+              alt="earth"
+              height={"100%"}
+            />
+          </Box>
+          <Box
+            top={"0px"}
+            width={"100%"}
+            p={{ xs: "2rem", sm: "4rem" }}
+            position={"absolute"}
+            zIndex={10}
+          >
+            <Grid
+              container
+              spacing={{ xs: "1rem", sm: "0rem" }}
+              rowSpacing={"2rem"}
+            >
+              <Grid item lg={5} sm={6} xs={12}>
+                <Typography
+                  color={"#007dff"}
+                  fontSize={{ xs: "24px", sm: "26px", lg: "30px" }}
+                  fontWeight={700}
+                  zIndex={10}
+                >
+                  Audits
+                </Typography>
+                <Typography
+                  color={darkmode ? "white" : "black"}
+                  fontSize={{ xs: "24px", sm: "26px", lg: "60px" }}
+                  fontWeight={700}
+                >
+                  Kirby Audits
+                </Typography>
+              </Grid>
+              <Grid item lg={7} sm={6} xs={12}>
+                <Typography
+                  color={darkmode ? "white" : "black"}
+                  fontSize={{ xs: "24px", sm: "26px", lg: "65px" }}
+                  fontWeight={700}
+                >
+                  "Kirby DAO contract is revolutionary."
+                </Typography>
+                <Typography
+                  color={darkmode ? "white" : "black"}
+                  fontSize={{ xs: "24px", sm: "26px", lg: "20px" }}
+                  mt={"2rem"}
+                >
+                  Larry Lundy{" "}
+                  <span
+                    style={{
+                      fontSize: "13px",
+                      marginLeft: "1rem",
+                    }}
+                    className="transperant-text"
+                  >
+                    Formerly with CertiK
+                  </span>
+                </Typography>
+              </Grid>
+              <Grid item lg={9} sm={6} xs={12}>
+                <Typography
+                  color={darkmode ? "white" : "black"}
+                  fontSize={{ xs: "24px", sm: "26px", lg: "30px" }}
+                  fontWeight={700}
+                >
+                  CertiK
+                </Typography>
+                <Box
+                  display={"flex"}
+                  alignItems={"center"}
+                  justifyContent={"start"}
+                  gap={"1rem"}
+                  mt={"1rem"}
+                >
+                  <button className="blue-button">Kirby Token</button>
+                  <button className="blue-button">Kirby FI</button>
+                </Box>
+              </Grid>
+              <Grid item lg={3} sm={6} xs={12}>
+                <Typography
+                  color={darkmode ? "white" : "black"}
+                  fontSize={{ xs: "24px", sm: "30px", lg: "30px" }}
+                  fontWeight={700}
+                >
+                  Solidity Finance
+                </Typography>
+                <Box
+                  display={"flex"}
+                  alignItems={"center"}
+                  justifyContent={"start"}
+                  gap={"1rem"}
+                  mt={"1rem"}
+                >
+                  <button
+                    className={
+                      darkmode
+                        ? "white-button text-stretch"
+                        : "black-button text-stretch"
+                    }
+                  >
+                    Binanace Smartchain
+                  </button>
+                  <button
+                    className={darkmode ? "white-button" : "black-button"}
+                  >
+                    Ethereum
+                  </button>
+                </Box>
+              </Grid>
+            </Grid>
+          </Box>
+        </Box>
       </Container>
     </Box>
   );
