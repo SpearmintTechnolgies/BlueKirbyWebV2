@@ -296,7 +296,7 @@ function History({ darkmode, isMobile }) {
                   >
                     <BlockIcon sx={{ color: "#007dff" }} />
                     <Typography
-                      fontSize={{ xs: "15px", sm: "18px", lg: "20px" }}
+                      fontSize={{ xs: "11px", sm: "18px", lg: "20px" }}
                       fontWeight={"800"}
                       color={"white"}
                       textAlign={{ xs: "center", sm: "center", lg: "start" }}
@@ -306,7 +306,7 @@ function History({ darkmode, isMobile }) {
                     </Typography>
                     <LockOutlinedIcon sx={{ color: "#007dff" }} />
                     <Typography
-                      fontSize={{ xs: "15px", sm: "18px", lg: "20px" }}
+                      fontSize={{ xs: "11px", sm: "18px", lg: "20px" }}
                       fontWeight={"800"}
                       color={"white"}
                       textAlign={{ xs: "center", sm: "center", lg: "start" }}

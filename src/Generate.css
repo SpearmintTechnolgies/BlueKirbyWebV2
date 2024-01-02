@@ -238,7 +238,10 @@
   .desktop-view {
     display: none;
   }
-  .main-container-black.main-container-black {
+  .main-container-black {
+    padding: 30px;
+  }
+  .main-container-white {
     padding: 30px;
   }
 }

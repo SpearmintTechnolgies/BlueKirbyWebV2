@@ -9,6 +9,8 @@ function Footer() {
   return (
     <Box my={"2rem"}>
       <Container maxWidth="xl" className="global-flex">
+        <Box width={'100%'}>
+
         <Grid container>
           <Grid item lg={6} sm={6} xs={12}>
             <Box
@@ -18,7 +20,6 @@ function Footer() {
               alignItems={"center"}
               p={"1rem"}
             >
-              {" "}
               <img src={BlueKirbyLogo} alt="img" />
             </Box>
           </Grid>
@@ -49,6 +50,7 @@ function Footer() {
             </Box>
           </Grid>
         </Grid>
+        </Box>
       </Container>
     </Box>
   );

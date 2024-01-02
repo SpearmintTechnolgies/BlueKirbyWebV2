@@ -491,20 +491,24 @@ function ThirdSection({ darkmode, isMobile }) {
                 darkmode ? "main-container-black" : "main-container-white"
               }
               mt={"2rem"}
+              width={'100%'}
             >
-              <div className="">
-                <div className="flex w-[302px] flex-col gap-[12px] items-start shrink-0 flex-nowrap relative">
-                  <span className="h-[32px] shrink-0 basis-auto font-['Poppins'] text-[30px] font-semibold leading-[31.8px] text-[#007dff] relative text-left whitespace-nowrap z-[1]">
-                    Finance
-                  </span>
-                  <Typography
-                    fontSize={{ xs: "30px", sm: "40px", lg: "50px" }}
-                    fontWeight={700}
-                    color={darkmode ? "white" : "black"}
-                  >
-                    Tokenomics
-                  </Typography>
-                </div>
+              <div className="w-[300px]">
+                <Typography
+                  fontSize={{ xs: "20px", sm: "40px", lg: "50px" }}
+                  fontWeight={700}
+                  color={"#007dff"}
+                >
+                  Finance
+                </Typography>
+                <Typography
+                  fontSize={{ xs: "30px", sm: "40px", lg: "50px" }}
+                  fontWeight={700}
+                  color={darkmode ? "white" : "black"}
+                >
+                  Tokenomics
+                </Typography>
+
                 <div className="flex  flex-col gap-[32px] items-start shrink-0 flex-nowrap relative z-[3]">
                   <div className="flex flex-col md:flex-row items-start md:items-center gap-[25px] md:gap-[125px] items-start shrink-0 flex-nowrap relative z-[4]">
                     <div className="shrink-0 font-['Poppins'] text-[30px] font-semibold leading-[41.1px] relative text-left z-[5]">
@@ -661,7 +665,7 @@ function ThirdSection({ darkmode, isMobile }) {
           <Box
             position={"absolute"}
             zIndex={1}
-            left={{xs:"10px",sm:"300px"}}
+            left={{ xs: "10px", sm: "300px" }}
             top={"0px"}
             height={"400px"}
           >
@@ -711,7 +715,7 @@ function ThirdSection({ darkmode, isMobile }) {
                 <Typography
                   color={darkmode ? "white" : "black"}
                   fontSize={{ xs: "15px", sm: "18px", lg: "20px" }}
-                  mt={{xs:"1rem",sm:"2rem"}}
+                  mt={{ xs: "1rem", sm: "2rem" }}
                 >
                   Larry Lundy{" "}
                   <span
