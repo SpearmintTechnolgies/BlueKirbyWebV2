@@ -405,7 +405,7 @@ function ThirdSection({ darkmode, isMobile, setElement1 }) {
                     </Typography>
                     <Typography
                       color={darkmode ? "white" : "black"}
-                      fontSize={{ xs: "11px", sm: "20px", lg: "20px" }}
+                      fontSize={{ xs: "11px", sm: "20px", lg: "18px" }}
                     >
                       Kirby contract address <br />
                       FTM: 0x97bdAfe3830734acF12Da25359674277fcc33729
@@ -525,7 +525,7 @@ function ThirdSection({ darkmode, isMobile, setElement1 }) {
                     </div>
                   </div>
                 </div>
-                <Box mt={"4rem"}>
+                <Box mt={"3.5rem"}>
                   <a
                     href="https://ftmscan.com/token/0x97bdAfe3830734acF12Da25359674277fcc33729#tokenAnalytics"
                     target="_blank"

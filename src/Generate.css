@@ -369,7 +369,29 @@
   }
 
 }
-@media (min-width: 1440px)  {
+@media (min-width: 1440px) and (max-width: 1509px)  {
+  .ecosystem-card {
+    width: 444px;
+    height: 420px;
+  }
+  .ecosystem-text {
+    font-size: 40px;
+    font-weight: 600;
+  }
+  .orange-card {
+    width: 380px;
+    height: 260px;
+  }
+  .blue-card {
+    width: 380px;
+    height: 260px;
+  }
+  .gray-card {
+    width: 380px;
+    height: 260px;
+  }
+}
+@media (min-width: 1510px)   {
   .ecosystem-card {
     width: 477px;
     height: 420px;
