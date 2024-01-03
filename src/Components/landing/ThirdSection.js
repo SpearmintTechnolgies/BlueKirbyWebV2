@@ -684,7 +684,7 @@ function ThirdSection({ darkmode, isMobile, setElement1 }) {
               <Grid item lg={7} sm={6} xs={12}>
                 <Typography
                   color={darkmode || isMobile ? "white" : "black"}
-                  fontSize={{ xs: "13px", sm: "26px", lg: "42px" }}
+                  fontSize={{ xs: "13px", sm: "26px", lg: "40px" }}
                   fontWeight={700}
                 >
                   “Kirby has the safest and most simple token contract possible
