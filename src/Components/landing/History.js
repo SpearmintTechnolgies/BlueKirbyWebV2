@@ -29,7 +29,7 @@ function History({ darkmode, isMobile, setElement2 }) {
     {
       img: "https://paintswap.finance/images/logoRound.png",
       name: "PaintSwap",
-      link: "https://paintswap.finance/",
+      link: "https://paintswap.finance/marketplace/fantom/collections/blue-friends",
     },
     {
       img: "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/spookyswap.png",
@@ -71,7 +71,7 @@ function History({ darkmode, isMobile, setElement2 }) {
     {
       img: "https://paintswap.finance/images/logoRound.png",
       name: "PaintSwap",
-      link: "https://paintswap.finance/",
+      link: "https://paintswap.finance/marketplace/fantom/collections/blue-friends",
     },
     {
       img: "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/spookyswap.png",

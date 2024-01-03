@@ -156,7 +156,7 @@ const Ecosystem = ({ darkmode, isMobile, setElement }) => {
                   NFTs
                 </Typography>
                 <IconButton
-                  href="https://paintswap.finance/marketplace/fantom/collections/blue-friends"
+                  href="https://paintswap.finance/"
                   target="_blank"
                 >
                   <EastIcon
