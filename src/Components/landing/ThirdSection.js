@@ -378,7 +378,7 @@ function ThirdSection({ darkmode, isMobile, setElement1 }) {
             <Box
               className={`${
                 darkmode ? "main-container-black" : "main-container-white"
-              } `}
+              } scale`}
               mt={"2rem"}
             >
               <div className="w-full">
@@ -433,7 +433,7 @@ function ThirdSection({ darkmode, isMobile, setElement1 }) {
           <Grid item sm={12} lg={6}>
             <Box
               className={
-                darkmode ? "main-container-black" : "main-container-white"
+                darkmode ? "main-container-black scale" : "main-container-white scale"
               }
               mt={"2rem"}
               width={"100%"}

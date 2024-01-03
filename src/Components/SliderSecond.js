@@ -16,7 +16,7 @@ function SliderSecond({ item, className }) {
       <Box className={className}>
         {item.map((slide, index) => (
           <a href={slide.link} target="_blank" rel="noreferrer">
-            <Box width={"150px"} position={"relative"}>
+            <Box width={"150px"} position={"relative"} className="scale">
               <img src={iconbox} width={"100%"} alt="icon" />
               <Box
                 position={"absolute"}

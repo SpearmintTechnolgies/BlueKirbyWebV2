@@ -295,7 +295,7 @@ body {
 }
 
 .scale:hover {
-  transform: scale(1.1);
+  transform: scale(1.03);
 }
 
 .hover-color {
@@ -336,11 +336,11 @@ body {
 }
 @media (min-width: 1025px) and (max-width: 1279px) {
   .gif-wrapp {
-    height: 362px;
+    height: 372px;
   }
   .pointer-line {
     height: 480px;
-    width: 592px;
+    width: 620px;
     border-radius: 0 0 25px 25px;
     top: 4rem;
   }

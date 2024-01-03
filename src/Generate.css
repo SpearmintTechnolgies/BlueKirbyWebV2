@@ -8,7 +8,9 @@
   padding: 50px;
   background: black;
   border-radius: 40px;
+
 }
+
 .main-container-white {
   display: flex;
   align-items: flex-start;
@@ -19,7 +21,9 @@
   padding: 50px;
   background: white;
   border-radius: 40px;
+
 }
+
 .frame-1 {
   display: flex;
   flex-direction: column;
@@ -132,6 +136,9 @@
   background: linear-gradient(to top left, rgba(244, 165, 39, 0.399), black);
   border-radius: 12px;
 }
+.orange-card:hover {
+  background: linear-gradient(to bottom right, rgba(244, 165, 39, 0.399), black);
+}
 .gray-card {
   display: flex;
   flex-direction: column;
@@ -147,12 +154,14 @@
   background: linear-gradient(to top left, rgba(255, 255, 255, 0.351), black);
   border-radius: 12px;
 }
+.gray-card:hover {
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.351), black);
+}
 .blue-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-
   gap: 79px;
   position: relative;
   width: 400px;
@@ -163,6 +172,10 @@
   background: linear-gradient(to top left, rgba(21, 95, 192, 0.582), black);
   border-radius: 12px;
 }
+.blue-card:hover{
+  background: linear-gradient(to bottom right, rgba(21, 95, 192, 0.582), black);
+}
+
 .tranperant-button {
   background-color: rgba(255, 255, 255, 0.189);
   padding: 0.4rem 1rem;
@@ -348,7 +361,7 @@
 
 @media (min-width: 1280px)  and (max-width: 1439px) {
   .ecosystem-card {
-    width: 380px;
+    width: 420px;
     height: 360px;
   }
   .ecosystem-text {
