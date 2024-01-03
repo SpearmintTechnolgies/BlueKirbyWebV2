@@ -57,26 +57,16 @@ function Item({ item, darkmode, active, index }) {
 }
 
 function ThirdSection({ darkmode, isMobile, setElement1 }) {
-  const walleticon =
-    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/wallet-icon.png";
   const powerKirby =
     "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/power-kirby.png";
   const powerKirbymobile =
     "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/power-kirby-mobile.png";
-  const okxicon =
-    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/okx-icon.png";
   const tokenicon =
     "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/token-icon.png";
   const earth = "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/earth.png";
   const earthbutton =
     "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/earth-mobile.png";
-  const lbank = "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/Lbank.png";
-  const spookyswap =
-    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/spookyswap.png";
-  const solidly =
-    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/solidly.png";
-  const equalizer =
-    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/equilizer.png";
+
   const [items, setItems] = useState([
     {
       title: "Community",
@@ -95,26 +85,38 @@ function ThirdSection({ darkmode, isMobile, setElement1 }) {
     },
   ]);
   const [cards, setCards] = useState([
-    { card: "orange-card", image: lbank },
-    { card: "gray-card", image: okxicon },
-    { card: "blue-card", image: walleticon },
+    {
+      card: "orange-card",
+      image: "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/Lbank.png",
+    },
+    {
+      card: "gray-card",
+      image: "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/okx-icon.png",
+    },
+    {
+      card: "blue-card",
+      image:
+        "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/wallet-icon.png",
+    },
   ]);
   const [cards1, setCards1] = useState([
     {
       card: "orange-card",
-      image: spookyswap,
+      image:
+        "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/spookyswap.png",
       name: "SpookySwap",
       link: "https://spooky.fi/#/swap?inputCurrency=FTM&outputCurrency=0x97bdAfe3830734acF12Da25359674277fcc33729",
     },
     {
       card: "gray-card",
-      image: solidly,
+      image:
+        "https://pbs.twimg.com/profile_images/1723104544635142144/m0IykHiF_400x400.jpg",
       name: "Solidly",
       link: "https://solidly.exchange/",
     },
     {
       card: "blue-card",
-      image: equalizer,
+      image: "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/equilizer.png",
       name: "Equalizer",
       link: "https://equalizer.exchange/swap",
     },
@@ -247,7 +249,7 @@ function ThirdSection({ darkmode, isMobile, setElement1 }) {
                           alignItems={"center"}
                           width={"100%"}
                         >
-                          <img src={item.image} alt="bnb" width={60} />
+                          <img src={item.image} alt="bnb" className="circle-img-wrapp" />
                         </Box>
                       ) : (
                         <Box
@@ -352,7 +354,7 @@ function ThirdSection({ darkmode, isMobile, setElement1 }) {
                         alignItems={"center"}
                         width={"100%"}
                       >
-                        <img src={item.image} alt="bnb" width={60} />
+                        <img src={item.image} alt="bnb" className="circle-img-wrapp" />
                       </Box>
                       <Box
                         display={"flex"}
@@ -479,8 +481,8 @@ function ThirdSection({ darkmode, isMobile, setElement1 }) {
                       </Typography>
                     </div>
                     <div className=" shrink-0 font-['Poppins'] text-[30px] font-semibold leading-[41.1px] relative text-left z-[6]">
-                      <Typography color={"gray"}>
-                        buy/sell tax
+                      <Typography color={"gray"}> 
+                        Buy/Sell tax
                         <br />
                       </Typography>
                       <Typography

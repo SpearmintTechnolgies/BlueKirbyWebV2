@@ -380,3 +380,12 @@ body {
     top: 4rem;
   }
 }
+
+.circle-img-wrapp{
+  width: 60px;
+  border-radius: 50%;
+}
+.circle-img-wrapp1{
+  width: 80px;
+  border-radius: 50%;
+}

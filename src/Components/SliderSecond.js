@@ -26,7 +26,7 @@ function SliderSecond({ item, className }) {
                 alignItems={"center"}
                 justifyContent={"space-between"}
               >
-                <img src={slide.img} width={"80px"} alt="logo" />
+                <img src={slide.img} className="circle-img-wrapp1" alt="logo" />
                 <Typography color={"gray"} fontSize={"13px"} mt={"1rem"}>
                   {slide.name}
                 </Typography>

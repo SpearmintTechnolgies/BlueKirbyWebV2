@@ -1,5 +1,5 @@
-import { Box, Container, Divider, Grid, Typography } from "@mui/material";
-import React, { useState } from "react";
+import { Box, Container,  Grid, Typography } from "@mui/material";
+import React from "react";
 import SliderSecond from "../SliderSecond";
 import BlockIcon from "@mui/icons-material/Block";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
@@ -13,17 +13,6 @@ function History({ darkmode, isMobile, setElement2 }) {
     "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/currency.png";
   const currencymobile =
     "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/currency-mobile.png";
-  const spookyswap =
-    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/spookyswap.png";
-  const equalizer =
-    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/equilizer.png";
-  const fantom = "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/ftm.png";
-  const CoinGecko = "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/CG.png";
-  const LBank = "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/Lbank.png";
-  const solidly =
-    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/solidly.png";
-  const coinmarketcap =
-    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/cmc.png";
   const coingap =
     "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/coingape.jpg";
   const coinography =
@@ -38,113 +27,96 @@ function History({ darkmode, isMobile, setElement2 }) {
     
   const items1 = [
     {
-      img: spookyswap,
+      img: "https://paintswap.finance/images/logoRound.png",
+      name: "PaintSwap",
+      link: "https://paintswap.finance/",
+    },
+    {
+      img: "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/spookyswap.png",
       name: "SpookySwap",
       link: "https://spooky.fi/#/swap?inputCurrency=FTM&outputCurrency=0x97bdAfe3830734acF12Da25359674277fcc33729",
     },
     {
-      img: equalizer,
+      img: "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/equilizer.png",
       name: "Equalizer",
       link: "https://equalizer.exchange/swap",
     },
     {
-      img: fantom,
+      img: "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/ftm.png",
       name: "Fantom",
       link: "https://fantom.foundation/",
     },
     {
-      img: CoinGecko,
+      img: "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/CG.png",
       name: "CoinGecko",
       link: "https://www.coingecko.com/en/coins/blue-kirby",
     },
     {
-      img: LBank,
+      img: "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/Lbank.png",
       name: "LBank",
       link: "https://www.lbank.com/trade/kirby_usdt",
     },
     {
-      img: solidly,
+      img: "https://pbs.twimg.com/profile_images/1723104544635142144/m0IykHiF_400x400.jpg",
       name: "Solidly",
       link: "https://solidly.exchange/",
     },
     {
-      img: coinmarketcap,
+      img: "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/cmc.png",
       name: "Coinmarketcap",
       link: "https://coinmarketcap.com/currencies/blue-kirby/",
     },
   ];
   const items2 = [
     {
-      img: spookyswap,
+      img: "https://paintswap.finance/images/logoRound.png",
+      name: "PaintSwap",
+      link: "https://paintswap.finance/",
+    },
+    {
+      img: "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/spookyswap.png",
       name: "SpookySwap",
       link: "https://spooky.fi/#/swap?inputCurrency=FTM&outputCurrency=0x97bdAfe3830734acF12Da25359674277fcc33729",
     },
     {
-      img: equalizer,
+      img: "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/equilizer.png",
       name: "Equalizer",
       link: "https://equalizer.exchange/swap",
     },
     {
-      img: fantom,
+      img: "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/ftm.png",
       name: "Fantom",
       link: "https://fantom.foundation/",
     },
     {
-      img: CoinGecko,
+      img: "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/CG.png",
       name: "CoinGecko",
       link: "https://www.coingecko.com/en/coins/blue-kirby",
     },
     {
-      img: LBank,
+      img: "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/Lbank.png",
       name: "LBank",
       link: "https://www.lbank.com/trade/kirby_usdt",
     },
     {
-      img: solidly,
+      img: "https://pbs.twimg.com/profile_images/1723104544635142144/m0IykHiF_400x400.jpg",
       name: "Solidly",
       link: "https://solidly.exchange/",
     },
     {
-      img: coinmarketcap,
+      img: "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/cmc.png",
       name: "Coinmarketcap",
       link: "https://coinmarketcap.com/currencies/blue-kirby/",
     },
   ];
+
+
   React.useEffect(() => {
     let element = document.getElementById("roadmap");
     setElement2(element);
   }, []);
 
-  const [roadmap, setRoadmap] = useState([
-    {
-      date: "December 15, 2023",
-      title: "Blue Kirby is born",
-      secondtitle: "The Idea",
-      description:
-        "Blue Kirby Launched on $FTM Network during a long haul of it being an abandoned blockchain, restoring volume and hope.",
-    },
-    {
-      date: "December 28, 2023",
-      title: "10M+ market cap breached",
-      secondtitle: "The Growth",
-      description:
-        "Community of Blue Kirby ranks as the top ten communities of all crypto memes, breaching 10m+ mcap on Fantom network which is a first for a FTM memecoin.",
-    },
-    {
-      date: "February 25, 2024",
-      title: "Glory Restored",
-      secondtitle: "Global Recognition",
-      description:
-        "Blue Kirby will unleash a large-scale global influencer campaign to bring recognition to the Kirby utilities and community.",
-    },
-    {
-      date: "June 18, 2024",
-      title: "The Future Awaits",
-      secondtitle: "Blue Chip Token",
-      description:
-        "Multiple listings on top tier exchanges with multiple completed and incubated projects.250k+ in shared Kirbot revenue",
-    },
-  ]);
+
   return (
     <Box my={"2rem"}>
       <Container maxWidth="xl" className="global-flex">
