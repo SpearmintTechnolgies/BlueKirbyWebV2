@@ -109,7 +109,7 @@ const Ecosystem = ({ darkmode, isMobile, setElement }) => {
           <Grid item xs={12} sm={6} lg={4}>
             <Box position={"relative"} className="ecosystem-card" >
               <Box position={"absolute"} top={"1rem"} left={"5rem"} zIndex={1}>
-                <p className="ecosystem-text">Blue Kirby Incubator</p>
+                <p className="ecosystem-text">Blue Kirby <br></br> Incubator</p>
               </Box>
               <img
                 src={token}
@@ -141,7 +141,7 @@ const Ecosystem = ({ darkmode, isMobile, setElement }) => {
           <Grid item xs={12} sm={6} lg={4}>
             <Box position={"relative"} className="ecosystem-card">
               <Box position={"absolute"} top={"1rem"} left={"5rem"} zIndex={1}>
-                <p className="ecosystem-text">Blue Kirby NFTs</p>
+                <p className="ecosystem-text">Blue Kirby <br></br> NFTs</p>
               </Box>
               <img
                 src={nft}
@@ -178,7 +178,7 @@ const Ecosystem = ({ darkmode, isMobile, setElement }) => {
           <Grid item xs={12} sm={6} lg={4}>
             <Box position={"relative"} className="ecosystem-card">
               <Box position={"absolute"} top={"1rem"} left={"5rem"} zIndex={1}>
-                <p className="ecosystem-text">Blue Kirby DeFi</p>
+                <p className="ecosystem-text">Blue Kirby <br></br> DeFi</p>
               </Box>
               <img
                 src={defi}
