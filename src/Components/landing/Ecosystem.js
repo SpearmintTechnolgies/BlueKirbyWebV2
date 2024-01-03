@@ -1,32 +1,21 @@
 import { Box, Container, Grid, IconButton, Typography } from "@mui/material";
-import React, { useEffect, useState } from "react";
-import tokencard from "../../images/tokencard.png";
-import nftcard from "../../images/nftcard.png";
-import deficard from "../../images/deficard.png";
+import React, { useState } from "react";
 import EastIcon from "@mui/icons-material/East";
 import ReactSimplyCarousel from "react-simply-carousel";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import slider1 from "../../images/slider1.png";
-import slider2 from "../../images/slider2.png";
-import slider3 from "../../images/slider3.png";
-import news1 from "../../images/news1.jpg";
-import news2 from "../../images/news2.webp";
-import news3 from "../../images/news3.webp";
-import news4 from "../../images/news4.jpg";
-import news5 from "../../images/news5.jpg";
-import token from "../../images/token-icon.png";
-import nft from "../../images/nft-icon.png";
-import defi from "../../images/defi-icon.png";
 
 const Ecosystem = ({ darkmode, isMobile, setElement }) => {
-  var [item, setItem] = useState([
-    slider1,
-    slider2,
-    slider3,
-    slider1,
-    slider2,
-    slider3,
-  ]);
+  const news1 = "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/news1.jpg";
+  const news2 = "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/news2.webp";
+  const news3 = "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/news3.webp";
+  const news4 = "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/news4.jpg";
+  const news5 = "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/news5.jpg";
+  const token =
+    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/token-icon.png";
+  const nft = "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/nft-icon.png";
+  const defi =
+    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/defi-icon.png";
+
   const [items, setItems] = useState([
     {
       image: news1,
@@ -107,9 +96,11 @@ const Ecosystem = ({ darkmode, isMobile, setElement }) => {
           justifyContent={"center"}
         >
           <Grid item xs={12} sm={6} lg={4}>
-            <Box position={"relative"} className="ecosystem-card" >
+            <Box position={"relative"} className="ecosystem-card">
               <Box position={"absolute"} top={"1rem"} left={"5rem"} zIndex={1}>
-                <p className="ecosystem-text">Blue Kirby <br></br> Incubator</p>
+                <p className="ecosystem-text">
+                  Blue Kirby <br></br> Incubator
+                </p>
               </Box>
               <img
                 src={token}
@@ -141,7 +132,9 @@ const Ecosystem = ({ darkmode, isMobile, setElement }) => {
           <Grid item xs={12} sm={6} lg={4}>
             <Box position={"relative"} className="ecosystem-card">
               <Box position={"absolute"} top={"1rem"} left={"5rem"} zIndex={1}>
-                <p className="ecosystem-text">Blue Kirby <br></br> NFTs</p>
+                <p className="ecosystem-text">
+                  Blue Kirby <br></br> NFTs
+                </p>
               </Box>
               <img
                 src={nft}
@@ -178,7 +171,9 @@ const Ecosystem = ({ darkmode, isMobile, setElement }) => {
           <Grid item xs={12} sm={6} lg={4}>
             <Box position={"relative"} className="ecosystem-card">
               <Box position={"absolute"} top={"1rem"} left={"5rem"} zIndex={1}>
-                <p className="ecosystem-text">Blue Kirby <br></br> DeFi</p>
+                <p className="ecosystem-text">
+                  Blue Kirby <br></br> DeFi
+                </p>
               </Box>
               <img
                 src={defi}
@@ -253,9 +248,13 @@ const Ecosystem = ({ darkmode, isMobile, setElement }) => {
               >
                 {items.map((item, index) => (
                   <a href={item.link} target="_blank" rel="noreferrer">
-                    <Box mx={{ xs: "0rem", sm: "2rem" }} key={index} >
+                    <Box mx={{ xs: "0rem", sm: "2rem" }} key={index}>
                       <div className="news-box-wrapp ">
-                        <img src={item.image} alt="slider" className="news-img-wrapp" />
+                        <img
+                          src={item.image}
+                          alt="slider"
+                          className="news-img-wrapp"
+                        />
                       </div>
                       <Typography
                         fontSize={"13px"}
@@ -265,7 +264,11 @@ const Ecosystem = ({ darkmode, isMobile, setElement }) => {
                       >
                         {item.date}
                       </Typography>
-                      <Typography fontSize={"15px"} color={darkmode?"white":"black"} ml={"5px"}>
+                      <Typography
+                        fontSize={"15px"}
+                        color={darkmode ? "white" : "black"}
+                        ml={"5px"}
+                      >
                         {item.title}
                       </Typography>
                     </Box>

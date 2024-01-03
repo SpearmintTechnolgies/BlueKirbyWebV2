@@ -1,5 +1,5 @@
 import React from "react";
-import BlueKirbyLogo from "../images/kirbyicon.svg";
+
 import { Box, Container, IconButton, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -53,6 +53,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 }));
 
 const Navbar = ({ darkmode, setDarkmode, element, element1, element2 }) => {
+  const BlueKirbyLogo = "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/kirbyicon.svg";
   const scroll2El = (elID) => {
     if (elID) {
       elID.scrollIntoView({
@@ -92,6 +93,7 @@ const Navbar = ({ darkmode, setDarkmode, element, element1, element2 }) => {
       scroll2El2(element2);
     }, 100);
   };
+
   return (
     <Box>
       <Container maxWidth="md">

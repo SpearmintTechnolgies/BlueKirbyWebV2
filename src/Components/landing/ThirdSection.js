@@ -1,21 +1,8 @@
 import { Box, Container, Grid, IconButton, Typography } from "@mui/material";
 import React, { useState } from "react";
-import Carousel from "react-material-ui-carousel";
-import bnbicon from "../../images/bnb-icon.png";
-import walleticon from "../../images/wallet-icon.png";
-import powerKirby from "../../images/power-kirby.png";
-import powerKirbymobile from "../../images/power-kirby-mobile.png";
-import okxicon from "../../images/okx-icon.png";
-import tokenicon from "../../images/token-icon.png";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
+import Carousel from "react-material-ui-carousel";
 import ReactSimplyCarousel from "react-simply-carousel";
-import earth from "../../images/earth.png";
-import earthbutton from "../../images/earth-mobile.png";
-import lbank from "../../images/Lbank.png";
-import spookyswap from "../../images/spookyswap.png";
-import solidly from "../../images/solidly.png";
-import equalizer from "../../images/equilizer.png";
-import { Home } from "@mui/icons-material";
 
 function Item({ item, darkmode, active, index }) {
   return (
@@ -70,6 +57,26 @@ function Item({ item, darkmode, active, index }) {
 }
 
 function ThirdSection({ darkmode, isMobile, setElement1 }) {
+  const walleticon =
+    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/wallet-icon.png";
+  const powerKirby =
+    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/power-kirby.png";
+  const powerKirbymobile =
+    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/power-kirby-mobile.png";
+  const okxicon =
+    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/okx-icon.png";
+  const tokenicon =
+    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/token-icon.png";
+  const earth = "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/earth.png";
+  const earthbutton =
+    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/earth-mobile.png";
+  const lbank = "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/Lbank.png";
+  const spookyswap =
+    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/spookyswap.png";
+  const solidly =
+    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/solidly.png";
+  const equalizer =
+    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/equilizer.png";
   const [items, setItems] = useState([
     {
       title: "Community",
@@ -244,13 +251,13 @@ function ThirdSection({ darkmode, isMobile, setElement1 }) {
                         </Box>
                       ) : (
                         <Box
-                        display={"flex"}
-                        justifyContent={"space-between"}
-                        alignItems={"center"}
-                        width={"100%"}
-                      >
-                       <div className="blank-circle"></div>
-                      </Box>
+                          display={"flex"}
+                          justifyContent={"space-between"}
+                          alignItems={"center"}
+                          width={"100%"}
+                        >
+                          <div className="blank-circle"></div>
+                        </Box>
                       )}
 
                       <Box
@@ -433,7 +440,9 @@ function ThirdSection({ darkmode, isMobile, setElement1 }) {
           <Grid item sm={12} lg={6}>
             <Box
               className={
-                darkmode ? "main-container-black scale" : "main-container-white scale"
+                darkmode
+                  ? "main-container-black scale"
+                  : "main-container-white scale"
               }
               mt={"2rem"}
               width={"100%"}

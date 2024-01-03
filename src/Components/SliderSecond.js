@@ -1,6 +1,5 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
-import iconbox from "../images/icon-box.svg";
 
 function SliderSecond({ item, className }) {
   return (
@@ -17,7 +16,7 @@ function SliderSecond({ item, className }) {
         {item.map((slide, index) => (
           <a href={slide.link} target="_blank" rel="noreferrer">
             <Box width={"150px"} position={"relative"} className="scale">
-              <img src={iconbox} width={"100%"} alt="icon" />
+              <img src={"https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/icon-box.svg"} width={"100%"} alt="icon" />
               <Box
                 position={"absolute"}
                 top={"20px"}

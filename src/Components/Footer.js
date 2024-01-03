@@ -1,10 +1,10 @@
-import { Box, Container, Grid, IconButton } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import React from "react";
-import BlueKirbyLogo from "../images/kirbyicon.svg";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 
 function Footer() {
+  const BlueKirbyLogo = "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/kirbyicon.svg";
   return (
     <Box my={"2rem"}>
       <Container maxWidth="xl" className="global-flex">

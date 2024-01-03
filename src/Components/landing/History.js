@@ -1,28 +1,41 @@
 import { Box, Container, Divider, Grid, Typography } from "@mui/material";
 import React, { useState } from "react";
 import SliderSecond from "../SliderSecond";
-import taxbg from "../../images/tax-section-bg.png";
-import taxbgmobile from "../../images/tax-section-bg-mobile.png";
-import currency from "../../images/currency.png";
-import currencymobile from "../../images/currency-mobile.png";
 import BlockIcon from "@mui/icons-material/Block";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import spookyswap from "../../images/spookyswap.png";
-import equalizer from "../../images/equilizer.png";
-import fantom from "../../images/ftm.png";
-import CoinGecko from "../../images/CG.png";
-import LBank from "../../images/Lbank.png";
-import solidly from "../../images/solidly.png";
-import coinmarketcap from "../../images/cmc.png";
-
-import coingap from "../../images/coingape.jpg";
-import coinography from "../../images/coinography.png";
-import cryptonomist from "../../images/cryptonomist.jpg";
-import memecoinist from "../../images/memecoinist.png";
-import yahoo from "../../images/yahoo.png";
-import benzinga from "../../images/benzinga.jpg";
 
 function History({ darkmode, isMobile, setElement2 }) {
+  const taxbg =
+    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/tax-section-bg.png";
+  const taxbgmobile =
+    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/tax-section-bg-mobile.png";
+  const currency =
+    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/currency.png";
+  const currencymobile =
+    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/currency-mobile.png";
+  const spookyswap =
+    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/spookyswap.png";
+  const equalizer =
+    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/equilizer.png";
+  const fantom = "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/ftm.png";
+  const CoinGecko = "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/CG.png";
+  const LBank = "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/Lbank.png";
+  const solidly =
+    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/solidly.png";
+  const coinmarketcap =
+    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/cmc.png";
+  const coingap =
+    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/coingape.jpg";
+  const coinography =
+    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/coinography.png";
+  const cryptonomist =
+    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/cryptonomist.jpg";
+  const memecoinist =
+    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/memecoinist.png";
+  const yahoo = "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/yahoo.png";
+  const benzinga =
+    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/benzinga.jpg";
+    
   const items1 = [
     {
       img: spookyswap,
@@ -529,7 +542,7 @@ function History({ darkmode, isMobile, setElement2 }) {
                         color={darkmode ? "white" : "black"}
                         fontSize={"30px"}
                         fontWeight={700}
-                      > 
+                      >
                         Coingape
                       </Typography>
                       <a
@@ -537,12 +550,10 @@ function History({ darkmode, isMobile, setElement2 }) {
                         target="_blank"
                         rel="noreferrer"
                       >
-                        <Typography color={"gray"}>Open</Typography> 
+                        <Typography color={"gray"}>Open</Typography>
                       </a>
                     </Box>
                   </Box>
-                    
-
                 </Grid>
                 <Grid item lg={4} sm={6} xs={12}>
                   <Box
@@ -691,7 +702,7 @@ function History({ darkmode, isMobile, setElement2 }) {
           >
             <Box ml={{ xs: "0rem", sm: "2rem" }}>
               <Typography
-                fontSize={{ xs: "20px", sm: "35px", lg: "35px" }} 
+                fontSize={{ xs: "20px", sm: "35px", lg: "35px" }}
                 fontWeight={"800"}
                 color={"#007dff"}
                 textAlign={{ xs: "center", sm: "center", lg: "start" }}

@@ -1,13 +1,17 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
 import React from "react";
-import heromaindark from "../../images/hero-main-dark.png";
-import heromainlight from "../../images/hero-main-light.png";
-import icon from "../../images/iconsmall.svg";
 import Slider from "../Slider";
-import heroseconddark from "../../images/hero-second-dark.png";
-import heromain2 from '../../images/hero-main-2.png'
 
 const Herosection = ({ darkmode, isMobile }) => {
+  const heromaindark =
+    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/hero-main-dark.png";
+  const heromainlight =
+    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/hero-main-light.png";
+  const icon =
+    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/iconsmall.svg";
+  const heroseconddark =
+    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/hero-second-dark.png";
+
   return (
     <Box my={"2rem"}>
       <Container maxWidth="xl" className="global-flex">
@@ -103,7 +107,6 @@ const Herosection = ({ darkmode, isMobile }) => {
               >
                 <img
                   src="https://s3-alpha-sig.figma.com/img/39a2/4292/c6eedc8b1346512ddcefe16676e7a5f5?Expires=1704672000&Signature=hEWl2N8-bfYJIHyDGQJxQrCZnHJxvdq3sLIAxdnQIIhPurgYdIJMkY0KeyxGOgY12L5G3gu1AWZ6wQ-1XcXix33ZpBhohXHmxFu-tgD6fWftiw-9-6Z3JH5FHnEZMvTBZPYOFLoQ~PSFDM0pgdM92hOjL~70utcdvBZN~FHyCxc7ea9w9-TTGtSX0sLTLMt52wqrkNzDfMxRtpQEfAxaIVC1OPYOCrawVe4j7-yTwi4osKqk0xOJIUzbCvBiIHAbtE-rOyL47I9azRjU7wWa0aTaACC8i2vO20B7wfhAZA~JEvq~pTrqCEri9HgCXTL-ThO2MSaJQ4cZWlmSmR77jQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
-                //  src={heromain2}
                   alt="main"
                   className="gif-wrapp"
                 />
