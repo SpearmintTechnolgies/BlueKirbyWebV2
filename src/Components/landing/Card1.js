@@ -5,6 +5,7 @@ import heromainlight from "../../images/hero-main-light.png";
 import icon from "../../images/iconsmall.svg";
 import Slider from "../Slider";
 import heroseconddark from "../../images/hero-second-dark.png";
+import heromain2 from '../../images/hero-main-2.png'
 
 const Herosection = ({ darkmode, isMobile }) => {
   return (
@@ -18,7 +19,7 @@ const Herosection = ({ darkmode, isMobile }) => {
           gap={"3rem"}
         >
           <Grid container spacing={5}>
-            <Grid item xs={12} sm={8} lg={8}>
+            <Grid item xs={12} sm={8} lg={8} xl={8}>
               <Box
                 display={"flex"}
                 justifyContent={"center"}
@@ -93,19 +94,18 @@ const Herosection = ({ darkmode, isMobile }) => {
                 </Box>
               </Box>
             </Grid>
-            <Grid item xs={12} sm={4} lg={4}>
+            <Grid item xs={12} sm={4} lg={4} xl={4}>
               <Box
                 display={{ xs: "hidden", sm: "flex" }}
                 justifyContent={"center"}
                 alignItems={"center"}
-                width={{ lg: "100%", sm: "100%" }}
-                height={{ lg: "450px", sm: "320px" }}
                 position={"relative"}
               >
                 <img
                   src="https://s3-alpha-sig.figma.com/img/39a2/4292/c6eedc8b1346512ddcefe16676e7a5f5?Expires=1704672000&Signature=hEWl2N8-bfYJIHyDGQJxQrCZnHJxvdq3sLIAxdnQIIhPurgYdIJMkY0KeyxGOgY12L5G3gu1AWZ6wQ-1XcXix33ZpBhohXHmxFu-tgD6fWftiw-9-6Z3JH5FHnEZMvTBZPYOFLoQ~PSFDM0pgdM92hOjL~70utcdvBZN~FHyCxc7ea9w9-TTGtSX0sLTLMt52wqrkNzDfMxRtpQEfAxaIVC1OPYOCrawVe4j7-yTwi4osKqk0xOJIUzbCvBiIHAbtE-rOyL47I9azRjU7wWa0aTaACC8i2vO20B7wfhAZA~JEvq~pTrqCEri9HgCXTL-ThO2MSaJQ4cZWlmSmR77jQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+                //  src={heromain2}
                   alt="main"
-                  className="w-full h-full rounded-3xl"
+                  className="gif-wrapp"
                 />
                 <Box position={"absolute"} top={"40px"} left={"30px"}>
                   <button className="blue-button">

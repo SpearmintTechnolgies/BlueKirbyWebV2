@@ -1,8 +1,5 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Container, Divider, Grid, Typography } from "@mui/material";
 import React, { useState } from "react";
-import monkey from "../../images/monkey.png";
-import cherry from "../../images/cherry.png";
-import shield from "../../images/shield.png";
 import SliderSecond from "../SliderSecond";
 import taxbg from "../../images/tax-section-bg.png";
 import taxbgmobile from "../../images/tax-section-bg-mobile.png";
@@ -17,6 +14,13 @@ import CoinGecko from "../../images/CG.png";
 import LBank from "../../images/Lbank.png";
 import solidly from "../../images/solidly.png";
 import coinmarketcap from "../../images/cmc.png";
+
+import coingap from "../../images/coingape.jpg";
+import coinography from "../../images/coinography.png";
+import cryptonomist from "../../images/cryptonomist.jpg";
+import memecoinist from "../../images/memecoinist.png";
+import yahoo from "../../images/yahoo.png";
+import benzinga from "../../images/benzinga.jpg";
 
 function History({ darkmode, isMobile, setElement2 }) {
   const items1 = [
@@ -487,6 +491,197 @@ function History({ darkmode, isMobile, setElement2 }) {
               </Grid>
             </Grid>
           </Box>
+          <Box mt={"4rem"}>
+            <Typography
+              fontSize={{ xs: "20px", sm: "35px", lg: "35px" }}
+              fontWeight={"800"}
+              color={"#007dff"}
+              textAlign={{ xs: "center", sm: "center", lg: "start" }}
+            >
+              News
+            </Typography>
+            <Typography
+              fontSize={{ xs: "20px", sm: "30px", lg: "60px" }}
+              fontWeight={"800"}
+              color={darkmode ? "white" : "black"}
+              textAlign={{ xs: "center", sm: "center", lg: "start" }}
+            >
+              Kirby in News
+            </Typography>
+
+            <Box>
+              <Grid container spacing={"1rem"}>
+                <Grid item lg={4} sm={6} xs={12}>
+                  <Box
+                    display={"flex"}
+                    justifyContent={"start"}
+                    alignItems={"center"}
+                    p={"1rem"}
+                    gap={"1rem"}
+                  >
+                    <img
+                      src={coingap}
+                      alt="coingap"
+                      className="mini-news-wrapp"
+                    />
+                    <Box>
+                      <Typography
+                        color={darkmode ? "white" : "black"}
+                        fontSize={"30px"}
+                        fontWeight={700}
+                      > 
+                        Coingape
+                      </Typography>
+                      <a
+                        href="https://coingape.com/press-releases/the-phantoms-redemption-and-blue-kirbys-ascent-in-the-ever-evolving-cryptocosm/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <Typography color={"gray"}>Open</Typography> 
+                      </a>
+                    </Box>
+                  </Box>
+                    
+
+                </Grid>
+                <Grid item lg={4} sm={6} xs={12}>
+                  <Box
+                    display={"flex"}
+                    justifyContent={"start"}
+                    alignItems={"center"}
+                    p={"1rem"}
+                    gap={"1rem"}
+                  >
+                    <img
+                      src={cryptonomist}
+                      alt="coingap"
+                      className="mini-news-wrapp"
+                    />
+                    <Box>
+                      <Typography
+                        color={darkmode ? "white" : "black"}
+                        fontSize={"30px"}
+                        fontWeight={700}
+                      >
+                        Cryptonomist
+                      </Typography>
+                      <a
+                        href="https://en.cryptonomist.ch/2023/12/30/blue-kirbys-role-fantoms/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <Typography color={"gray"}>Open</Typography>
+                      </a>
+                    </Box>
+                  </Box>
+                </Grid>
+                <Grid item lg={4} sm={6} xs={12}>
+                  <Box
+                    display={"flex"}
+                    justifyContent={"start"}
+                    alignItems={"center"}
+                    p={"1rem"}
+                    gap={"1rem"}
+                  >
+                    <img
+                      src={coinography}
+                      alt="coingap"
+                      className="mini-news-wrapp"
+                    />
+                    <Box>
+                      <Typography
+                        color={darkmode ? "white" : "black"}
+                        fontSize={"30px"}
+                        fontWeight={700}
+                      >
+                        Coinography
+                      </Typography>
+
+                      <Typography color={"gray"}>Posting soon</Typography>
+                    </Box>
+                  </Box>
+                </Grid>
+                <Grid item lg={4} sm={6} xs={12}>
+                  <Box
+                    display={"flex"}
+                    justifyContent={"start"}
+                    alignItems={"center"}
+                    p={"1rem"}
+                    gap={"1rem"}
+                  >
+                    <img
+                      src={memecoinist}
+                      alt="coingap"
+                      className="mini-news-wrapp"
+                    />
+                    <Box>
+                      <Typography
+                        color={darkmode ? "white" : "black"}
+                        fontSize={"30px"}
+                        fontWeight={700}
+                      >
+                        Memecoinist
+                      </Typography>
+
+                      <Typography color={"gray"}>Posting soon</Typography>
+                    </Box>
+                  </Box>
+                </Grid>
+                <Grid item lg={4} sm={6} xs={12}>
+                  <Box
+                    display={"flex"}
+                    justifyContent={"start"}
+                    alignItems={"center"}
+                    p={"1rem"}
+                    gap={"1rem"}
+                  >
+                    <img
+                      src={yahoo}
+                      alt="coingap"
+                      className="mini-news-wrapp"
+                    />
+                    <Box>
+                      <Typography
+                        color={darkmode ? "white" : "black"}
+                        fontSize={"30px"}
+                        fontWeight={700}
+                      >
+                        Yahoo.com
+                      </Typography>
+
+                      <Typography color={"gray"}>Posting soon</Typography>
+                    </Box>
+                  </Box>
+                </Grid>
+                <Grid item lg={4} sm={6} xs={12}>
+                  <Box
+                    display={"flex"}
+                    justifyContent={"start"}
+                    alignItems={"center"}
+                    p={"1rem"}
+                    gap={"1rem"}
+                  >
+                    <img
+                      src={benzinga}
+                      alt="coingap"
+                      className="mini-news-wrapp"
+                    />
+                    <Box>
+                      <Typography
+                        color={darkmode ? "white" : "black"}
+                        fontSize={"30px"}
+                        fontWeight={700}
+                      >
+                        Benzinga
+                      </Typography>
+
+                      <Typography color={"gray"}>Posting soon</Typography>
+                    </Box>
+                  </Box>
+                </Grid>
+              </Grid>
+            </Box>
+          </Box>
           <Box
             mt={"2rem"}
             width={"100%"}
@@ -496,7 +691,7 @@ function History({ darkmode, isMobile, setElement2 }) {
           >
             <Box ml={{ xs: "0rem", sm: "2rem" }}>
               <Typography
-                fontSize={{ xs: "20px", sm: "35px", lg: "35px" }}
+                fontSize={{ xs: "20px", sm: "35px", lg: "35px" }} 
                 fontWeight={"800"}
                 color={"#007dff"}
                 textAlign={{ xs: "center", sm: "center", lg: "start" }}

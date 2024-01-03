@@ -30,19 +30,19 @@ function Item({ item, darkmode, active, index }) {
           {item.title}
         </Typography>
         <Box
-          className={active === 0 ? "vector-active" : "vector-inactive"}
+          className={active === 2 ? "vector-active" : "vector-inactive"}
           top={{ xs: "1rem", lg: "30px" }}
-          left={{ xs: "1rem", sm: "50rem", lg: "75rem" }}
+          left={{ xs: "1rem", sm: "50rem", lg: "63rem" }}
         ></Box>
         <Box
-          className={active === 1 ? "vector-active" : "vector-inactive"}
+          className={active === 0 ? "vector-active" : "vector-inactive"}
           top={{ xs: "1rem", lg: "30px" }}
           left={{ xs: "6.5rem", sm: "44rem", lg: "69rem" }}
         ></Box>
         <Box
-          className={active === 2 ? "vector-active" : "vector-inactive"}
+          className={active === 1 ? "vector-active" : "vector-inactive"}
           top={{ xs: "1rem", lg: "30px" }}
-          left={{ xs: "12rem", sm: "38rem", lg: "63rem" }}
+          left={{ xs: "12rem", sm: "38rem", lg: "75rem" }}
         ></Box>
         <div className="frame-2">
           <Typography
@@ -77,14 +77,14 @@ function ThirdSection({ darkmode, isMobile, setElement1 }) {
         "Blue Kirby has one of the strongest memecoin communities in all of crypto. Never ending grit and persistence is what keeps us together. Good vibes mixed with a professional family of admins, devs, builders, designers and advisors.",
     },
     {
-      title: "Innovation",
-      description:
-        "Blue Kirby thrives on innovation, constantly pushing the boundaries of what's possible in the crypto space. From cutting-edge technology to groundbreaking ideas, our commitment to innovation sets us apart and propels us toward new horizons.",
-    },
-    {
       title: "Longevity",
       description:
         "Blue Kirby is not just a momentary trend; it's a journey for the long haul. We focus on sustainable growth, building a foundation for longevity in the crypto space. Our vision extends beyond the immediate future, ensuring Blue Kirby's enduring impact.",
+    },
+    {
+      title: "Innovation",
+      description:
+        "Blue Kirby thrives on innovation, constantly pushing the boundaries of what's possible in the crypto space. From cutting-edge technology to groundbreaking ideas, our commitment to innovation sets us apart and propels us toward new horizons.",
     },
   ]);
   const [cards, setCards] = useState([
@@ -240,10 +240,17 @@ function ThirdSection({ darkmode, isMobile, setElement1 }) {
                           alignItems={"center"}
                           width={"100%"}
                         >
-                          <img src={item.image} alt="bnb" width={30} />
+                          <img src={item.image} alt="bnb" width={60} />
                         </Box>
                       ) : (
-                        ""
+                        <Box
+                        display={"flex"}
+                        justifyContent={"space-between"}
+                        alignItems={"center"}
+                        width={"100%"}
+                      >
+                       <div className="blank-circle"></div>
+                      </Box>
                       )}
 
                       <Box
@@ -338,7 +345,7 @@ function ThirdSection({ darkmode, isMobile, setElement1 }) {
                         alignItems={"center"}
                         width={"100%"}
                       >
-                        <img src={item.image} alt="bnb" width={30} />
+                        <img src={item.image} alt="bnb" width={60} />
                       </Box>
                       <Box
                         display={"flex"}
@@ -677,7 +684,7 @@ function ThirdSection({ darkmode, isMobile, setElement1 }) {
               <Grid item lg={7} sm={6} xs={12}>
                 <Typography
                   color={darkmode || isMobile ? "white" : "black"}
-                  fontSize={{ xs: "13px", sm: "26px", lg: "45px" }}
+                  fontSize={{ xs: "13px", sm: "26px", lg: "43px" }}
                   fontWeight={700}
                 >
                   “Kirby has the safest and most simple token contract possible

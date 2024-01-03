@@ -152,6 +152,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+
   gap: 79px;
   position: relative;
   width: 400px;
@@ -238,10 +239,10 @@
     display: none;
   }
   .main-container-black {
-    padding: 30px;
+    padding: 37px;
   }
   .main-container-white {
-    padding: 30px;
+    padding: 37px;
   }
 }
 .icon-box {
@@ -270,25 +271,126 @@
   font-weight: 800;
 }
 
-@media (max-width: 999px) {
+.blank-circle {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: gray;
+}
+
+
+@media (max-width: 480px) {
   .ecosystem-card {
-    width: 350px;
-    height: 450px;
+    width: 372px;
+    height: 370px;
   }
   .ecosystem-text {
     font-size: 40px;
     font-weight: 600;
   }
-  .orange-card{
+  .orange-card {
     width: 228px;
     height: 217px;
   }
-  .blue-card{
+  .blue-card {
     width: 228px;
     height: 217px;
   }
-  .gray-card{
+  .gray-card {
     width: 228px;
     height: 217px;
   }
 }
+@media (min-width: 768px) and (max-width: 1024px) {
+  .ecosystem-card {
+    width: 320px;
+    height: 300px;
+  }
+  .ecosystem-text {
+    font-size: 40px;
+    font-weight: 600;
+  }
+  .orange-card {
+    width: 228px;
+    height: 217px;
+  }
+  .blue-card {
+    width: 228px;
+    height: 217px;
+  }
+  .gray-card {
+    width: 228px;
+    height: 217px;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1279px) {
+  .ecosystem-card {
+    width: 435px;
+    height: 370px;
+  }
+  .ecosystem-text {
+    font-size: 40px;
+    font-weight: 600;
+  } 
+  .orange-card {
+    width: 260px;
+    height: 230px;
+  }
+  .blue-card {
+    width: 260px;
+    height: 230px;
+  }
+  .gray-card {
+  width: 260px;
+    height: 230px;
+  }
+}
+
+@media (min-width: 1280px)  and (max-width: 1439px) {
+  .ecosystem-card {
+    width: 380px;
+    height: 360px;
+  }
+  .ecosystem-text {
+    font-size: 40px;
+    font-weight: 600;
+  }
+  .orange-card {
+    width: 340px;
+    height: 230px;
+  }
+  .blue-card {
+    width: 340px;
+    height: 230px;
+  }
+  .gray-card {
+  width: 340px;
+    height: 230px;
+  }
+
+}
+@media (min-width: 1440px)  {
+  .ecosystem-card {
+    width: 477px;
+    height: 420px;
+  }
+  .ecosystem-text {
+    font-size: 40px;
+    font-weight: 600;
+  }
+  .orange-card {
+    width: 380px;
+    height: 260px;
+  }
+  .blue-card {
+    width: 380px;
+    height: 260px;
+  }
+  .gray-card {
+    width: 380px;
+    height: 260px;
+  }
+}
+
+
+

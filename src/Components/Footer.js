@@ -11,8 +11,8 @@ function Footer() {
         <Box
           width={"100%"}
           display={"flex"}
-          justifyContent={'space-between'}
-          flexDirection={{xs:'column',sm:'row'}}
+          justifyContent={"space-between"}
+          flexDirection={{ xs: "column", sm: "row" }}
           alignItems={"center"}
         >
           <img src={BlueKirbyLogo} alt="img" />
@@ -22,10 +22,20 @@ function Footer() {
             alignItems={"center"}
             gap={"1rem"}
           >
-            <a className="social-circle"  href="https://t.me/bluekirbyftm" target="_blank" rel="noreferrer">
+            <a
+              className="social-circle "
+              href="https://t.me/bluekirbyftm"
+              target="_blank"
+              rel="noreferrer"
+            >
               <TelegramIcon />
             </a>
-            <a className="social-circle" href="https://twitter.com/Bluekirbyftm" target="_blank" rel="noreferrer">
+            <a
+              className="social-circle "
+              href="https://twitter.com/Bluekirbyftm"
+              target="_blank"
+              rel="noreferrer"
+            >
               <TwitterIcon />
             </a>
           </Box>

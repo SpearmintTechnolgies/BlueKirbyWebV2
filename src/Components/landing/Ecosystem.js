@@ -107,7 +107,7 @@ const Ecosystem = ({ darkmode, isMobile, setElement }) => {
           justifyContent={"center"}
         >
           <Grid item xs={12} sm={6} lg={4}>
-            <Box position={"relative"} className="ecosystem-card">
+            <Box position={"relative"} className="ecosystem-card" >
               <Box position={"absolute"} top={"1rem"} left={"5rem"} zIndex={1}>
                 <p className="ecosystem-text">Blue Kirby Incubator</p>
               </Box>
@@ -254,8 +254,8 @@ const Ecosystem = ({ darkmode, isMobile, setElement }) => {
                 {items.map((item, index) => (
                   <a href={item.link} target="_blank" rel="noreferrer">
                     <Box mx={{ xs: "0rem", sm: "2rem" }} key={index} >
-                      <div className="news-box-wrapp scale">
-                        <img src={item.image} alt="slider"  />
+                      <div className="news-box-wrapp ">
+                        <img src={item.image} alt="slider" className="news-img-wrapp" />
                       </div>
                       <Typography
                         fontSize={"13px"}
