@@ -77,17 +77,12 @@ const Herosection = ({ darkmode, isMobile }) => {
                   bottom={"40px"}
                   right={{ sm: "60px", xs: "150px" }}
                 >
-                  <a
-                    href="https://www.dextools.io/app/en/fantom/pair-explorer/0x3684706b32648757bbf9c234b18689d1a225b857"
-                    target="_blank"
-                    rel="noreferrer"
+                  <button
+                    className={darkmode ? "white-button" : "black-button"}
                   >
-                    <button
-                      className={darkmode ? "white-button" : "black-button"}
-                    >
-                      Chart
-                    </button>
-                  </a>
+                    Open DAPP
+                  </button>
+
                   <a
                     href="https://spooky.fi/#/swap?inputCurrency=FTM&outputCurrency=0x97bdAfe3830734acF12Da25359674277fcc33729"
                     target="_blank"
@@ -106,7 +101,7 @@ const Herosection = ({ darkmode, isMobile }) => {
                 position={"relative"}
               >
                 <img
-                  src="https://s3-alpha-sig.figma.com/img/39a2/4292/c6eedc8b1346512ddcefe16676e7a5f5?Expires=1704672000&Signature=hEWl2N8-bfYJIHyDGQJxQrCZnHJxvdq3sLIAxdnQIIhPurgYdIJMkY0KeyxGOgY12L5G3gu1AWZ6wQ-1XcXix33ZpBhohXHmxFu-tgD6fWftiw-9-6Z3JH5FHnEZMvTBZPYOFLoQ~PSFDM0pgdM92hOjL~70utcdvBZN~FHyCxc7ea9w9-TTGtSX0sLTLMt52wqrkNzDfMxRtpQEfAxaIVC1OPYOCrawVe4j7-yTwi4osKqk0xOJIUzbCvBiIHAbtE-rOyL47I9azRjU7wWa0aTaACC8i2vO20B7wfhAZA~JEvq~pTrqCEri9HgCXTL-ThO2MSaJQ4cZWlmSmR77jQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+                  src="https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/kirbyv2.gif"
                   alt="main"
                   className="gif-wrapp"
                 />
@@ -177,7 +172,7 @@ const Herosection = ({ darkmode, isMobile }) => {
               right={{ lg: "100px", sm: "60px", xs: "150px" }}
             >
               <a
-                href="https://t.me/bluekirbyftm"
+                href="https://www.dextools.io/app/en/fantom/pair-explorer/0x3684706b32648757bbf9c234b18689d1a225b857"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -186,7 +181,7 @@ const Herosection = ({ darkmode, isMobile }) => {
                     darkmode ? "white-button" : "black-button"
                   } desktop-view`}
                 >
-                  Explore
+                  Chart
                 </button>
               </a>
               <a
