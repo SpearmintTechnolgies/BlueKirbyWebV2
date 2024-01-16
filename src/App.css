@@ -393,9 +393,10 @@ body {
 .newsletter-input {
   width: 100%;
   padding: 0.7rem 1rem;
-  background-color: white;
+  background-color: rgb(236, 236, 236);
   border-radius: 10px;
   width: 100%;
+  border: inherit;
 }
 .newsletter-input:focus {
   outline: none;
@@ -415,5 +416,20 @@ body {
   }
   .newsletter-input{
     width: 100%;
+  }
+}
+
+
+.from-top {
+  transition: all 200ms ease-in;
+  animation: move-up 500ms ease-in;
+}
+
+@keyframes move-up {
+  from {
+    opacity: 0;
+  }
+  to {
+   opacity: 1;
   }
 }

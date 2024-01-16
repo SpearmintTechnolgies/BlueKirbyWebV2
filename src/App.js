@@ -9,6 +9,7 @@ import ThirdSection from "./Components/landing/ThirdSection";
 import Ecosystem from "./Components/landing/Ecosystem";
 import History from "./Components/landing/History";
 import Footer from "./Components/Footer";
+import NewsLetterModal from "./Components/modals/NewsLetterModal";
 
 const theme = createTheme({
   typography: {
@@ -24,6 +25,8 @@ const App = () => {
       ? JSON.parse(localStorage.getItem("darkmode"))
       : true
   );
+
+  const [open,setOpen] = useState(true)
 
   useEffect(() => {
     document.body.style.backgroundColor = darkmode ? "#13171E" : "#D3DEEE";
@@ -51,6 +54,9 @@ const App = () => {
   const [element1, setElement1] = useState(null);
   const [element2, setElement2] = useState(null);
 
+
+
+
   return (
     <ThemeProvider theme={theme}>
       <Box className="main">
@@ -66,6 +72,7 @@ const App = () => {
         <ThirdSection darkmode={darkmode} isMobile={isMobile} setElement1={setElement1} />
         <History darkmode={darkmode} isMobile={isMobile} setElement2={setElement2} />
         <Footer />
+        <NewsLetterModal open={open} setOpen={setOpen} darkmode={darkmode}/>
       </Box>
     </ThemeProvider>
   );
