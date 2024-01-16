@@ -3,6 +3,7 @@ import React from "react";
 import SliderSecond from "../SliderSecond";
 import BlockIcon from "@mui/icons-material/Block";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import NewsLetter from "./NewsLetter";
 
 function History({ darkmode, isMobile, setElement2 }) {
   const taxbg =
@@ -697,6 +698,7 @@ function History({ darkmode, isMobile, setElement2 }) {
             />
           </Box>
         </Box>
+        <NewsLetter darkmode={darkmode} />
         <Box width={"100%"} mt={"2rem"} position={"relative"}>
           <img src={isMobile ? taxbgmobile : taxbg} alt="bg" />
           <Box position={"absolute"} top={"1rem"} width={"100%"}>

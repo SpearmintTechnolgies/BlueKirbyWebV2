@@ -50,7 +50,24 @@ const Ecosystem = ({ darkmode, isMobile, setElement }) => {
       date: "December 28th 2023",
       link: "https://medium.com/@bluekirbyftm/glory-follows-virtue-as-if-it-were-its-shadow-kirby-c2e13151d842",
     },
-   
+    // {
+    //   image: news3,
+    //   title: "Blue Kirby NFT Mint",
+    //   date: "December 25th 2023",
+    //   link: "https://medium.com/@bluekirbyftm/blue-kirby-nft-mint-9624039b4254",
+    // },
+    // {
+    //   image: news4,
+    //   title: "kings remain kings. $KIRBY",
+    //   date: "December 21st 2023",
+    //   link: "https://medium.com/@bluekirbyftm/kings-remain-kings-kirby-058f1e8e39ed",
+    // },
+    // {
+    //   image: news5,
+    //   title: "FTM’s mascot nemesis Blue Kirby “Fi”",
+    //   date: "December 15th 2023",
+    //   link: "https://medium.com/@bluekirbyftm/ftms-mascot-nemesis-blue-kirby-fi-5d86b5024153",
+    // },
   ]);
   const [activeSlideIndex, setActiveSlideIndex] = useState(0);
 
