@@ -698,7 +698,7 @@ function History({ darkmode, isMobile, setElement2 }) {
             />
           </Box>
         </Box>
-        <NewsLetter darkmode={darkmode} />
+        {/* <NewsLetter darkmode={darkmode} /> */}
         <Box width={"100%"} mt={"2rem"} position={"relative"}>
           <img src={isMobile ? taxbgmobile : taxbg} alt="bg" />
           <Box position={"absolute"} top={"1rem"} width={"100%"}>

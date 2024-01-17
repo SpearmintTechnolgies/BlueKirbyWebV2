@@ -72,7 +72,7 @@ const App = () => {
         <ThirdSection darkmode={darkmode} isMobile={isMobile} setElement1={setElement1} />
         <History darkmode={darkmode} isMobile={isMobile} setElement2={setElement2} />
         <Footer />
-        <NewsLetterModal open={open} setOpen={setOpen} darkmode={darkmode}/>
+        {/* <NewsLetterModal open={open} setOpen={setOpen} darkmode={darkmode}/> */}
       </Box>
     </ThemeProvider>
   );
