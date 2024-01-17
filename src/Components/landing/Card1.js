@@ -5,9 +5,11 @@ import lightlanding from "../images/light.png";
 import darklanding from "../images/dark.png";
 
 const Herosection = ({ darkmode, isMobile }) => {
-  const heromaindark = darklanding;
+  const heromaindark =
+    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/drk.png";
   // "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/hero-main-dark.png";
-  const heromainlight = lightlanding;
+  const heromainlight =
+    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/lite.png";
   // "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/hero-main-light.png";
   const icon =
     "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/iconsmall.svg";
@@ -73,13 +75,13 @@ const Herosection = ({ darkmode, isMobile }) => {
                 </Box>
                 <Box
                   display={"flex"}
-                  justifyContent={"center"}
+                  justifyContent={"start"}
                   alignItems={"center"}
                   gap={"2rem"}
                   position={"absolute"}
                   bottom={"40px"}
-                  right={{ sm: "60px", xs: "120px" }}
-                  width={"100%"}
+                  left={{ sm: "50px", xs: "40px" }}
+                 
                 >
                   <a
                     href="https://app.bluekirby.io/"
