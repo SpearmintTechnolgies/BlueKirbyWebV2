@@ -15,6 +15,8 @@ const Herosection = ({ darkmode, isMobile }) => {
     "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/iconsmall.svg";
   const heroseconddark =
     "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/hero-second-dark.png";
+  const herosecondlight =
+    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/hero-main-light.png";
 
   return (
     <Box my={"2rem"}>
@@ -81,7 +83,6 @@ const Herosection = ({ darkmode, isMobile }) => {
                   position={"absolute"}
                   bottom={"40px"}
                   left={{ sm: "50px", xs: "40px" }}
-                 
                 >
                   <a
                     href="https://app.bluekirby.io/"
@@ -145,7 +146,7 @@ const Herosection = ({ darkmode, isMobile }) => {
 
           <Box position={"relative"} width={"100%"}>
             <img
-              src={darkmode ? heroseconddark : heromainlight}
+              src={darkmode ? heroseconddark : herosecondlight}
               alt="main2"
               width={"100%"}
             />
