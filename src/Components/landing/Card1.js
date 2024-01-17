@@ -1,12 +1,14 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
 import React from "react";
 import Slider from "../Slider";
+import lightlanding from "../images/light.png";
+import darklanding from "../images/dark.png";
 
 const Herosection = ({ darkmode, isMobile }) => {
-  const heromaindark =
-    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/hero-main-dark.png";
-  const heromainlight =
-    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/hero-main-light.png";
+  const heromaindark = darklanding;
+  // "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/hero-main-dark.png";
+  const heromainlight = lightlanding;
+  // "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/hero-main-light.png";
   const icon =
     "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/iconsmall.svg";
   const heroseconddark =
@@ -53,7 +55,8 @@ const Herosection = ({ darkmode, isMobile }) => {
                     fontWeight={"900"}
                     color={"#007DFF"}
                   >
-                    Kings remain kings.
+                    {/* Kings remain kings. */}
+                    Launching SLIME.
                   </Typography>
                 </Box>
                 <Box
@@ -65,7 +68,7 @@ const Herosection = ({ darkmode, isMobile }) => {
                     fontSize={{ xs: "10px", sm: "15px", lg: "20px" }}
                     color={darkmode ? "white" : "black"}
                   >
-                    MemeFi ecosystem based on Fantom
+                    {/* MemeFi ecosystem based on Fantom */}
                   </Typography>
                 </Box>
                 <Box
@@ -75,20 +78,33 @@ const Herosection = ({ darkmode, isMobile }) => {
                   gap={"2rem"}
                   position={"absolute"}
                   bottom={"40px"}
-                  right={{ sm: "60px", xs: "150px" }}
+                  right={{ sm: "60px", xs: "120px" }}
+                  width={"100%"}
                 >
-                  <button
-                    className={darkmode ? "white-button" : "black-button"}
+                  <a
+                    href="https://app.bluekirby.io/"
+                    target="_blank"
+                    rel="noreferrer"
                   >
-                    Open DAPP
-                  </button>
+                    <button
+                      className={
+                        darkmode
+                          ? "white-button text-stretch"
+                          : "black-button text-stretch"
+                      }
+                    >
+                      Launchpad
+                    </button>
+                  </a>
 
                   <a
                     href="https://spooky.fi/#/swap?inputCurrency=FTM&outputCurrency=0x97bdAfe3830734acF12Da25359674277fcc33729"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <button className="blue-button">Buy KIRBY</button>
+                    <button className="blue-button text-stretch">
+                      Buy KIRBY
+                    </button>
                   </a>
                 </Box>
               </Box>

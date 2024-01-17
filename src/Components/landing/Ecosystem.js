@@ -142,11 +142,13 @@ const Ecosystem = ({ darkmode, isMobile, setElement }) => {
                 <Typography fontSize={"30px"} color={"white"}>
                   Launchpad
                 </Typography>
-                <EastIcon
-                  sx={{ color: "#007dff" }}
-                  fontSize="large"
-                  className="scale"
-                />
+                <IconButton href="https://app.bluekirby.io/" target="_blank">
+                  <EastIcon
+                    sx={{ color: "#007dff" }}
+                    fontSize="large"
+                    className="scale"
+                  />
+                </IconButton>
               </Box>
             </Box>
           </Grid>
@@ -176,7 +178,7 @@ const Ecosystem = ({ darkmode, isMobile, setElement }) => {
                 <Typography fontSize={"30px"} color={"white"}>
                   NFTs
                 </Typography>
-                <IconButton href="https://paintswap.finance/" target="_blank">
+                <IconButton href="https://paintswap.finance/marketplace/fantom/collections/blue-friends" target="_blank">
                   <EastIcon
                     sx={{ color: "#007dff" }}
                     fontSize="large"
