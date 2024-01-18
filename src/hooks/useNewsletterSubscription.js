@@ -9,6 +9,7 @@ const useNewsletterSubscription = () => {
   const [error, setError] = useState(null);
 
   const subscribeNewsletter = async (listId, apiKey) => {
+    console.log(apiKey);
     try {
       setIsLoading(true);
 

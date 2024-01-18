@@ -13,6 +13,7 @@ import NewsLetterModal from "./Components/modals/NewsLetterModal";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
 const theme = createTheme({
   typography: {
     fontFamily: "POPPINS, sans-serif",

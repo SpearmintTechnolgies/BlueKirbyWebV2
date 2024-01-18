@@ -2,11 +2,7 @@ import React from "react";
 import { Box, Grid, Typography } from "@mui/material";
 import image from "../images/newsletter-icon.svg";
 import useNewsletterSubscription from "../../hooks/useNewsletterSubscription";
-import Snackbar from "@mui/material/Snackbar";
-
-const apiKey =
-  "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";
-const listId = 3;
+import { API_KEY, LIST_ID } from "../../config";
 
 const NewsLetter = ({ darkmode }) => {
   // Use the custom hook
@@ -44,7 +40,7 @@ const NewsLetter = ({ darkmode }) => {
                 steps ahead of the game with Kirby's exclusive updates.
               </Typography>
 
-              <form onSubmit={(e) => handleSubmit(e, listId, apiKey)}>
+              <form onSubmit={(e) => handleSubmit(e, LIST_ID, API_KEY)}>
                 <Grid container spacing={2} mt={"2rem"}>
                   <Grid item lg={8} sm={8} xs={12}>
                     {isMail ? (
@@ -63,7 +59,9 @@ const NewsLetter = ({ darkmode }) => {
                         exist
                       </Typography>
                     ) : (
-                      <Typography color={"white"}>Enter email address here</Typography>
+                      <Typography color={"white"}>
+                        Enter email address here
+                      </Typography>
                     )}
 
                     <input

@@ -5,10 +5,8 @@ import Modal from "@mui/material/Modal";
 import { Grid, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import useNewsletterSubscription from "../../hooks/useNewsletterSubscription";
+import { API_KEY,LIST_ID } from "../../config";
 
-const apiKey =
-  "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";
-const listId = 3;
 
 const style = {
   position: "absolute",
@@ -64,7 +62,7 @@ export default function NewsLetterModal({ open, setOpen, darkmode }) {
         >
           Grab opportunities at first
         </Typography>
-        <form onSubmit={(e) => handleSubmit(e, listId, apiKey)}>
+        <form onSubmit={(e) => handleSubmit(e, LIST_ID, API_KEY)}>
           <Grid container spacing={2} mt={"2rem"}>
             <Grid item lg={12} sm={12} xs={12}>
               {isMail ? (
