@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { ToastContainer,toast } from 'react-toastify';
+import { ToastContainer, toast } from "react-toastify";
 
 const useNewsletterSubscription = () => {
   const [email, setEmail] = useState("");
@@ -45,13 +45,12 @@ const useNewsletterSubscription = () => {
       );
 
       console.log("Contact added successfully:", response.data);
-      setEmail("")
+      setEmail("");
       setError(null);
-      toast('success')
+      toast("Subscribed!");
     } catch (error) {
       console.error("Error adding contact:", error.response.data);
       setError(error.response.data);
-      
     } finally {
       setIsLoading(false);
     }
@@ -74,7 +73,6 @@ const useNewsletterSubscription = () => {
     isLoading,
     error,
     handleSubmit,
-
   };
 };
 

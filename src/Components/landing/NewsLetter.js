@@ -51,14 +51,19 @@ const NewsLetter = ({ darkmode }) => {
                       <Typography color={"red"}>
                         Please enter email address
                       </Typography>
-                    ) : error ? (
+                    ) : error?.message ===
+                      "Contact email addresses are invalid/ not in valid format" ? (
                       <Typography color={"red"} fontSize={"14px"}>
-                        {error.message}
+                        Please input email in a correct format
+                      </Typography>
+                    ) : error?.message ===
+                      "Contact already in list and/or does not exist" ? (
+                      <Typography color={"red"} fontSize={"14px"}>
+                        Either this email has already subscribed or it doesn't
+                        exist
                       </Typography>
                     ) : (
-                      <Typography color={"white"}>
-                        Enter email address
-                      </Typography>
+                      <Typography color={"white"}>Enter email address here</Typography>
                     )}
 
                     <input
