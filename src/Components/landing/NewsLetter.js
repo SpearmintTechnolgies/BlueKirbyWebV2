@@ -1,23 +1,18 @@
-import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
+import { Box, Grid, Typography } from "@mui/material";
 import image from "../images/newsletter-icon.svg";
-import axios from "axios";
+import useNewsletterSubscription from "../../hooks/useNewsletterSubscription";
+import Snackbar from "@mui/material/Snackbar";
+
+const apiKey =
+  "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";
+const listId = 3;
 
 const NewsLetter = ({ darkmode }) => {
-  const [email, setEmail] = React.useState("");
-  const [isMail, setIsmail] = React.useState(false);
+  // Use the custom hook
+  const { email, setEmail, isMail, isLoading, error, handleSubmit } =
+    useNewsletterSubscription();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    email.length === 0 ? setIsmail(true) : setIsmail(false);
-    try {
-      await axios.post("http://localhost:3001/send-email", { email });
-      alert("Email sent successfully!");
-    } catch (error) {
-      console.error("Error sending email:", error);
-      alert("Error sending email. Please try again.");
-    }
-  };
   return (
     <Box my={"1rem"}>
       <Grid container>
@@ -38,34 +33,48 @@ const NewsLetter = ({ darkmode }) => {
                 color={darkmode ? "white" : "black"}
                 textAlign={{ xs: "center", sm: "center", lg: "start" }}
               >
-                Subscribe to our Newsletter
+                Subscribe To Kirby’s Newsletter
               </Typography>
               <Typography
                 fontSize={{ xs: "13px", sm: "15px", lg: "18px" }}
                 color={darkmode ? "white" : "black"}
                 textAlign={{ xs: "center", sm: "center", lg: "start" }}
               >
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard.
+                Seize the unparalleled advantages of early insights and stay
+                steps ahead of the game with Kirby's exclusive updates.
               </Typography>
-            
-              <form onSubmit={handleSubmit}>
+
+              <form onSubmit={(e) => handleSubmit(e, listId, apiKey)}>
                 <Grid container spacing={2} mt={"2rem"}>
-                  <Grid item lg={8} sm={8} xs={12} >
-                    {/* {isMail && (
+                  <Grid item lg={8} sm={8} xs={12}>
+                    {isMail ? (
                       <Typography color={"red"}>
                         Please enter email address
                       </Typography>
-                    )} */}
-                  
+                    ) : error ? (
+                      <Typography color={"red"} fontSize={"14px"}>
+                        {error.message}
+                      </Typography>
+                    ) : (
+                      <Typography color={"white"}>
+                        Enter email address
+                      </Typography>
+                    )}
+
                     <input
                       className="newsletter-input"
                       placeholder="Enter Email Address"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
                     />
                   </Grid>
-                  <Grid item lg={4} sm={4} xs={12} >
-                    <button className="newsletter-button" type="submit">
-                      Subscribe Now
+                  <Grid item lg={4} sm={4} xs={12}>
+                    <button
+                      className="newsletter-button"
+                      type="submit"
+                      style={{ marginTop: "25px" }}
+                    >
+                      {isLoading ? "Subscribing..." : "Subscribe Now"}
                     </button>
                   </Grid>
                 </Grid>

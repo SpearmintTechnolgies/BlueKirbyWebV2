@@ -1,11 +1,14 @@
-import * as React from "react";
+import React from "react";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { Grid, IconButton } from "@mui/material";
-import axios from "axios";
 import CloseIcon from "@mui/icons-material/Close";
+import useNewsletterSubscription from "../../hooks/useNewsletterSubscription";
+
+const apiKey =
+  "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";
+const listId = 3;
 
 const style = {
   position: "absolute",
@@ -22,20 +25,10 @@ const style = {
 
 export default function NewsLetterModal({ open, setOpen, darkmode }) {
   const handleClose = () => setOpen(false);
-  const [email, setEmail] = React.useState("");
-  const [isMail, setIsmail] = React.useState(false);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    email.length === 0 ? setIsmail(true) : setIsmail(false);
-    try {
-      await axios.post("http://localhost:3001/send-email", { email });
-      alert("Email sent successfully!");
-    } catch (error) {
-      console.error("Error sending email:", error);
-      alert("Error sending email. Please try again.");
-    }
-  };
+  // Use the custom hook
+  const { email, setEmail, isMail, isLoading, error, handleSubmit } =
+    useNewsletterSubscription();
 
   return (
     <Modal
@@ -49,11 +42,12 @@ export default function NewsLetterModal({ open, setOpen, darkmode }) {
         className="from-top"
         position={"relative"}
       >
-        <Box position={"absolute"} top={"10px"} right={"10px"}>
-          <IconButton onClick={handleClose}>
+        <IconButton
+          onClick={handleClose}
+          sx={{ position: "absolute", right: "10px", top: "10px" }}
+        >
           <CloseIcon fontSize="medium" />
-          </IconButton>
-        </Box>
+        </IconButton>
         <Typography
           textAlign={"center"}
           fontSize={"30px"}
@@ -68,22 +62,27 @@ export default function NewsLetterModal({ open, setOpen, darkmode }) {
           fontWeight={800}
           color={"black"}
         >
-          Subscribe to our Newsletter
+          Grab opportunities at first
         </Typography>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={(e) => handleSubmit(e, listId, apiKey)}>
           <Grid container spacing={2} mt={"2rem"}>
             <Grid item lg={12} sm={12} xs={12}>
-              {isMail && (
+              {isMail ? (
                 <Typography color={"red"}>
                   Please enter email address
                 </Typography>
+              ) : error ? (
+                <Typography color={"red"} fontSize={'14px'}>
+                  {error.message}
+                </Typography>
+              ) : (
+                <Typography color={"red"}></Typography>
               )}
 
               <input
                 className="newsletter-input"
                 placeholder="Enter Email Address"
                 value={email}
-                // type="email"
                 onChange={(e) => setEmail(e.target.value)}
               />
             </Grid>
@@ -92,8 +91,9 @@ export default function NewsLetterModal({ open, setOpen, darkmode }) {
                 className="newsletter-button"
                 style={{ width: "100%" }}
                 type="submit"
+                disabled={isLoading}
               >
-                Subscribe Now
+                {isLoading ? "Subscribing..." : "Subscribe Now"}
               </button>
             </Grid>
           </Grid>

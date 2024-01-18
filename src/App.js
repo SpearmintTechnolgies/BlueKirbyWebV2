@@ -10,6 +10,8 @@ import Ecosystem from "./Components/landing/Ecosystem";
 import History from "./Components/landing/History";
 import Footer from "./Components/Footer";
 import NewsLetterModal from "./Components/modals/NewsLetterModal";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const theme = createTheme({
   typography: {
@@ -72,8 +74,9 @@ const App = () => {
         <ThirdSection darkmode={darkmode} isMobile={isMobile} setElement1={setElement1} />
         <History darkmode={darkmode} isMobile={isMobile} setElement2={setElement2} />
         <Footer />
-        {/* <NewsLetterModal open={open} setOpen={setOpen} darkmode={darkmode}/> */}
+        <NewsLetterModal open={open} setOpen={setOpen} darkmode={darkmode}/>
       </Box>
+      <ToastContainer />
     </ThemeProvider>
   );
 };
