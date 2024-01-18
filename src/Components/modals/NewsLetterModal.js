@@ -7,7 +7,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import useNewsletterSubscription from "../../hooks/useNewsletterSubscription";
 
 const apiKey =
-  "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";
+  "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";
 const listId = 3;
 
 const style = {

@@ -5,7 +5,7 @@ import useNewsletterSubscription from "../../hooks/useNewsletterSubscription";
 import Snackbar from "@mui/material/Snackbar";
 
 const apiKey =
-  "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";
+  "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";
 const listId = 3;
 
 const NewsLetter = ({ darkmode }) => {
