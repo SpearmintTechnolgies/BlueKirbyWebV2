@@ -72,7 +72,7 @@ const NewsLetter = ({ darkmode }) => {
                     <button
                       className="newsletter-button"
                       type="submit"
-                      style={{ marginTop: "25px" }}
+                      style={{ marginTop: "22px" }}
                     >
                       {isLoading ? "Subscribing..." : "Subscribe Now"}
                     </button>
