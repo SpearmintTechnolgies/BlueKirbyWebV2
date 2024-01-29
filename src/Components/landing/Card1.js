@@ -6,11 +6,11 @@ import darklanding from "../images/dark.png";
 
 const Herosection = ({ darkmode, isMobile }) => {
   const heromaindark =
-    // "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/drk.png";
-  "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/hero-main-dark.png";
+    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/FantasiaDark.png";
+  // "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/hero-main-dark.png";
   const heromainlight =
-    // "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/lite.png";
-  "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/hero-main-light.png";
+    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/FantasiaLite.png";
+  // "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/hero-main-light.png";
   const icon =
     "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/iconsmall.svg";
   const heroseconddark =
@@ -59,11 +59,11 @@ const Herosection = ({ darkmode, isMobile }) => {
                     fontWeight={"900"}
                     color={"#007DFF"}
                   >
-                    Kings remain kings.
+                    Hosting Fantasia Launch.
                     {/* Launching SLIME. */}
                   </Typography>
                 </Box>
-                <Box
+                {/* <Box
                   position={"absolute"}
                   bottom={{ xs: "10px", sm: "50px" }}
                   left={"40px"}
@@ -74,7 +74,7 @@ const Herosection = ({ darkmode, isMobile }) => {
                   >
                     MemeFi ecosystem based on Fantom
                   </Typography>
-                </Box>
+                </Box> */}
                 <Box
                   display={"flex"}
                   justifyContent={"start"}
@@ -82,7 +82,7 @@ const Herosection = ({ darkmode, isMobile }) => {
                   gap={"2rem"}
                   position={"absolute"}
                   bottom={"40px"}
-                  right={{ sm: "50px", xs: "80px" }}
+                  right={{ sm: "50px", xs: "100px" }}
 
                 >
                   <a
