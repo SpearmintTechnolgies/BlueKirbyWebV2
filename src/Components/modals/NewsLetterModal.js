@@ -1,12 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { Grid, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import useNewsletterSubscription from "../../hooks/useNewsletterSubscription";
-import { API_KEY,LIST_ID } from "../../config";
-
+import axios from "axios";
 
 const style = {
   position: "absolute",
@@ -23,10 +21,32 @@ const style = {
 
 export default function NewsLetterModal({ open, setOpen, darkmode }) {
   const handleClose = () => setOpen(false);
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState(false);
 
-  // Use the custom hook
-  const { email, setEmail, isMail, isLoading, error, handleSubmit } =
-    useNewsletterSubscription();
+  const handlSubmit = async (e) => {
+    e.preventDefault();
+    if (email.length !== 0) {
+      setMessage(true);
+      setTimeout(() => {
+        setMessage(false);
+      }, 3000);
+
+      const response = await axios.post(
+        `https://kirby-test-api.vercel.app/sendConfirmationEmail`,
+        {
+          email,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      console.log(response.data);
+    } else {
+    }
+  };
 
   return (
     <Modal
@@ -62,27 +82,21 @@ export default function NewsLetterModal({ open, setOpen, darkmode }) {
         >
           Grab opportunities at first
         </Typography>
-        <form onSubmit={(e) => handleSubmit(e, LIST_ID, API_KEY)}>
+        <form onSubmit={handlSubmit}>
           <Grid container spacing={2} mt={"2rem"}>
             <Grid item lg={12} sm={12} xs={12}>
-              {isMail ? (
-                <Typography color={"red"}>
-                  Please enter email address
-                </Typography>
-              ) : error?.message ===
-                "Contact email addresses are invalid/ not in valid format" ? (
-                <Typography color={"red"} fontSize={"14px"}>
-                  Please input email in a correct format
-                </Typography>
-              ) : error?.message ===
-                "Contact already in list and/or does not exist" ? (
-                <Typography color={"red"} fontSize={"14px"}>
-                  Either this email has already subscribed or it doesn't exist
-                </Typography>
-              ) : (
-                <Typography color={"red"}></Typography>
+              {message && (
+                <div
+                  style={{
+                    width: "100%",
+                    height: "60px",
+                    backgroundColor: "yellow",
+                    padding: "10px",
+                  }}
+                >
+                  A confirmation message send to you mail.
+                </div>
               )}
-
               <input
                 className="newsletter-input"
                 placeholder="Enter Email Address"
@@ -95,9 +109,8 @@ export default function NewsLetterModal({ open, setOpen, darkmode }) {
                 className="newsletter-button"
                 style={{ width: "100%" }}
                 type="submit"
-                disabled={isLoading}
               >
-                {isLoading ? "Subscribing..." : "Subscribe Now"}
+                Subscribe Now
               </button>
             </Grid>
           </Grid>

@@ -1,13 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, Grid, Typography } from "@mui/material";
 import image from "../images/newsletter-icon.svg";
-import useNewsletterSubscription from "../../hooks/useNewsletterSubscription";
-import { API_KEY, LIST_ID } from "../../config";
+import axios from "axios";
 
 const NewsLetter = ({ darkmode }) => {
-  // Use the custom hook
-  const { email, setEmail, isMail, isLoading, error, handleSubmit } =
-    useNewsletterSubscription();
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState(false);
+
+  const handlSubmit = async (e) => {
+    e.preventDefault();
+    if (email.length !== 0) {
+      setMessage(true);
+      setTimeout(() => {
+        setMessage(false);
+      }, 3000);
+
+      const response = await axios.post(
+        `https://kirby-test-api.vercel.app/sendConfirmationEmail`,
+        {
+          email,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      console.log(response.data);
+    } else {
+    }
+  };
 
   return (
     <Box my={"1rem"}>
@@ -40,28 +62,15 @@ const NewsLetter = ({ darkmode }) => {
                 steps ahead of the game with Kirby's exclusive updates.
               </Typography>
 
-              <form onSubmit={(e) => handleSubmit(e, LIST_ID, API_KEY)}>
+              <form onSubmit={handlSubmit}>
                 <Grid container spacing={2} mt={"2rem"}>
                   <Grid item lg={8} sm={8} xs={12}>
-                    {isMail ? (
-                      <Typography color={"red"}>
-                        Please enter email address
-                      </Typography>
-                    ) : error?.message ===
-                      "Contact email addresses are invalid/ not in valid format" ? (
-                      <Typography color={"red"} fontSize={"14px"}>
-                        Please input email in a correct format
-                      </Typography>
-                    ) : error?.message ===
-                      "Contact already in list and/or does not exist" ? (
-                      <Typography color={"red"} fontSize={"14px"}>
-                        Either this email has already subscribed or it doesn't
-                        exist
+                    {message ? (
+                      <Typography color={darkmode ? "white" : "black"}>
+                        A confirmation message send to you mail.
                       </Typography>
                     ) : (
-                      <Typography color={"white"}>
-                        Enter email address here
-                      </Typography>
+                      <div style={{ height: "21px" }}></div>
                     )}
 
                     <input
@@ -77,7 +86,7 @@ const NewsLetter = ({ darkmode }) => {
                       type="submit"
                       style={{ marginTop: "22px" }}
                     >
-                      {isLoading ? "Subscribing..." : "Subscribe Now"}
+                      Subscribe Now
                     </button>
                   </Grid>
                 </Grid>
