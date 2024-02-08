@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { Grid, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import axios from "axios";
-import { SERVER_URL } from "../../config";
+import useNewsletterSubscription from "../../hooks/useSendInblue";
+import { API_KEY, LIST_ID } from "../../config";
 
 const style = {
   position: "absolute",
@@ -22,56 +22,10 @@ const style = {
 
 export default function NewsLetterModal({ open, setOpen, darkmode }) {
   const handleClose = () => setOpen(false);
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState(false);
-  const [error, setError] = useState("");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (email.length !== 0) {
-      // Retrieve emails array from localStorage or initialize it if it doesn't exist
-      const storedEmailsJSON = localStorage.getItem("emails");
-      const storedEmails = storedEmailsJSON ? JSON.parse(storedEmailsJSON) : [];
-
-      // Check if the email already exists in the stored emails array
-      if (storedEmails.includes(email)) {
-        setError("A confirmation mail was already sent or already confirmed. Please check!");
-        setMessage(false);
-      } else {
-        // Store the email in the stored emails array
-        const updatedEmails = [...storedEmails, email];
-        localStorage.setItem("emails", JSON.stringify(updatedEmails));
-
-        setMessage(true);
-        setError("");
-        setTimeout(() => {
-          setMessage(false);
-        }, 15000);
-
-        try {
-          // Send confirmation email
-          const response = await axios.post(
-            `${SERVER_URL}/sendConfirmationEmail`,
-            {
-              email,
-            },
-            {
-              headers: {
-                "Content-Type": "application/json",
-              },
-            }
-          );
-          console.log(response.data);
-        } catch (error) {
-          console.error("Error sending confirmation email:", error);
-          // Handle error, show error message, etc.
-        }
-      }
-    } else {
-      // Handle case where email is empty
-    }
-  };
-  
+  // Use the custom hook
+  const { email, setEmail, isMail, isLoading, error, handleSubmit } =
+    useNewsletterSubscription();
 
   return (
     <Modal
@@ -107,40 +61,32 @@ export default function NewsLetterModal({ open, setOpen, darkmode }) {
         >
           Grab opportunities at first
         </Typography>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={(e) => handleSubmit(e, LIST_ID, API_KEY)}>
           <Grid container spacing={2} mt={"2rem"}>
             <Grid item lg={12} sm={12} xs={12}>
-              {message && (
-                <div
-                  style={{
-                    width: "100%",
-                    height: "60px",
-                    backgroundColor: "yellow",
-                    padding: "10px",
-                  }}
-                >
-                  A confirmation mail has been sent, make sure to check
-                  spam/junk.
-                </div>
+              {isMail ? (
+                <Typography color={"red"}>
+                  Please enter email address
+                </Typography>
+              ) : error?.message ===
+                "Contact email addresses are invalid/ not in valid format" ? (
+                <Typography color={"red"} fontSize={"14px"}>
+                  Please input email in a correct format
+                </Typography>
+              ) : error?.message ===
+                "Contact already in list and/or does not exist" ? (
+                <Typography color={"red"} fontSize={"14px"}>
+                  Either this email has already subscribed or it doesn't exist
+                </Typography>
+              ) : (
+                <Typography color={"red"}></Typography>
               )}
-              {error && (
-                <div
-                  style={{
-                    width: "100%",
-                    height: "60px",
-                    backgroundColor: "yellow",
-                    padding: "10px",
-                  }}
-                >
-                  {error}
-                </div>
-              )}
+
               <input
                 className="newsletter-input"
                 placeholder="Enter Email Address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                type="email"
               />
             </Grid>
             <Grid item lg={12} sm={12} xs={12}>
@@ -148,8 +94,9 @@ export default function NewsLetterModal({ open, setOpen, darkmode }) {
                 className="newsletter-button"
                 style={{ width: "100%" }}
                 type="submit"
+                disabled={isLoading}
               >
-                Subscribe Now
+                {isLoading ? "Subscribing..." : "Subscribe Now"}
               </button>
             </Grid>
           </Grid>
