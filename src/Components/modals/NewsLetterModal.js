@@ -51,7 +51,7 @@ export default function NewsLetterModal({ open, setOpen, darkmode }) {
         try {
           // Send confirmation email
           const response = await axios.post(
-            `${SERVER_URL}.app/sendConfirmationEmail`,
+            `${SERVER_URL}/sendConfirmationEmail`,
             {
               email,
             },
