@@ -5,6 +5,7 @@ import Modal from "@mui/material/Modal";
 import { Grid, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import axios from "axios";
+import { SERVER_URL } from "../../config";
 
 const style = {
   position: "absolute",
@@ -23,30 +24,54 @@ export default function NewsLetterModal({ open, setOpen, darkmode }) {
   const handleClose = () => setOpen(false);
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState(false);
+  const [error, setError] = useState("");
 
-  const handlSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (email.length !== 0) {
-      setMessage(true);
-      setTimeout(() => {
+      // Retrieve emails array from localStorage or initialize it if it doesn't exist
+      const storedEmailsJSON = localStorage.getItem("emails");
+      const storedEmails = storedEmailsJSON ? JSON.parse(storedEmailsJSON) : [];
+  
+      // Check if the email already exists in the stored emails array
+      if (storedEmails.includes(email)) {
+        setError("A confirmation mail was already sent or already confirmed. Please check!");
         setMessage(false);
-      }, 3000);
-
-      const response = await axios.post(
-        `https://kirby-test-api.vercel.app/sendConfirmationEmail`,
-        {
-          email,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
+      } else {
+        // Store the email in the stored emails array
+        const updatedEmails = [...storedEmails, email];
+        localStorage.setItem("emails", JSON.stringify(updatedEmails));
+  
+        setMessage(true);
+        setError("");
+        setTimeout(() => {
+          setMessage(false);
+        }, 15000);
+  
+        try {
+          // Send confirmation email
+          const response = await axios.post(
+            `${SERVER_URL}.app/sendConfirmationEmail`,
+            {
+              email,
+            },
+            {
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          );
+          console.log(response.data);
+        } catch (error) {
+          console.error("Error sending confirmation email:", error);
+          // Handle error, show error message, etc.
         }
-      );
-      console.log(response.data);
+      }
     } else {
+      // Handle case where email is empty
     }
   };
+  
 
   return (
     <Modal
@@ -82,7 +107,7 @@ export default function NewsLetterModal({ open, setOpen, darkmode }) {
         >
           Grab opportunities at first
         </Typography>
-        <form onSubmit={handlSubmit}>
+        <form onSubmit={handleSubmit}>
           <Grid container spacing={2} mt={"2rem"}>
             <Grid item lg={12} sm={12} xs={12}>
               {message && (
@@ -94,7 +119,20 @@ export default function NewsLetterModal({ open, setOpen, darkmode }) {
                     padding: "10px",
                   }}
                 >
-                  A confirmation message send to you mail.
+                  A confirmation mail has been sent, make sure to check
+                  spam/junk.
+                </div>
+              )}
+              {error && (
+                <div
+                  style={{
+                    width: "100%",
+                    height: "60px",
+                    backgroundColor: "yellow",
+                    padding: "10px",
+                  }}
+                >
+                  {error}
                 </div>
               )}
               <input
@@ -102,6 +140,7 @@ export default function NewsLetterModal({ open, setOpen, darkmode }) {
                 placeholder="Enter Email Address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                type="email"
               />
             </Grid>
             <Grid item lg={12} sm={12} xs={12}>
