@@ -1,18 +1,18 @@
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 import React, { useEffect, useState } from "react";
-import Navbar from "./Components/Navbar";
 import { Box, ThemeProvider, createTheme } from "@mui/material";
-import "./App.css";
-import Herosection from "./Components/landing/Card1";
+
 import "./App.css";
 import "./Generate.css";
+
+import Navbar from "./Components/Navbar";
+import Herosection from "./Components/landing/Card1";
 import ThirdSection from "./Components/landing/ThirdSection";
 import Ecosystem from "./Components/landing/Ecosystem";
 import History from "./Components/landing/History";
 import Footer from "./Components/Footer";
 import NewsLetterModal from "./Components/modals/NewsLetterModal";
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
 
 const theme = createTheme({
   typography: {
@@ -53,12 +53,10 @@ const App = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, [isMobile]);
+  
   const [element, setElement] = useState(null);
   const [element1, setElement1] = useState(null);
   const [element2, setElement2] = useState(null);
-
-
-
 
   return (
     <ThemeProvider theme={theme}>

@@ -24,10 +24,34 @@ export default function NewsLetterModal({ open, setOpen, darkmode }) {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState(false);
 
+  const [error, setError] = useState(false);
+
+  const [messageText, setMessageText] = useState("");
+
   const handlSubmit = async (e) => {
     e.preventDefault();
+
     if (email.length !== 0) {
+
+      // add regex for mail 
+      const regEx = /\S+@\S+\.\S+/;
+
+      if (!regEx.test(email)) {
+        setMessage(true);
+        setMessageText("Please enter a valid email address");
+
+        setError(true)
+
+        setTimeout(() => {
+          setMessage(false);
+          setError(false);
+        }, 3000);
+        return;
+      };
+
       setMessage(true);
+      setMessageText("A confirmation message send to you mail.");
+
       setTimeout(() => {
         setMessage(false);
       }, 3000);
@@ -42,9 +66,22 @@ export default function NewsLetterModal({ open, setOpen, darkmode }) {
             "Content-Type": "application/json",
           },
         }
-      );
-      console.log(response.data);
+      ).then((res) => {
+        console.log(res);
+      }).catch((err) => {
+        console.log(err);
+      });
+      
     } else {
+      setMessage(true);
+      setMessageText("Field can't be empty");
+
+      setError(true)
+
+      setTimeout(() => {
+        setMessage(false);
+        setError(false);
+      }, 3000);
     }
   };
 
@@ -90,11 +127,11 @@ export default function NewsLetterModal({ open, setOpen, darkmode }) {
                   style={{
                     width: "100%",
                     height: "60px",
-                    backgroundColor: "yellow",
+                    backgroundColor: error ? "red" : "yellow",
                     padding: "10px",
                   }}
                 >
-                  A confirmation message send to you mail.
+                  {messageText}
                 </div>
               )}
               <input
