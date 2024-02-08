@@ -32,12 +32,21 @@ export default function NewsLetterModal({ open, setOpen, darkmode }) {
       // Retrieve emails array from localStorage or initialize it if it doesn't exist
       const storedEmailsJSON = localStorage.getItem("emails");
       const storedEmails = storedEmailsJSON ? JSON.parse(storedEmailsJSON) : [];
-  
+
       // Check if the email already exists in the stored emails array
       if (storedEmails.includes(email)) {
         setError("A confirmation mail was already sent or already confirmed. Please check!");
         setMessage(false);
       } else {
+        // Store the email in the stored emails array
+        const updatedEmails = [...storedEmails, email];
+        localStorage.setItem("emails", JSON.stringify(updatedEmails));
+
+        setMessage(true);
+        setError("");
+        setTimeout(() => {
+          setMessage(false);
+        }, 15000);
 
         try {
           // Send confirmation email
@@ -53,16 +62,6 @@ export default function NewsLetterModal({ open, setOpen, darkmode }) {
             }
           );
           console.log(response.data);
-                  // Store the email in the stored emails array
-        const updatedEmails = [...storedEmails, email];
-        localStorage.setItem("emails", JSON.stringify(updatedEmails));
-  
-        setMessage(true);
-        setError("");
-        setTimeout(() => {
-          setMessage(false);
-        }, 15000);
-  
         } catch (error) {
           console.error("Error sending confirmation email:", error);
           // Handle error, show error message, etc.
