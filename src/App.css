@@ -283,6 +283,9 @@ body {
 
 .news-img-wrapp {
   border-radius: 15px;
+  object-fit: cover;
+  height:175px;
+  width: 100%;
   transition: all 500ms ease-in;
 }
 

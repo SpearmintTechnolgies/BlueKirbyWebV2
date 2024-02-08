@@ -6,10 +6,10 @@ import darklanding from "../images/dark.png";
 
 const Herosection = ({ darkmode, isMobile }) => {
   const heromaindark =
-    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/FantasiaDark.png";
+    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/kirpilldark.png";
   // "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/hero-main-dark.png";
   const heromainlight =
-    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/FantasiaLite.png";
+    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/kirpilllite.png";
   // "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/hero-main-light.png";
   const icon =
     "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/iconsmall.svg";
@@ -57,9 +57,10 @@ const Herosection = ({ darkmode, isMobile }) => {
                   <Typography
                     fontSize={{ xs: "20px", sm: "40px", lg: "70px" }}
                     fontWeight={"900"}
-                    color={"#007DFF"}
+                    color={"#004e9e"}
+                   
                   >
-                    Hosting Fantasia Launch.
+                    Launching KirpillVsFood
                     {/* Launching SLIME. */}
                   </Typography>
                 </Box>
@@ -83,7 +84,6 @@ const Herosection = ({ darkmode, isMobile }) => {
                   position={"absolute"}
                   bottom={"40px"}
                   right={{ sm: "50px", xs: "100px" }}
-
                 >
                   <a
                     href="https://app.bluekirby.io/"
