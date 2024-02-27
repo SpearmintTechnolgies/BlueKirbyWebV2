@@ -6,11 +6,11 @@ import darklanding from "../images/dark.png";
 
 const Herosection = ({ darkmode, isMobile }) => {
   const heromaindark =
-    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/kirpilldark.png";
-  // "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/hero-main-dark.png";
+    // "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/kirpilldark.png";
+  "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/hero-main-dark.png";
   const heromainlight =
-    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/kirpilllite.png";
-  // "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/hero-main-light.png";
+    // "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/kirpilllite.png";
+  "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/hero-main-light.png";
   const icon =
     "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/iconsmall.svg";
   const heroseconddark =
@@ -57,11 +57,10 @@ const Herosection = ({ darkmode, isMobile }) => {
                   <Typography
                     fontSize={{ xs: "20px", sm: "40px", lg: "70px" }}
                     fontWeight={"900"}
-                    color={"#004e9e"}
+                    color={"#007dff"}
                    
                   >
-                    Launching KirpillVsFood
-                    {/* Launching SLIME. */}
+                  Kings remain kings.
                   </Typography>
                 </Box>
                 {/* <Box

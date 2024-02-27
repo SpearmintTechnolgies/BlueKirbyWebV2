@@ -7,6 +7,8 @@ import latestimage13 from "../Components/images/latest-news1.1.webp";
 import latestimage21 from "../Components/images/latest-news2.1.webp";
 import latestimag22 from "../Components/images/latest-news2.2.webp";
 import latestimage23 from "../Components/images/latest-news2.3.webp";
+import latestimage31 from "../Components/images/latest-news3.1.webp";
+import latestimage32 from "../Components/images/latest-news3.2.webp";
 
 const news4 = "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/news1.jpg";
 const news5 = "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/news2.webp";
@@ -15,6 +17,18 @@ const news7 = "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/news4.jpg";
 const news8 = "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/news5.jpg";
 
 export const News = [
+  {
+    image: latestimage31,
+    title: "blue kirby arrives on solana!",
+    date: "February 22th 2024",
+    link: "https://medium.com/@bluekirbyftm/blue-kirby-arrives-on-solana-90671c0d3a43",
+  },
+  {
+    image: latestimage32,
+    title: "blue kirby live on solana $sol #sol!",
+    date: "February 22th 2024",
+    link: "https://medium.com/@bluekirbyftm/blue-kirby-live-on-solana-sol-sol-90bf5d13a7b0",
+  },
   {
     image: latestimage21,
     title: "kirbpill vs food presale",
