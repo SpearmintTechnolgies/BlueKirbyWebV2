@@ -63,7 +63,7 @@ const Herosection = ({ darkmode, isMobile }) => {
                   Kings remain kings.
                   </Typography>
                 </Box>
-                {/* <Box
+                <Box
                   position={"absolute"}
                   bottom={{ xs: "10px", sm: "50px" }}
                   left={"40px"}
@@ -74,7 +74,7 @@ const Herosection = ({ darkmode, isMobile }) => {
                   >
                     MemeFi ecosystem based on Fantom
                   </Typography>
-                </Box> */}
+                </Box>
                 <Box
                   display={"flex"}
                   justifyContent={"start"}
