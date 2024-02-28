@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
@@ -6,6 +6,7 @@ import { Grid, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import useNewsletterSubscription from "../../hooks/useSendInblue";
 import { API_KEY, LIST_ID } from "../../config";
+import usePostEmailApi from "../../hooks/useSendMail";
 
 const style = {
   position: "absolute",
@@ -24,8 +25,14 @@ export default function NewsLetterModal({ open, setOpen, darkmode }) {
   const handleClose = () => setOpen(false);
 
   // Use the custom hook
-  const { email, setEmail, isMail, isLoading, error, handleSubmit } =
-    useNewsletterSubscription();
+  const [email, setEmail] = useState("");
+  const { loading, error, response, postEmail } = usePostEmailApi();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (email.length === 0) return false;
+    await postEmail(email);
+  };
 
   return (
     <Modal
@@ -61,26 +68,11 @@ export default function NewsLetterModal({ open, setOpen, darkmode }) {
         >
           Grab opportunities at first
         </Typography>
-        <form onSubmit={(e) => handleSubmit(e, LIST_ID, API_KEY)}>
+        <form onSubmit={(e) => handleSubmit(e)}>
           <Grid container spacing={2} mt={"2rem"}>
             <Grid item lg={12} sm={12} xs={12}>
-              {isMail ? (
-                <Typography color={"red"}>
-                  Please enter email address
-                </Typography>
-              ) : error?.message ===
-                "Contact email addresses are invalid/ not in valid format" ? (
-                <Typography color={"red"} fontSize={"14px"}>
-                  Please input email in a correct format
-                </Typography>
-              ) : error?.message ===
-                "Contact already in list and/or does not exist" ? (
-                <Typography color={"red"} fontSize={"14px"}>
-                  Either this email has already subscribed or it doesn't exist
-                </Typography>
-              ) : (
-                <Typography color={"red"}></Typography>
-              )}
+              {response && <Typography>{response}</Typography>}
+              {error && <Typography>Error sending mail</Typography>}
 
               <input
                 className="newsletter-input"
@@ -94,9 +86,9 @@ export default function NewsLetterModal({ open, setOpen, darkmode }) {
                 className="newsletter-button"
                 style={{ width: "100%" }}
                 type="submit"
-                disabled={isLoading}
+                disabled={loading}
               >
-                {isLoading ? "Subscribing..." : "Subscribe Now"}
+                {loading ? "Subscribing..." : "Subscribe Now"}
               </button>
             </Grid>
           </Grid>

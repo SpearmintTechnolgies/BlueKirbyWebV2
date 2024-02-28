@@ -1,13 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, Grid, Typography } from "@mui/material";
 import image from "../images/newsletter-icon.svg";
 import useNewsletterSubscription from "../../hooks/useSendInblue";
 import { API_KEY, LIST_ID } from "../../config";
+import usePostEmailApi from "../../hooks/useSendMail";
 
 const NewsLetter = ({ darkmode }) => {
   // Use the custom hook
-  const { email, setEmail, isMail, isLoading, error, handleSubmit } =
-    useNewsletterSubscription();
+  const [email, setEmail] = useState("");
+  const { loading, error, response, postEmail } = usePostEmailApi();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (email.length === 0) return false;
+    await postEmail(email);
+  };
 
   return (
     <Box my={"1rem"}>
@@ -43,26 +50,14 @@ const NewsLetter = ({ darkmode }) => {
               <form onSubmit={(e) => handleSubmit(e, LIST_ID, API_KEY)}>
                 <Grid container spacing={2} mt={"2rem"}>
                   <Grid item lg={8} sm={8} xs={12}>
-                    {isMail ? (
-                      <Typography color={"red"}>
-                        Please enter email address
-                      </Typography>
-                    ) : error?.message ===
-                      "Contact email addresses are invalid/ not in valid format" ? (
-                      <Typography color={"red"} fontSize={"14px"}>
-                        Please input email in a correct format
-                      </Typography>
-                    ) : error?.message ===
-                      "Contact already in list and/or does not exist" ? (
-                      <Typography color={"red"} fontSize={"14px"}>
-                        Either this email has already subscribed or it doesn't
-                        exist
-                      </Typography>
+                    {response ? (
+                      <Typography color={'white'}>{response}</Typography>
+                    ) : error ? (
+                      <Typography color={'white'}>Error sending mail</Typography>
                     ) : (
-                      <Typography color={"white"}>
-                        Enter email address here
-                      </Typography>
+                      <Typography>.</Typography>
                     )}
+                   
 
                     <input
                       className="newsletter-input"
@@ -77,7 +72,7 @@ const NewsLetter = ({ darkmode }) => {
                       type="submit"
                       style={{ marginTop: "22px" }}
                     >
-                      {isLoading ? "Subscribing..." : "Subscribe Now"}
+                      {loading ? "Subscribing..." : "Subscribe Now"}
                     </button>
                   </Grid>
                 </Grid>
