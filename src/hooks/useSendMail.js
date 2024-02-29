@@ -30,14 +30,8 @@ const usePostEmailApi = () => {
       } else {
         setError("Something went wrong! Try again");
       }
-      setTimeout(() => {
-        setResponse("");
-      }, 10000);
     } catch (error) {
       setError("Something went wrong! Try again");
-      setTimeout(() => {
-        setError("");
-      }, 10000);
     } finally {
       setLoading(false);
     }
