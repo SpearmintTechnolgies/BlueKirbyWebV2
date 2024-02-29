@@ -53,7 +53,7 @@ const NewsLetter = ({ darkmode }) => {
                     {response ? (
                       <Typography color={'white'}>{response}</Typography>
                     ) : error ? (
-                      <Typography color={'white'}>Error sending mail</Typography>
+                      <Typography color={'white'}>{error}</Typography>
                     ) : (
                       <Typography>.</Typography>
                     )}

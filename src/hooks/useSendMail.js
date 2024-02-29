@@ -23,13 +23,18 @@ const usePostEmailApi = () => {
       );
 
       const data = await response.json();
-      console.log(data, "data");
-      setResponse(data.message);
+      console.log(data.code, "dataaa");
+      if (data.message) {
+        console.log("if");
+        setResponse(data.message);
+      } else {
+        setError("Something went wrong! Try again");
+      }
       setTimeout(() => {
         setResponse("");
       }, 10000);
     } catch (error) {
-      setError(error);
+      setError("Something went wrong! Try again");
       setTimeout(() => {
         setError("");
       }, 10000);

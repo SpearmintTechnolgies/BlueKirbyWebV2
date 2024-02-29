@@ -72,7 +72,7 @@ export default function NewsLetterModal({ open, setOpen, darkmode }) {
           <Grid container spacing={2} mt={"2rem"}>
             <Grid item lg={12} sm={12} xs={12}>
               {response && <Typography>{response}</Typography>}
-              {error && <Typography>Error sending mail</Typography>}
+              {error && <Typography>{error}</Typography>}
 
               <input
                 className="newsletter-input"
