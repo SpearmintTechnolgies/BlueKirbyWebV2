@@ -65,7 +65,7 @@ const App = () => {
       <Box className="main">
         <Navbar
           darkmode={darkmode}
-          setDarkmode={setDarkmode}
+          setDarkmode={setDarkmode} 
           element={element}
           element1={element1}
           element2={element2}
