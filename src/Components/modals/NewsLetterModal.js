@@ -71,8 +71,8 @@ export default function NewsLetterModal({ open, setOpen, darkmode }) {
         <form onSubmit={(e) => handleSubmit(e)}>
           <Grid container spacing={2} mt={"2rem"}>
             <Grid item lg={12} sm={12} xs={12}>
-              {response && <Typography>{response}</Typography>}
-              {error && <Typography>{error}</Typography>}
+              {response && <Typography textAlign={'center'}>{response}</Typography>}
+              {error && <Typography textAlign={'center'}>{error}</Typography>}
 
               <input
                 className="newsletter-input"

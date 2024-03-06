@@ -6,11 +6,11 @@ import darklanding from "../images/dark.png";
 
 const Herosection = ({ darkmode, isMobile }) => {
   const heromaindark =
-    // "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/kirpilldark.png";
-  "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/hero-main-dark.png";
+    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/PyroDarkHero.png";
+  // "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/hero-main-dark.png";
   const heromainlight =
-    // "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/kirpilllite.png";
-  "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/hero-main-light.png";
+    "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/PyroLiteHero.png";
+  // "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/hero-main-light.png";
   const icon =
     "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/iconsmall.svg";
   const heroseconddark =
@@ -60,7 +60,7 @@ const Herosection = ({ darkmode, isMobile }) => {
                     color={"#007dff"}
                    
                   >
-                  Kings remain kings.
+                  Launching Pyro.
                   </Typography>
                 </Box>
                 <Box
@@ -68,12 +68,12 @@ const Herosection = ({ darkmode, isMobile }) => {
                   bottom={{ xs: "10px", sm: "50px" }}
                   left={"40px"}
                 >
-                  <Typography
+                  {/* <Typography
                     fontSize={{ xs: "10px", sm: "15px", lg: "20px" }}
                     color={darkmode ? "white" : "black"}
                   >
                     MemeFi ecosystem based on Fantom
-                  </Typography>
+                  </Typography> */}
                 </Box>
                 <Box
                   display={"flex"}

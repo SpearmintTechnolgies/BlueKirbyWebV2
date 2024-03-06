@@ -9,6 +9,8 @@ import latestimag22 from "../Components/images/latest-news2.2.webp";
 import latestimage23 from "../Components/images/latest-news2.3.webp";
 import latestimage31 from "../Components/images/latest-news3.1.webp";
 import latestimage32 from "../Components/images/latest-news3.2.webp";
+import latestimage41 from "../Components/images/latest-news4.1.webp";
+import latestimage42 from "../Components/images/latest-news4.2.webp";
 
 const news4 = "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/news1.jpg";
 const news5 = "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/news2.webp";
@@ -17,6 +19,18 @@ const news7 = "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/news4.jpg";
 const news8 = "https://kirbyv2.s3.eu-north-1.amazonaws.com/Images/news5.jpg";
 
 export const News = [
+  {
+    image: latestimage41,
+    title: "kirby and pyro the flame.",
+    date: "March 4th 2024",
+    link: "https://medium.com/@bluekirbyftm/kirby-and-pyro-the-flame-54f6477f006b",
+  },
+  {
+    image: latestimage42,
+    title: "kirbot beep beep beep",
+    date: "February 28th 2024",
+    link: "https://medium.com/@bluekirbyftm/kirbot-beep-beep-beep-f333b5e72a26",
+  },
   {
     image: latestimage31,
     title: "blue kirby arrives on solana!",
