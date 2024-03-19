@@ -559,7 +559,7 @@ function History({ darkmode, isMobile, setElement2 }) {
                     </Box>
                   </Box>
                 </Grid>
-                <Grid item lg={4} sm={6} xs={12}>
+                {/* <Grid item lg={4} sm={6} xs={12}>
                   <Box
                     display={"flex"}
                     justifyContent={"start"}
@@ -584,8 +584,8 @@ function History({ darkmode, isMobile, setElement2 }) {
                       <Typography color={"gray"}>Posting soon</Typography>
                     </Box>
                   </Box>
-                </Grid>
-                <Grid item lg={4} sm={6} xs={12}>
+                </Grid> */}
+                {/* <Grid item lg={4} sm={6} xs={12}>
                   <Box
                     display={"flex"}
                     justifyContent={"start"}
@@ -610,8 +610,8 @@ function History({ darkmode, isMobile, setElement2 }) {
                       <Typography color={"gray"}>Posting soon</Typography>
                     </Box>
                   </Box>
-                </Grid>
-                <Grid item lg={4} sm={6} xs={12}>
+                </Grid> */}
+                {/* <Grid item lg={4} sm={6} xs={12}>
                   <Box
                     display={"flex"}
                     justifyContent={"start"}
@@ -636,7 +636,7 @@ function History({ darkmode, isMobile, setElement2 }) {
                       <Typography color={"gray"}>Posting soon</Typography>
                     </Box>
                   </Box>
-                </Grid>
+                </Grid> */}
                 <Grid item lg={4} sm={6} xs={12}>
                   <Box
                     display={"flex"}
